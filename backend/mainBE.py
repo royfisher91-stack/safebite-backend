@@ -1011,3 +1011,14 @@ def flag_community_feedback_route(
         'status': 'flagged',
         'id': feedback_id,
     }
+
+
+from run_imports import run_imports
+
+@app.on_event("startup")
+def startup_event():
+    try:
+        run_imports()
+        print("Data imported successfully")
+    except Exception as e:
+        print("Import failed:", e)
