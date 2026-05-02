@@ -1,0 +1,23 @@
+{
+  "aliases": {
+    "natural flavourings": "flavouring",
+    "natural flavouring": "flavouring",
+    "artificial flavourings": "artificial flavouring",
+    "artificial flavouring": "artificial flavouring",
+    "mixed herbs": "herbs",
+    "wholegrain oats": "oats",
+    "whole grain oats": "oats",
+    "organic apples": "apple",
+    "organic bananas": "banana",
+    "organic pears": "pear",
+    "organic peaches": "peach",
+    "organic carrots": "carrot",
+    "organic parsnips": "parsnip",
+    "galacto oligosaccharides": "galacto-oligosaccharides",
+    "fructo oligosaccharides": "fructo-oligosaccharides",
+    "partially hydrolysed whey protein": "hydrolysed whey protein",
+    "partially hydrolyzed whey protein": "hydrolysed whey protein",
+    "oil from the microalgae schizochytrium sp": "microalgae oil",
+    "oil from mortierella alpina": "arachidonic acid oil"
+  }
+}

@@ -1,0 +1,139 @@
+.scanner-page {
+  min-height: 100vh;
+  background: #f5f5f7;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 24px;
+}
+
+.scanner-shell {
+  width: 100%;
+  max-width: 680px;
+}
+
+.scanner-header {
+  text-align: center;
+  margin-bottom: 24px;
+}
+
+.scanner-header h1 {
+  font-size: 2rem;
+  margin-bottom: 8px;
+  color: #1d1d1f;
+}
+
+.scanner-header p {
+  color: #6e6e73;
+  font-size: 1rem;
+}
+
+.scanner-card {
+  background: #ffffff;
+  border-radius: 24px;
+  padding: 24px;
+  box-shadow: 0 12px 40px rgba(0, 0, 0, 0.08);
+  border: 1px solid rgba(0, 0, 0, 0.06);
+}
+
+.scanner-frame {
+  position: relative;
+  overflow: hidden;
+  border-radius: 20px;
+  background: #000;
+  min-height: 320px;
+}
+
+.scan-overlay {
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.scan-box {
+  width: 72%;
+  height: 42%;
+  border: 2px solid rgba(255, 255, 255, 0.95);
+  border-radius: 20px;
+  box-shadow: 0 0 0 9999px rgba(0, 0, 0, 0.18);
+}
+
+.scanner-status {
+  margin-top: 16px;
+  text-align: center;
+  color: #1d1d1f;
+  font-weight: 500;
+}
+
+.scanner-status.success {
+  color: #0a7f2e;
+}
+
+.scanner-error {
+  text-align: center;
+  color: #b42318;
+  margin-bottom: 16px;
+}
+
+.scanner-actions {
+  display: flex;
+  gap: 12px;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+
+.primary-button,
+.secondary-button {
+  border: none;
+  border-radius: 999px;
+  padding: 12px 20px;
+  font-size: 0.95rem;
+  cursor: pointer;
+}
+
+.primary-button {
+  background: #111;
+  color: white;
+}
+
+.secondary-button {
+  background: #ececf0;
+  color: #111;
+}
+
+.manual-barcode-form {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.manual-barcode-label {
+  font-size: 0.95rem;
+  font-weight: 600;
+  color: #1d1d1f;
+}
+
+.manual-barcode-row {
+  display: flex;
+  gap: 12px;
+  flex-wrap: wrap;
+}
+
+.manual-barcode-input {
+  flex: 1;
+  min-width: 220px;
+  border: 1px solid rgba(0, 0, 0, 0.12);
+  border-radius: 999px;
+  padding: 12px 16px;
+  font-size: 0.95rem;
+  outline: none;
+  background: #fff;
+}
+
+.manual-barcode-input:focus {
+  border-color: rgba(0, 102, 204, 0.55);
+  box-shadow: 0 0 0 4px rgba(0, 102, 204, 0.12);
+}

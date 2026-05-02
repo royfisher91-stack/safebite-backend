@@ -1,0 +1,199 @@
+{
+  "aliases": {
+    "milk": "dairy",
+    "milk allergy": "dairy",
+    "dairy allergy": "dairy",
+    "peanut allergy": "nuts",
+    "nut allergy": "nuts",
+    "soya": "soy",
+    "soya allergy": "soy",
+    "soy allergy": "soy",
+    "egg allergy": "egg",
+    "gluten allergy": "gluten",
+    "coeliac disease": "coeliac",
+    "celiac": "coeliac",
+    "celiac disease": "coeliac",
+    "stoma support": "stoma",
+    "baby age": "baby-specific sensitivity",
+    "baby": "baby-specific sensitivity",
+    "baby sensitivity": "baby-specific sensitivity",
+    "baby specific sensitivity": "baby-specific sensitivity"
+  },
+  "conditions": {
+    "dairy": {
+      "display_name": "Dairy allergy",
+      "kind": "allergy",
+      "safe_summary": "No dairy trigger found in the verified ingredients.",
+      "unknown_summary": "Insufficient verified detail to rule dairy in or out confidently.",
+      "unknown_if_missing_ingredients": true,
+      "unknown_if_ambiguous": true,
+      "ambiguous_summary": "Generic ingredient wording leaves the dairy check uncertain.",
+      "suggestions": {
+        "avoid": [
+          "Look for dairy-free alternatives with simpler verified labels."
+        ],
+        "caution": [
+          "Check the full pack or retailer page for additional dairy wording."
+        ],
+        "unknown": [
+          "Use a product with a fully verified ingredient list for dairy checks."
+        ]
+      }
+    },
+    "nuts": {
+      "display_name": "Nut allergy",
+      "kind": "allergy",
+      "safe_summary": "No nut trigger found in the verified ingredients.",
+      "unknown_summary": "Insufficient verified detail to rule nuts in or out confidently.",
+      "unknown_if_missing_ingredients": true,
+      "unknown_if_ambiguous": true,
+      "ambiguous_summary": "Generic ingredient wording leaves the nut check uncertain.",
+      "suggestions": {
+        "avoid": [
+          "Choose a product with no nut ingredients and a simpler verified label."
+        ],
+        "caution": [
+          "Review the full allergen wording before relying on this product."
+        ],
+        "unknown": [
+          "Use a product with a clearer verified label for nut checks."
+        ]
+      }
+    },
+    "gluten": {
+      "display_name": "Gluten allergy",
+      "kind": "allergy",
+      "safe_summary": "No gluten trigger found in the verified ingredients.",
+      "unknown_summary": "Insufficient verified detail to rule gluten in or out confidently.",
+      "unknown_if_missing_ingredients": true,
+      "unknown_if_ambiguous": false,
+      "suggestions": {
+        "avoid": [
+          "Choose a verified gluten-free alternative."
+        ],
+        "caution": [
+          "Check whether oats or cereal wording is explicitly gluten free."
+        ],
+        "unknown": [
+          "Use a product with a complete verified ingredient label for gluten checks."
+        ]
+      }
+    },
+    "soy": {
+      "display_name": "Soy allergy",
+      "kind": "allergy",
+      "safe_summary": "No soy trigger found in the verified ingredients.",
+      "unknown_summary": "Insufficient verified detail to rule soy in or out confidently.",
+      "unknown_if_missing_ingredients": true,
+      "unknown_if_ambiguous": true,
+      "ambiguous_summary": "Generic ingredient wording leaves the soy check uncertain.",
+      "suggestions": {
+        "avoid": [
+          "Choose a soy-free alternative with a simpler verified ingredient list."
+        ],
+        "caution": [
+          "Double-check the full pack for soy or soya wording."
+        ],
+        "unknown": [
+          "Use a product with a fully verified ingredient label for soy checks."
+        ]
+      }
+    },
+    "egg": {
+      "display_name": "Egg allergy",
+      "kind": "allergy",
+      "safe_summary": "No egg trigger found in the verified ingredients.",
+      "unknown_summary": "Insufficient verified detail to rule egg in or out confidently.",
+      "unknown_if_missing_ingredients": true,
+      "unknown_if_ambiguous": true,
+      "ambiguous_summary": "Generic ingredient wording leaves the egg check uncertain.",
+      "suggestions": {
+        "avoid": [
+          "Choose an egg-free alternative with a cleaner verified label."
+        ],
+        "caution": [
+          "Check the full pack label for egg-derived wording."
+        ],
+        "unknown": [
+          "Use a product with a more complete verified ingredient list for egg checks."
+        ]
+      }
+    },
+    "ibs": {
+      "display_name": "IBS support",
+      "kind": "condition",
+      "safe_summary": "No obvious IBS trigger was found in the verified ingredients.",
+      "unknown_summary": "Insufficient verified detail to assess IBS triggers confidently.",
+      "unknown_if_missing_ingredients": true,
+      "unknown_if_ambiguous": false,
+      "suggestions": {
+        "caution": [
+          "Consider simpler ingredient alternatives if IBS symptoms are sensitive."
+        ],
+        "avoid": [
+          "Prefer products without known IBS triggers like inulin, onion, or sweeteners."
+        ],
+        "unknown": [
+          "Use a product with a full verified ingredient list for IBS checks."
+        ]
+      }
+    },
+    "stoma": {
+      "display_name": "Stoma support",
+      "kind": "condition",
+      "safe_summary": "No obvious stoma-related trigger was found in the verified ingredients.",
+      "unknown_summary": "Insufficient verified detail to assess stoma support confidently.",
+      "unknown_if_missing_ingredients": true,
+      "unknown_if_ambiguous": false,
+      "suggestions": {
+        "caution": [
+          "Consider lower-fibre or smoother-texture alternatives if needed."
+        ],
+        "avoid": [
+          "Prefer easier-digestion options without seeds or tougher fibre cues."
+        ],
+        "unknown": [
+          "Use a product with a complete verified ingredient list for stoma checks."
+        ]
+      }
+    },
+    "coeliac": {
+      "display_name": "Coeliac support",
+      "kind": "condition",
+      "safe_summary": "No obvious coeliac trigger was found in the verified ingredients.",
+      "unknown_summary": "Insufficient verified detail to assess coeliac suitability confidently.",
+      "unknown_if_missing_ingredients": true,
+      "unknown_if_ambiguous": false,
+      "suggestions": {
+        "avoid": [
+          "Choose a product with no gluten ingredients and clear verified labelling."
+        ],
+        "caution": [
+          "Check cereal and oats wording carefully before relying on this product."
+        ],
+        "unknown": [
+          "Use a product with a complete verified ingredient label for coeliac checks."
+        ]
+      }
+    },
+    "baby-specific sensitivity": {
+      "display_name": "Baby-specific sensitivity",
+      "kind": "condition",
+      "safe_summary": "No obvious baby-specific sensitivity trigger was found in the verified ingredients.",
+      "unknown_summary": "Insufficient verified detail to assess baby-specific sensitivity confidently.",
+      "unknown_if_missing_ingredients": true,
+      "unknown_if_ambiguous": false,
+      "suggestions": {
+        "caution": [
+          "Prefer simpler, lower-sugar options with fewer additives."
+        ],
+        "avoid": [
+          "Look for lower-sugar, less additive-heavy alternatives."
+        ],
+        "unknown": [
+          "Use a product with a fuller verified ingredient list for baby sensitivity checks."
+        ]
+      }
+    }
+  }
+}

@@ -1,0 +1,79 @@
+{
+  "rules": [
+    {
+      "pattern": "formula milk",
+      "score_delta": -18,
+      "reason": "Formula milk is a highly processed specialist nutrition product."
+    },
+    {
+      "pattern": "first infant milk",
+      "score_delta": -12,
+      "reason": "Infant-milk formulations are manufactured specialist products."
+    },
+    {
+      "pattern": "follow on",
+      "score_delta": -10,
+      "reason": "Follow-on milk remains a specialist manufactured product."
+    },
+    {
+      "pattern": "comfort milk",
+      "score_delta": -14,
+      "reason": "Comfort milk is a specialised formula product."
+    },
+    {
+      "pattern": "toddler milk",
+      "score_delta": -10,
+      "reason": "Toddler milk is still a processed nutrition product."
+    },
+    {
+      "pattern": "soft oaty bars",
+      "score_delta": -10,
+      "reason": "Bar-format toddler snack is more processed than a simple puree or cereal."
+    },
+    {
+      "pattern": "oat snacks",
+      "score_delta": -8,
+      "reason": "Snack-bar format adds processing steps and concentration."
+    },
+    {
+      "pattern": "puffs",
+      "score_delta": -8,
+      "reason": "Puff snacks are processed finger foods."
+    },
+    {
+      "pattern": "rings",
+      "score_delta": -8,
+      "reason": "Ring snacks are processed finger foods."
+    },
+    {
+      "pattern": "crisps",
+      "score_delta": -8,
+      "reason": "Crisp-style snack format is more processed."
+    },
+    {
+      "pattern": "pouch",
+      "score_delta": -3,
+      "reason": "Pouch-format foods are processed but often still ingredient-led."
+    },
+    {
+      "pattern": "puree",
+      "score_delta": 3,
+      "reason": "Puree format can stay lightly processed when ingredients stay simple."
+    },
+    {
+      "pattern": "first tastes",
+      "score_delta": 8,
+      "reason": "First-tastes products are usually built around very short ingredient lists."
+    },
+    {
+      "pattern": "baby meals",
+      "score_delta": -4,
+      "reason": "Prepared baby meals tend to have longer, more processed ingredient lists."
+    },
+    {
+      "pattern": "porridge",
+      "score_delta": -2,
+      "reason": "Baby cereals are processed but often remain cereal-led rather than additive-led."
+    }
+  ]
+}

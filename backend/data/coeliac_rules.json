@@ -1,0 +1,92 @@
+{
+  "rules": [
+    {
+      "condition": "coeliac",
+      "source": "ingredient",
+      "pattern": "wheat",
+      "match_type": "contains",
+      "impact": "avoid",
+      "reason": "Wheat contains gluten and is not suitable for coeliac disease.",
+      "flags": [
+        "contains_gluten"
+      ]
+    },
+    {
+      "condition": "coeliac",
+      "source": "ingredient",
+      "pattern": "barley",
+      "match_type": "contains",
+      "impact": "avoid",
+      "reason": "Barley contains gluten and is not suitable for coeliac disease.",
+      "flags": [
+        "contains_gluten"
+      ]
+    },
+    {
+      "condition": "coeliac",
+      "source": "ingredient",
+      "pattern": "rye",
+      "match_type": "contains",
+      "impact": "avoid",
+      "reason": "Rye contains gluten and is not suitable for coeliac disease.",
+      "flags": [
+        "contains_gluten"
+      ]
+    },
+    {
+      "condition": "coeliac",
+      "source": "ingredient",
+      "pattern": "gluten",
+      "match_type": "contains",
+      "impact": "avoid",
+      "reason": "Gluten ingredient wording is not suitable for coeliac disease.",
+      "flags": [
+        "contains_gluten"
+      ]
+    },
+    {
+      "condition": "coeliac",
+      "source": "ingredient",
+      "pattern": "malt",
+      "match_type": "contains",
+      "impact": "avoid",
+      "reason": "Malt is commonly gluten-based and is not suitable for coeliac disease.",
+      "flags": [
+        "contains_gluten"
+      ]
+    },
+    {
+      "condition": "coeliac",
+      "source": "ingredient",
+      "pattern": "breadcrumb",
+      "match_type": "contains",
+      "impact": "avoid",
+      "reason": "Breadcrumb-style ingredients are not suitable for coeliac disease.",
+      "flags": [
+        "contains_gluten"
+      ]
+    },
+    {
+      "condition": "coeliac",
+      "source": "ingredient",
+      "pattern": "oats",
+      "match_type": "contains",
+      "impact": "caution",
+      "reason": "Oats need explicit gluten-free verification for coeliac support.",
+      "flags": [
+        "oat_caution_flag"
+      ]
+    },
+    {
+      "condition": "coeliac",
+      "source": "allergen",
+      "pattern": "gluten",
+      "match_type": "contains",
+      "impact": "avoid",
+      "reason": "Declared gluten allergen is not suitable for coeliac disease.",
+      "flags": [
+        "contains_gluten"
+      ]
+    }
+  ]
+}

@@ -1,0 +1,997 @@
+{
+  "generated_at": "2026-04-23T05:04:57.512365+00:00",
+  "database": "/Users/royfisher/Desktop/product-safety-app/backend/safebite.db",
+  "target_subcategories": [
+    "Baby Meals",
+    "Formula Milk",
+    "Fruit Puree",
+    "Porridge"
+  ],
+  "rows": [
+    {
+      "rank": 1,
+      "barcode": "5060107332614",
+      "name": "Ella's Kitchen Apples First Tastes 70G",
+      "brand": "Ella's Kitchen",
+      "category": "Baby & Toddler",
+      "subcategory": "Fruit Puree",
+      "score": 8,
+      "priority": "low priority",
+      "reasons": [
+        "thin ingredient list"
+      ],
+      "offer_count": 1,
+      "retailers": [
+        "Sainsbury's"
+      ],
+      "source": "manual_real_batch_fruit_puree_002",
+      "source_retailer": "Sainsbury's"
+    },
+    {
+      "rank": 2,
+      "barcode": "5060107332621",
+      "name": "Ella's Kitchen Pears First Tastes 70G",
+      "brand": "Ella's Kitchen",
+      "category": "Baby & Toddler",
+      "subcategory": "Fruit Puree",
+      "score": 8,
+      "priority": "low priority",
+      "reasons": [
+        "thin ingredient list"
+      ],
+      "offer_count": 1,
+      "retailers": [
+        "Sainsbury's"
+      ],
+      "source": "manual_real_batch_fruit_puree_002",
+      "source_retailer": "Sainsbury's"
+    },
+    {
+      "rank": 3,
+      "barcode": "5056000503369",
+      "name": "Kendamil Comfort Milk",
+      "brand": "Kendamil",
+      "category": "Baby & Toddler",
+      "subcategory": "Formula Milk",
+      "score": 6,
+      "priority": "low priority",
+      "reasons": [
+        "missing visible weight/pack size in name"
+      ],
+      "offer_count": 2,
+      "retailers": [
+        "Asda",
+        "Tesco"
+      ],
+      "source": "manual_real_batch",
+      "source_retailer": "Asda"
+    },
+    {
+      "rank": 4,
+      "barcode": "5056000500825",
+      "name": "Kendamil Goat First Infant Milk Stage 1",
+      "brand": "Kendamil",
+      "category": "Baby & Toddler",
+      "subcategory": "Formula Milk",
+      "score": 6,
+      "priority": "low priority",
+      "reasons": [
+        "missing visible weight/pack size in name"
+      ],
+      "offer_count": 2,
+      "retailers": [
+        "Asda",
+        "Tesco"
+      ],
+      "source": "manual_real_batch",
+      "source_retailer": "Tesco"
+    },
+    {
+      "rank": 5,
+      "barcode": "5060107332249",
+      "name": "Ella's Chicken Casserole With Rice 190G",
+      "brand": "Ella's Kitchen",
+      "category": "Baby & Toddler",
+      "subcategory": "Baby Meals",
+      "score": 0,
+      "priority": "clean",
+      "reasons": [],
+      "offer_count": 2,
+      "retailers": [
+        "Sainsbury's",
+        "Tesco"
+      ],
+      "source": "manual_real_batch_baby_meals_003",
+      "source_retailer": "Tesco"
+    },
+    {
+      "rank": 6,
+      "barcode": "5060503502673",
+      "name": "Ella's Kitchen 7 Month Plus Veggie Biryani 130G",
+      "brand": "Ella's Kitchen",
+      "category": "Baby & Toddler",
+      "subcategory": "Baby Meals",
+      "score": 0,
+      "priority": "clean",
+      "reasons": [],
+      "offer_count": 2,
+      "retailers": [
+        "Asda",
+        "Tesco"
+      ],
+      "source": "manual_real_batch_baby_meals_001",
+      "source_retailer": "Tesco"
+    },
+    {
+      "rank": 7,
+      "barcode": "5060107332119",
+      "name": "Ella's Kitchen Chicken Casserole With Rice 130G",
+      "brand": "Ella's Kitchen",
+      "category": "Baby & Toddler",
+      "subcategory": "Baby Meals",
+      "score": 0,
+      "priority": "clean",
+      "reasons": [],
+      "offer_count": 1,
+      "retailers": [
+        "Tesco"
+      ],
+      "source": "manual_real_batch_baby_meals_001",
+      "source_retailer": "Tesco"
+    },
+    {
+      "rank": 8,
+      "barcode": "5060107338920",
+      "name": "Ella's Kitchen Chicken Curry With Veggie Rice 190G",
+      "brand": "Ella's Kitchen",
+      "category": "Baby & Toddler",
+      "subcategory": "Baby Meals",
+      "score": 0,
+      "priority": "clean",
+      "reasons": [],
+      "offer_count": 2,
+      "retailers": [
+        "Sainsbury's",
+        "Tesco"
+      ],
+      "source": "manual_real_batch_baby_meals_003",
+      "source_retailer": "Tesco"
+    },
+    {
+      "rank": 9,
+      "barcode": "5060107337879",
+      "name": "Ella's Kitchen Cottage Pie 130G",
+      "brand": "Ella's Kitchen",
+      "category": "Baby & Toddler",
+      "subcategory": "Baby Meals",
+      "score": 0,
+      "priority": "clean",
+      "reasons": [],
+      "offer_count": 2,
+      "retailers": [
+        "Asda",
+        "Tesco"
+      ],
+      "source": "manual_real_batch_baby_meals_001",
+      "source_retailer": "Tesco"
+    },
+    {
+      "rank": 10,
+      "barcode": "5060107333956",
+      "name": "Ella's Kitchen Lovely Lamb Roast Dinner 190G",
+      "brand": "Ella's Kitchen",
+      "category": "Baby & Toddler",
+      "subcategory": "Baby Meals",
+      "score": 0,
+      "priority": "clean",
+      "reasons": [],
+      "offer_count": 2,
+      "retailers": [
+        "Sainsbury's",
+        "Tesco"
+      ],
+      "source": "manual_real_batch_baby_meals_003",
+      "source_retailer": "Tesco"
+    },
+    {
+      "rank": 11,
+      "barcode": "5060107331365",
+      "name": "Ella's Kitchen Organic Cottage Pie With Cinnamon 190G",
+      "brand": "Ella's Kitchen",
+      "category": "Baby & Toddler",
+      "subcategory": "Baby Meals",
+      "score": 0,
+      "priority": "clean",
+      "reasons": [],
+      "offer_count": 2,
+      "retailers": [
+        "Sainsbury's",
+        "Tesco"
+      ],
+      "source": "manual_real_batch_baby_meals_003",
+      "source_retailer": "Tesco"
+    },
+    {
+      "rank": 12,
+      "barcode": "5060107331327",
+      "name": "Ella's Kitchen Organic Tomato Pasta With Vegetables 190G",
+      "brand": "Ella's Kitchen",
+      "category": "Baby & Toddler",
+      "subcategory": "Baby Meals",
+      "score": 0,
+      "priority": "clean",
+      "reasons": [],
+      "offer_count": 2,
+      "retailers": [
+        "Sainsbury's",
+        "Tesco"
+      ],
+      "source": "manual_real_batch_baby_meals_003",
+      "source_retailer": "Tesco"
+    },
+    {
+      "rank": 13,
+      "barcode": "5060107332157",
+      "name": "Ella's Kitchen Vegetable Bake With Lentils 130G",
+      "brand": "Ella's Kitchen",
+      "category": "Baby & Toddler",
+      "subcategory": "Baby Meals",
+      "score": 0,
+      "priority": "clean",
+      "reasons": [],
+      "offer_count": 1,
+      "retailers": [
+        "Tesco"
+      ],
+      "source": "manual_real_replacement",
+      "source_retailer": "Tesco"
+    },
+    {
+      "rank": 14,
+      "barcode": "5060107333970",
+      "name": "Ella's Kitchen Wonderfully Warming Beef Stew 190G",
+      "brand": "Ella's Kitchen",
+      "category": "Baby & Toddler",
+      "subcategory": "Baby Meals",
+      "score": 0,
+      "priority": "clean",
+      "reasons": [],
+      "offer_count": 2,
+      "retailers": [
+        "Sainsbury's",
+        "Tesco"
+      ],
+      "source": "manual_real_batch_baby_meals_003",
+      "source_retailer": "Tesco"
+    },
+    {
+      "rank": 15,
+      "barcode": "5060107335127",
+      "name": "Ella's Vegetable Lasagne Stage 2 130G",
+      "brand": "Ella's Kitchen",
+      "category": "Baby & Toddler",
+      "subcategory": "Baby Meals",
+      "score": 0,
+      "priority": "clean",
+      "reasons": [],
+      "offer_count": 1,
+      "retailers": [
+        "Tesco"
+      ],
+      "source": "manual_real_replacement",
+      "source_retailer": "Tesco"
+    },
+    {
+      "rank": 16,
+      "barcode": "5000157079855",
+      "name": "Heinz Lamb Hot Pot Baby Food Pouch 130g",
+      "brand": "Heinz",
+      "category": "Baby & Toddler",
+      "subcategory": "Baby Meals",
+      "score": 0,
+      "priority": "clean",
+      "reasons": [],
+      "offer_count": 1,
+      "retailers": [
+        "Tesco"
+      ],
+      "source": "manual_real_batch_baby_meals_001",
+      "source_retailer": "Tesco"
+    },
+    {
+      "rank": 17,
+      "barcode": "5000157079800",
+      "name": "Heinz Spaghetti Bolognese Baby Food Pouch 180g",
+      "brand": "Heinz",
+      "category": "Baby & Toddler",
+      "subcategory": "Baby Meals",
+      "score": 0,
+      "priority": "clean",
+      "reasons": [],
+      "offer_count": 3,
+      "retailers": [
+        "Asda",
+        "Sainsbury's",
+        "Tesco"
+      ],
+      "source": "manual_real_batch_baby_meals_002",
+      "source_retailer": "Tesco"
+    },
+    {
+      "rank": 18,
+      "barcode": "5000157079787",
+      "name": "Heinz Sunday Chicken Dinner Baby Food Pouch 130g",
+      "brand": "Heinz",
+      "category": "Baby & Toddler",
+      "subcategory": "Baby Meals",
+      "score": 0,
+      "priority": "clean",
+      "reasons": [],
+      "offer_count": 2,
+      "retailers": [
+        "Asda",
+        "Tesco"
+      ],
+      "source": "manual_real_batch_baby_meals_002",
+      "source_retailer": "Tesco"
+    },
+    {
+      "rank": 19,
+      "barcode": "5000157079893",
+      "name": "Heinz Sweet & Sour Chicken Baby Food Pouch 180g",
+      "brand": "Heinz",
+      "category": "Baby & Toddler",
+      "subcategory": "Baby Meals",
+      "score": 0,
+      "priority": "clean",
+      "reasons": [],
+      "offer_count": 3,
+      "retailers": [
+        "Asda",
+        "Sainsbury's",
+        "Tesco"
+      ],
+      "source": "manual_real_batch_baby_meals_002",
+      "source_retailer": "Tesco"
+    },
+    {
+      "rank": 20,
+      "barcode": "5000157079701",
+      "name": "Heinz Sweet Potato & Beef Casserole Baby Food Pouch 130g",
+      "brand": "Heinz",
+      "category": "Baby & Toddler",
+      "subcategory": "Baby Meals",
+      "score": 0,
+      "priority": "clean",
+      "reasons": [],
+      "offer_count": 1,
+      "retailers": [
+        "Tesco"
+      ],
+      "source": "manual_real_batch_baby_meals_002",
+      "source_retailer": "Tesco"
+    },
+    {
+      "rank": 21,
+      "barcode": "5000157079909",
+      "name": "Heinz Sweet Potato, Chicken & Veggies Pouch Baby Food 130g",
+      "brand": "Heinz",
+      "category": "Baby & Toddler",
+      "subcategory": "Baby Meals",
+      "score": 0,
+      "priority": "clean",
+      "reasons": [],
+      "offer_count": 1,
+      "retailers": [
+        "Tesco"
+      ],
+      "source": "manual_real_batch_baby_meals_002",
+      "source_retailer": "Tesco"
+    },
+    {
+      "rank": 22,
+      "barcode": "5000157079794",
+      "name": "Heinz Thai Chicken Curry Baby Food Pouch 180g",
+      "brand": "Heinz",
+      "category": "Baby & Toddler",
+      "subcategory": "Baby Meals",
+      "score": 0,
+      "priority": "clean",
+      "reasons": [],
+      "offer_count": 3,
+      "retailers": [
+        "Asda",
+        "Sainsbury's",
+        "Tesco"
+      ],
+      "source": "manual_real_batch_baby_meals_002",
+      "source_retailer": "Tesco"
+    },
+    {
+      "rank": 23,
+      "barcode": "5000157079749",
+      "name": "Heinz Tomato Mozzarella Pasta Shapes Baby Food Pouch 130g",
+      "brand": "Heinz",
+      "category": "Baby & Toddler",
+      "subcategory": "Baby Meals",
+      "score": 0,
+      "priority": "clean",
+      "reasons": [],
+      "offer_count": 1,
+      "retailers": [
+        "Tesco"
+      ],
+      "source": "manual_real_batch_baby_meals_001",
+      "source_retailer": "Tesco"
+    },
+    {
+      "rank": 24,
+      "barcode": "5051594006812",
+      "name": "Aptamil 1 First Baby Milk Formula Powder from Birth 800g",
+      "brand": "Aptamil",
+      "category": "Baby & Toddler",
+      "subcategory": "Formula Milk",
+      "score": 0,
+      "priority": "clean",
+      "reasons": [],
+      "offer_count": 3,
+      "retailers": [
+        "Asda",
+        "Sainsbury's",
+        "Tesco"
+      ],
+      "source": "manual_real_batch_formula_milk_001",
+      "source_retailer": "Tesco"
+    },
+    {
+      "rank": 25,
+      "barcode": "5051594006829",
+      "name": "Aptamil 2 Follow On Baby Milk Formula Powder 6-12 Months 800g",
+      "brand": "Aptamil",
+      "category": "Baby & Toddler",
+      "subcategory": "Formula Milk",
+      "score": 0,
+      "priority": "clean",
+      "reasons": [],
+      "offer_count": 2,
+      "retailers": [
+        "Sainsbury's",
+        "Tesco"
+      ],
+      "source": "manual_real_batch_formula_milk_002",
+      "source_retailer": "Tesco"
+    },
+    {
+      "rank": 26,
+      "barcode": "5051594006874",
+      "name": "Cow & Gate 1 First Infant Baby Milk Formula Powder from Birth 800g",
+      "brand": "Cow & Gate",
+      "category": "Baby & Toddler",
+      "subcategory": "Formula Milk",
+      "score": 0,
+      "priority": "clean",
+      "reasons": [],
+      "offer_count": 3,
+      "retailers": [
+        "Asda",
+        "Sainsbury's",
+        "Tesco"
+      ],
+      "source": "manual_real_batch_formula_milk_001",
+      "source_retailer": "Tesco"
+    },
+    {
+      "rank": 27,
+      "barcode": "5051594006881",
+      "name": "Cow & Gate 2 Follow On Baby Milk Formula Powder 6-12 Months 800g",
+      "brand": "Cow & Gate",
+      "category": "Baby & Toddler",
+      "subcategory": "Formula Milk",
+      "score": 0,
+      "priority": "clean",
+      "reasons": [],
+      "offer_count": 2,
+      "retailers": [
+        "Sainsbury's",
+        "Tesco"
+      ],
+      "source": "manual_real_batch_formula_milk_002",
+      "source_retailer": "Tesco"
+    },
+    {
+      "rank": 28,
+      "barcode": "4062300139008",
+      "name": "HiPP Organic 1 First Infant Baby Milk Powder Formula, From Birth, 800g",
+      "brand": "HiPP Organic",
+      "category": "Baby & Toddler",
+      "subcategory": "Formula Milk",
+      "score": 0,
+      "priority": "clean",
+      "reasons": [],
+      "offer_count": 2,
+      "retailers": [
+        "Sainsbury's",
+        "Tesco"
+      ],
+      "source": "manual_real_batch_formula_milk_001",
+      "source_retailer": "Tesco"
+    },
+    {
+      "rank": 29,
+      "barcode": "4062300460492",
+      "name": "HiPP Organic 2 Follow on Baby Milk Powder Formula, From 6 Months, 800g",
+      "brand": "HiPP Organic",
+      "category": "Baby & Toddler",
+      "subcategory": "Formula Milk",
+      "score": 0,
+      "priority": "clean",
+      "reasons": [],
+      "offer_count": 2,
+      "retailers": [
+        "Sainsbury's",
+        "Tesco"
+      ],
+      "source": "manual_real_batch_formula_milk_002",
+      "source_retailer": "Tesco"
+    },
+    {
+      "rank": 30,
+      "barcode": "5056000505910",
+      "name": "Kendamil Classic First Infant Milk Stage 1 800g",
+      "brand": "Kendamil",
+      "category": "Baby & Toddler",
+      "subcategory": "Formula Milk",
+      "score": 0,
+      "priority": "clean",
+      "reasons": [],
+      "offer_count": 3,
+      "retailers": [
+        "Asda",
+        "Sainsbury's",
+        "Tesco"
+      ],
+      "source": "manual_real_replacement",
+      "source_retailer": "Tesco"
+    },
+    {
+      "rank": 31,
+      "barcode": "5056000502926",
+      "name": "Kendamil Organic First Infant Milk Stage 1 800g",
+      "brand": "Kendamil",
+      "category": "Baby & Toddler",
+      "subcategory": "Formula Milk",
+      "score": 0,
+      "priority": "clean",
+      "reasons": [],
+      "offer_count": 3,
+      "retailers": [
+        "Asda",
+        "Sainsbury's",
+        "Tesco"
+      ],
+      "source": "manual_real_replacement",
+      "source_retailer": "Tesco"
+    },
+    {
+      "rank": 32,
+      "barcode": "7613036926744",
+      "name": "Little Steps First Infant Baby Milk Formula Powder from Birth 800g",
+      "brand": "Little Steps",
+      "category": "Baby & Toddler",
+      "subcategory": "Formula Milk",
+      "score": 0,
+      "priority": "clean",
+      "reasons": [],
+      "offer_count": 2,
+      "retailers": [
+        "Sainsbury's",
+        "Tesco"
+      ],
+      "source": "manual_real_batch_formula_milk_001",
+      "source_retailer": "Tesco"
+    },
+    {
+      "rank": 33,
+      "barcode": "7613036938259",
+      "name": "Little Steps Follow On Baby Milk Formula Powder 6+ Months 800g",
+      "brand": "Little Steps",
+      "category": "Baby & Toddler",
+      "subcategory": "Formula Milk",
+      "score": 0,
+      "priority": "clean",
+      "reasons": [],
+      "offer_count": 1,
+      "retailers": [
+        "Tesco"
+      ],
+      "source": "manual_real_batch_formula_milk_002",
+      "source_retailer": "Tesco"
+    },
+    {
+      "rank": 34,
+      "barcode": "7613035477872",
+      "name": "SMA First Infant Baby Milk Powder Formula From Birth 800g",
+      "brand": "SMA",
+      "category": "Baby & Toddler",
+      "subcategory": "Formula Milk",
+      "score": 0,
+      "priority": "clean",
+      "reasons": [],
+      "offer_count": 2,
+      "retailers": [
+        "Sainsbury's",
+        "Tesco"
+      ],
+      "source": "manual_real_batch_formula_milk_001",
+      "source_retailer": "Tesco"
+    },
+    {
+      "rank": 35,
+      "barcode": "7613035477742",
+      "name": "SMA Follow-On Baby Milk Powder Formula 6-12 Months 800g",
+      "brand": "SMA",
+      "category": "Baby & Toddler",
+      "subcategory": "Formula Milk",
+      "score": 0,
+      "priority": "clean",
+      "reasons": [],
+      "offer_count": 2,
+      "retailers": [
+        "Sainsbury's",
+        "Tesco"
+      ],
+      "source": "manual_real_batch_formula_milk_002",
+      "source_retailer": "Tesco"
+    },
+    {
+      "rank": 36,
+      "barcode": "5060107330276",
+      "name": "Ella's Kitchen Apples Plus Bananas 120G",
+      "brand": "Ella's Kitchen",
+      "category": "Baby & Toddler",
+      "subcategory": "Fruit Puree",
+      "score": 0,
+      "priority": "clean",
+      "reasons": [],
+      "offer_count": 3,
+      "retailers": [
+        "Asda",
+        "Sainsbury's",
+        "Tesco"
+      ],
+      "source": "manual_real_batch_fruit_puree_001",
+      "source_retailer": "Tesco"
+    },
+    {
+      "rank": 37,
+      "barcode": "5060107330382",
+      "name": "Ella's Kitchen Peaches Plus Bananas 120G",
+      "brand": "Ella's Kitchen",
+      "category": "Baby & Toddler",
+      "subcategory": "Fruit Puree",
+      "score": 0,
+      "priority": "clean",
+      "reasons": [],
+      "offer_count": 1,
+      "retailers": [
+        "Sainsbury's"
+      ],
+      "source": "manual_real_batch_fruit_puree_002",
+      "source_retailer": "Sainsbury's"
+    },
+    {
+      "rank": 38,
+      "barcode": "5060107330368",
+      "name": "Ella's Kitchen Strawberries Plus Apples 120G",
+      "brand": "Ella's Kitchen",
+      "category": "Baby & Toddler",
+      "subcategory": "Fruit Puree",
+      "score": 0,
+      "priority": "clean",
+      "reasons": [],
+      "offer_count": 3,
+      "retailers": [
+        "Asda",
+        "Sainsbury's",
+        "Tesco"
+      ],
+      "source": "manual_real_batch_fruit_puree_001",
+      "source_retailer": "Tesco"
+    },
+    {
+      "rank": 39,
+      "barcode": "5060503500808",
+      "name": "Ella's Kitchen Strawberries, Rhubarb & Apples 120G",
+      "brand": "Ella's Kitchen",
+      "category": "Baby & Toddler",
+      "subcategory": "Fruit Puree",
+      "score": 0,
+      "priority": "clean",
+      "reasons": [],
+      "offer_count": 1,
+      "retailers": [
+        "Asda"
+      ],
+      "source": "manual_real_batch_fruit_puree_002",
+      "source_retailer": "Asda"
+    },
+    {
+      "rank": 40,
+      "barcode": "5000157079930",
+      "name": "Heinz Apple & Mango Baby Food Fruit Puree Pouch 100g",
+      "brand": "Heinz",
+      "category": "Baby & Toddler",
+      "subcategory": "Fruit Puree",
+      "score": 0,
+      "priority": "clean",
+      "reasons": [],
+      "offer_count": 1,
+      "retailers": [
+        "Tesco"
+      ],
+      "source": "manual_real_replacement",
+      "source_retailer": "Tesco"
+    },
+    {
+      "rank": 41,
+      "barcode": "5000157140081",
+      "name": "Heinz Apple & Strawberry Baby Food Fruit Puree Pouch 100g",
+      "brand": "Heinz",
+      "category": "Baby & Toddler",
+      "subcategory": "Fruit Puree",
+      "score": 0,
+      "priority": "clean",
+      "reasons": [],
+      "offer_count": 1,
+      "retailers": [
+        "Tesco"
+      ],
+      "source": "manual_real_replacement",
+      "source_retailer": "Tesco"
+    },
+    {
+      "rank": 42,
+      "barcode": "5000157079961",
+      "name": "Heinz Apple, Pear & Banana Fruit Puree Pouch Baby Food 100g",
+      "brand": "Heinz",
+      "category": "Baby & Toddler",
+      "subcategory": "Fruit Puree",
+      "score": 0,
+      "priority": "clean",
+      "reasons": [],
+      "offer_count": 2,
+      "retailers": [
+        "Asda",
+        "Tesco"
+      ],
+      "source": "manual_real_batch_fruit_puree_001",
+      "source_retailer": "Tesco"
+    },
+    {
+      "rank": 43,
+      "barcode": "5000157079978",
+      "name": "Heinz Peach, Mango, Banana & Apple Baby Food Fruit Puree Pouch 100g",
+      "brand": "Heinz",
+      "category": "Baby & Toddler",
+      "subcategory": "Fruit Puree",
+      "score": 0,
+      "priority": "clean",
+      "reasons": [],
+      "offer_count": 2,
+      "retailers": [
+        "Sainsbury's",
+        "Tesco"
+      ],
+      "source": "manual_real_batch_fruit_puree_001",
+      "source_retailer": "Tesco"
+    },
+    {
+      "rank": 44,
+      "barcode": "5051594008304",
+      "name": "Aptamil Creamed Banana Porridge Baby Cereal 125g",
+      "brand": "Aptamil",
+      "category": "Baby & Toddler",
+      "subcategory": "Porridge",
+      "score": 0,
+      "priority": "clean",
+      "reasons": [],
+      "offer_count": 1,
+      "retailers": [
+        "Sainsbury's"
+      ],
+      "source": "manual_real_batch_porridge_002",
+      "source_retailer": "Sainsbury's"
+    },
+    {
+      "rank": 45,
+      "barcode": "5051594008281",
+      "name": "Aptamil Creamed Porridge Cereal 125g 4 Month+",
+      "brand": "Aptamil",
+      "category": "Baby & Toddler",
+      "subcategory": "Porridge",
+      "score": 0,
+      "priority": "clean",
+      "reasons": [],
+      "offer_count": 1,
+      "retailers": [
+        "Sainsbury's"
+      ],
+      "source": "manual_real_batch_porridge_002",
+      "source_retailer": "Sainsbury's"
+    },
+    {
+      "rank": 46,
+      "barcode": "5051594008342",
+      "name": "Aptamil Multigrain Banana & Berry Cereal 200g 7 Month+",
+      "brand": "Aptamil",
+      "category": "Baby & Toddler",
+      "subcategory": "Porridge",
+      "score": 0,
+      "priority": "clean",
+      "reasons": [],
+      "offer_count": 1,
+      "retailers": [
+        "Sainsbury's"
+      ],
+      "source": "manual_real_batch_porridge_002",
+      "source_retailer": "Sainsbury's"
+    },
+    {
+      "rank": 47,
+      "barcode": "5900852921254",
+      "name": "Aptamil Multigrain Breakfast Cereal 200g 7 Month+",
+      "brand": "Aptamil",
+      "category": "Baby & Toddler",
+      "subcategory": "Porridge",
+      "score": 0,
+      "priority": "clean",
+      "reasons": [],
+      "offer_count": 1,
+      "retailers": [
+        "Sainsbury's"
+      ],
+      "source": "manual_real_batch_porridge_002",
+      "source_retailer": "Sainsbury's"
+    },
+    {
+      "rank": 48,
+      "barcode": "3041091431998",
+      "name": "Cow & Gate Banana Porridge 125G",
+      "brand": "Cow & Gate",
+      "category": "Baby & Toddler",
+      "subcategory": "Porridge",
+      "score": 0,
+      "priority": "clean",
+      "reasons": [],
+      "offer_count": 2,
+      "retailers": [
+        "Sainsbury's",
+        "Tesco"
+      ],
+      "source": "manual_real_batch_porridge_001",
+      "source_retailer": "Tesco"
+    },
+    {
+      "rank": 49,
+      "barcode": "3041091431790",
+      "name": "Cow & Gate Banana Wholegrain Porridge Baby Cereal 200G",
+      "brand": "Cow & Gate",
+      "category": "Baby & Toddler",
+      "subcategory": "Porridge",
+      "score": 0,
+      "priority": "clean",
+      "reasons": [],
+      "offer_count": 2,
+      "retailers": [
+        "Asda",
+        "Tesco"
+      ],
+      "source": "manual_real_batch_porridge_001",
+      "source_retailer": "Tesco"
+    },
+    {
+      "rank": 50,
+      "barcode": "3041091427717",
+      "name": "Cow & Gate Creamy Porridge Cereal 125g 4 Month+",
+      "brand": "Cow & Gate",
+      "category": "Baby & Toddler",
+      "subcategory": "Porridge",
+      "score": 0,
+      "priority": "clean",
+      "reasons": [],
+      "offer_count": 2,
+      "retailers": [
+        "Sainsbury's",
+        "Tesco"
+      ],
+      "source": "manual_real_batch_porridge_002",
+      "source_retailer": "Sainsbury's"
+    },
+    {
+      "rank": 51,
+      "barcode": "5051594002050",
+      "name": "Cow & Gate Multigrain Banana Porridge Baby Cereal 200g",
+      "brand": "Cow & Gate",
+      "category": "Baby & Toddler",
+      "subcategory": "Porridge",
+      "score": 0,
+      "priority": "clean",
+      "reasons": [],
+      "offer_count": 1,
+      "retailers": [
+        "Sainsbury's"
+      ],
+      "source": "manual_real_batch_porridge_002",
+      "source_retailer": "Sainsbury's"
+    },
+    {
+      "rank": 52,
+      "barcode": "5000157158499",
+      "name": "Heinz My First Oat Porridge Baby Food 6m+125g",
+      "brand": "Heinz",
+      "category": "Baby & Toddler",
+      "subcategory": "Porridge",
+      "score": 0,
+      "priority": "clean",
+      "reasons": [],
+      "offer_count": 1,
+      "retailers": [
+        "Tesco"
+      ],
+      "source": "manual_real_replacement",
+      "source_retailer": "Tesco"
+    },
+    {
+      "rank": 53,
+      "barcode": "5000157158437",
+      "name": "Heinz Summer Fruit Porridge Baby Food 7m+ 200g",
+      "brand": "Heinz",
+      "category": "Baby & Toddler",
+      "subcategory": "Porridge",
+      "score": 0,
+      "priority": "clean",
+      "reasons": [],
+      "offer_count": 1,
+      "retailers": [
+        "Tesco"
+      ],
+      "source": "manual_real_replacement",
+      "source_retailer": "Tesco"
+    },
+    {
+      "rank": 54,
+      "barcode": "5056000505132",
+      "name": "Kendamil Banana Porridge 150G",
+      "brand": "Kendamil",
+      "category": "Baby & Toddler",
+      "subcategory": "Porridge",
+      "score": 0,
+      "priority": "clean",
+      "reasons": [],
+      "offer_count": 2,
+      "retailers": [
+        "Asda",
+        "Tesco"
+      ],
+      "source": "manual_real_batch_porridge_001",
+      "source_retailer": "Tesco"
+    },
+    {
+      "rank": 55,
+      "barcode": "5056000505125",
+      "name": "Kendamil Creamy Porridge 150G",
+      "brand": "Kendamil",
+      "category": "Baby & Toddler",
+      "subcategory": "Porridge",
+      "score": 0,
+      "priority": "clean",
+      "reasons": [],
+      "offer_count": 1,
+      "retailers": [
+        "Tesco"
+      ],
+      "source": "manual_real_batch_porridge_001",
+      "source_retailer": "Tesco"
+    }
+  ]
+}

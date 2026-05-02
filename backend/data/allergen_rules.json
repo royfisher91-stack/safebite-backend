@@ -1,0 +1,433 @@
+{
+  "rules": [
+    {
+      "condition": "dairy",
+      "source": "ingredient",
+      "pattern": "milk",
+      "match_type": "contains",
+      "impact": "avoid",
+      "reason": "Contains a milk-derived ingredient.",
+      "flags": [
+        "contains_dairy"
+      ]
+    },
+    {
+      "condition": "dairy",
+      "source": "ingredient",
+      "pattern": "whey",
+      "match_type": "contains",
+      "impact": "avoid",
+      "reason": "Contains whey, which is milk-derived.",
+      "flags": [
+        "contains_dairy"
+      ]
+    },
+    {
+      "condition": "dairy",
+      "source": "ingredient",
+      "pattern": "casein",
+      "match_type": "contains",
+      "impact": "avoid",
+      "reason": "Contains casein, which is milk-derived.",
+      "flags": [
+        "contains_dairy"
+      ]
+    },
+    {
+      "condition": "dairy",
+      "source": "ingredient",
+      "pattern": "lactose",
+      "match_type": "contains",
+      "impact": "avoid",
+      "reason": "Contains lactose, which is milk-derived.",
+      "flags": [
+        "contains_dairy"
+      ]
+    },
+    {
+      "condition": "dairy",
+      "source": "ingredient",
+      "pattern": "cream",
+      "match_type": "contains",
+      "impact": "avoid",
+      "reason": "Contains cream, which is dairy-based.",
+      "flags": [
+        "contains_dairy"
+      ]
+    },
+    {
+      "condition": "dairy",
+      "source": "ingredient",
+      "pattern": "butter",
+      "match_type": "contains",
+      "impact": "avoid",
+      "reason": "Contains butter, which is dairy-based.",
+      "flags": [
+        "contains_dairy"
+      ]
+    },
+    {
+      "condition": "dairy",
+      "source": "ingredient",
+      "pattern": "yoghurt",
+      "match_type": "contains",
+      "impact": "avoid",
+      "reason": "Contains yoghurt, which is dairy-based.",
+      "flags": [
+        "contains_dairy"
+      ]
+    },
+    {
+      "condition": "dairy",
+      "source": "ingredient",
+      "pattern": "yogurt",
+      "match_type": "contains",
+      "impact": "avoid",
+      "reason": "Contains yoghurt, which is dairy-based.",
+      "flags": [
+        "contains_dairy"
+      ]
+    },
+    {
+      "condition": "dairy",
+      "source": "ingredient",
+      "pattern": "cheese",
+      "match_type": "contains",
+      "impact": "avoid",
+      "reason": "Contains cheese-derived ingredient.",
+      "flags": [
+        "contains_dairy"
+      ]
+    },
+    {
+      "condition": "dairy",
+      "source": "ingredient",
+      "pattern": "mozzarella",
+      "match_type": "contains",
+      "impact": "avoid",
+      "reason": "Contains cheese-derived ingredient.",
+      "flags": [
+        "contains_dairy"
+      ]
+    },
+    {
+      "condition": "dairy",
+      "source": "allergen",
+      "pattern": "milk",
+      "match_type": "contains",
+      "impact": "avoid",
+      "reason": "Declared milk allergen detected.",
+      "flags": [
+        "contains_dairy"
+      ]
+    },
+    {
+      "condition": "nuts",
+      "source": "ingredient",
+      "pattern": "nut",
+      "match_type": "contains",
+      "impact": "avoid",
+      "reason": "Contains nut ingredient wording.",
+      "flags": [
+        "contains_nuts"
+      ]
+    },
+    {
+      "condition": "nuts",
+      "source": "ingredient",
+      "pattern": "peanut",
+      "match_type": "contains",
+      "impact": "avoid",
+      "reason": "Contains peanut ingredient wording.",
+      "flags": [
+        "contains_nuts"
+      ]
+    },
+    {
+      "condition": "nuts",
+      "source": "ingredient",
+      "pattern": "almond",
+      "match_type": "contains",
+      "impact": "avoid",
+      "reason": "Contains almond ingredient wording.",
+      "flags": [
+        "contains_nuts"
+      ]
+    },
+    {
+      "condition": "nuts",
+      "source": "ingredient",
+      "pattern": "hazelnut",
+      "match_type": "contains",
+      "impact": "avoid",
+      "reason": "Contains hazelnut ingredient wording.",
+      "flags": [
+        "contains_nuts"
+      ]
+    },
+    {
+      "condition": "nuts",
+      "source": "ingredient",
+      "pattern": "cashew",
+      "match_type": "contains",
+      "impact": "avoid",
+      "reason": "Contains cashew ingredient wording.",
+      "flags": [
+        "contains_nuts"
+      ]
+    },
+    {
+      "condition": "nuts",
+      "source": "ingredient",
+      "pattern": "walnut",
+      "match_type": "contains",
+      "impact": "avoid",
+      "reason": "Contains walnut ingredient wording.",
+      "flags": [
+        "contains_nuts"
+      ]
+    },
+    {
+      "condition": "nuts",
+      "source": "ingredient",
+      "pattern": "pistachio",
+      "match_type": "contains",
+      "impact": "avoid",
+      "reason": "Contains pistachio ingredient wording.",
+      "flags": [
+        "contains_nuts"
+      ]
+    },
+    {
+      "condition": "nuts",
+      "source": "ingredient",
+      "pattern": "pecan",
+      "match_type": "contains",
+      "impact": "avoid",
+      "reason": "Contains pecan ingredient wording.",
+      "flags": [
+        "contains_nuts"
+      ]
+    },
+    {
+      "condition": "nuts",
+      "source": "ingredient",
+      "pattern": "brazil nut",
+      "match_type": "contains",
+      "impact": "avoid",
+      "reason": "Contains brazil nut ingredient wording.",
+      "flags": [
+        "contains_nuts"
+      ]
+    },
+    {
+      "condition": "nuts",
+      "source": "allergen",
+      "pattern": "nut",
+      "match_type": "contains",
+      "impact": "avoid",
+      "reason": "Declared nut allergen detected.",
+      "flags": [
+        "contains_nuts"
+      ]
+    },
+    {
+      "condition": "gluten",
+      "source": "ingredient",
+      "pattern": "wheat",
+      "match_type": "contains",
+      "impact": "avoid",
+      "reason": "Contains wheat, which is a gluten trigger.",
+      "flags": [
+        "contains_gluten"
+      ]
+    },
+    {
+      "condition": "gluten",
+      "source": "ingredient",
+      "pattern": "barley",
+      "match_type": "contains",
+      "impact": "avoid",
+      "reason": "Contains barley, which is a gluten trigger.",
+      "flags": [
+        "contains_gluten"
+      ]
+    },
+    {
+      "condition": "gluten",
+      "source": "ingredient",
+      "pattern": "rye",
+      "match_type": "contains",
+      "impact": "avoid",
+      "reason": "Contains rye, which is a gluten trigger.",
+      "flags": [
+        "contains_gluten"
+      ]
+    },
+    {
+      "condition": "gluten",
+      "source": "ingredient",
+      "pattern": "gluten",
+      "match_type": "contains",
+      "impact": "avoid",
+      "reason": "Contains gluten ingredient wording.",
+      "flags": [
+        "contains_gluten"
+      ]
+    },
+    {
+      "condition": "gluten",
+      "source": "ingredient",
+      "pattern": "malt",
+      "match_type": "contains",
+      "impact": "avoid",
+      "reason": "Contains malt, which is commonly gluten-based.",
+      "flags": [
+        "contains_gluten"
+      ]
+    },
+    {
+      "condition": "gluten",
+      "source": "ingredient",
+      "pattern": "breadcrumb",
+      "match_type": "contains",
+      "impact": "avoid",
+      "reason": "Contains breadcrumb-style gluten ingredient.",
+      "flags": [
+        "contains_gluten"
+      ]
+    },
+    {
+      "condition": "gluten",
+      "source": "ingredient",
+      "pattern": "oats",
+      "match_type": "contains",
+      "impact": "caution",
+      "reason": "Oats may need explicit gluten-free verification.",
+      "flags": [
+        "oat_caution_flag"
+      ]
+    },
+    {
+      "condition": "gluten",
+      "source": "allergen",
+      "pattern": "gluten",
+      "match_type": "contains",
+      "impact": "avoid",
+      "reason": "Declared gluten allergen detected.",
+      "flags": [
+        "contains_gluten"
+      ]
+    },
+    {
+      "condition": "soy",
+      "source": "ingredient",
+      "pattern": "soy",
+      "match_type": "contains",
+      "impact": "avoid",
+      "reason": "Contains soy ingredient wording.",
+      "flags": [
+        "contains_soy"
+      ]
+    },
+    {
+      "condition": "soy",
+      "source": "ingredient",
+      "pattern": "soya",
+      "match_type": "contains",
+      "impact": "avoid",
+      "reason": "Contains soya ingredient wording.",
+      "flags": [
+        "contains_soy"
+      ]
+    },
+    {
+      "condition": "soy",
+      "source": "ingredient",
+      "pattern": "tofu",
+      "match_type": "contains",
+      "impact": "avoid",
+      "reason": "Contains tofu, which is soy-based.",
+      "flags": [
+        "contains_soy"
+      ]
+    },
+    {
+      "condition": "soy",
+      "source": "ingredient",
+      "pattern": "edamame",
+      "match_type": "contains",
+      "impact": "avoid",
+      "reason": "Contains edamame, which is soy-based.",
+      "flags": [
+        "contains_soy"
+      ]
+    },
+    {
+      "condition": "soy",
+      "source": "allergen",
+      "pattern": "soya",
+      "match_type": "contains",
+      "impact": "avoid",
+      "reason": "Declared soya allergen detected.",
+      "flags": [
+        "contains_soy"
+      ]
+    },
+    {
+      "condition": "soy",
+      "source": "allergen",
+      "pattern": "soy",
+      "match_type": "contains",
+      "impact": "avoid",
+      "reason": "Declared soy allergen detected.",
+      "flags": [
+        "contains_soy"
+      ]
+    },
+    {
+      "condition": "egg",
+      "source": "ingredient",
+      "pattern": "egg",
+      "match_type": "contains",
+      "impact": "avoid",
+      "reason": "Contains egg ingredient wording.",
+      "flags": [
+        "contains_egg"
+      ]
+    },
+    {
+      "condition": "egg",
+      "source": "ingredient",
+      "pattern": "albumen",
+      "match_type": "contains",
+      "impact": "avoid",
+      "reason": "Contains albumen, which is egg-derived.",
+      "flags": [
+        "contains_egg"
+      ]
+    },
+    {
+      "condition": "egg",
+      "source": "ingredient",
+      "pattern": "mayonnaise",
+      "match_type": "contains",
+      "impact": "avoid",
+      "reason": "Mayonnaise commonly contains egg.",
+      "flags": [
+        "contains_egg"
+      ]
+    },
+    {
+      "condition": "egg",
+      "source": "allergen",
+      "pattern": "egg",
+      "match_type": "contains",
+      "impact": "avoid",
+      "reason": "Declared egg allergen detected.",
+      "flags": [
+        "contains_egg"
+      ]
+    }
+  ]
+}

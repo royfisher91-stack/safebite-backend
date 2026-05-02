@@ -1,0 +1,6 @@
+{
+  "rule_pack": "home_chemical_risk_v1",
+  "status": "starter",
+  "rules": [],
+  "note": "Chemical risk rules are placeholders until verified GHS/CLP-style source data is connected."
+}

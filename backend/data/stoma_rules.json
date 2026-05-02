@@ -1,0 +1,92 @@
+{
+  "rules": [
+    {
+      "condition": "stoma",
+      "source": "ingredient",
+      "pattern": "seed",
+      "match_type": "contains",
+      "impact": "caution",
+      "reason": "Seeds can be harder to tolerate for some stoma users.",
+      "flags": [
+        "seed_flag"
+      ]
+    },
+    {
+      "condition": "stoma",
+      "source": "ingredient",
+      "pattern": "wholegrain",
+      "match_type": "contains",
+      "impact": "caution",
+      "reason": "Wholegrain ingredients may be harder to digest for some stoma users.",
+      "flags": [
+        "high_fibre_flag"
+      ]
+    },
+    {
+      "condition": "stoma",
+      "source": "ingredient",
+      "pattern": "multigrain",
+      "match_type": "contains",
+      "impact": "caution",
+      "reason": "Multigrain ingredients may be harder to digest for some stoma users.",
+      "flags": [
+        "high_fibre_flag"
+      ]
+    },
+    {
+      "condition": "stoma",
+      "source": "ingredient",
+      "pattern": "oats",
+      "match_type": "contains",
+      "impact": "caution",
+      "reason": "Oat-heavy ingredients may need more careful tolerance checks for stoma support.",
+      "flags": [
+        "high_fibre_flag"
+      ]
+    },
+    {
+      "condition": "stoma",
+      "source": "ingredient",
+      "pattern": "sweetcorn",
+      "match_type": "contains",
+      "impact": "caution",
+      "reason": "Sweetcorn can be harder to digest for some stoma users.",
+      "flags": [
+        "harder_digest_flag"
+      ]
+    },
+    {
+      "condition": "stoma",
+      "source": "ingredient",
+      "pattern": "lentil",
+      "match_type": "contains",
+      "impact": "caution",
+      "reason": "Lentils can be a higher-fibre choice for stoma support.",
+      "flags": [
+        "high_fibre_flag"
+      ]
+    },
+    {
+      "condition": "stoma",
+      "source": "ingredient",
+      "pattern": "pea",
+      "match_type": "contains",
+      "impact": "caution",
+      "reason": "Peas can be a higher-fibre choice for stoma support.",
+      "flags": [
+        "high_fibre_flag"
+      ]
+    },
+    {
+      "condition": "stoma",
+      "source": "category",
+      "pattern": "fibre/prebiotic",
+      "match_type": "exact",
+      "impact": "caution",
+      "reason": "Prebiotic fibre ingredients may be harder to tolerate for stoma support.",
+      "flags": [
+        "high_fibre_flag"
+      ]
+    }
+  ]
+}

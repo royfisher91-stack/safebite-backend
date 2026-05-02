@@ -1,0 +1,6 @@
+{
+  "rule_pack": "home_rules_v1",
+  "status": "starter",
+  "rules": [],
+  "note": "SafeHome hazard rules require verified household chemical data before scoring is enabled."
+}

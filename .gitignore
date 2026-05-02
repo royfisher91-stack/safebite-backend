@@ -1,0 +1,26 @@
+# Python
+.venv/
+__pycache__/
+*.pyc
+
+# Env/secrets
+.env
+.env.*
+*.db
+*.sqlite
+*.sqlite3
+
+# Node
+node_modules/
+.next/
+dist/
+build/
+
+# Expo / React Native
+.expo/
+
+# Mac
+.DS_Store
+
+# Logs
+*.log

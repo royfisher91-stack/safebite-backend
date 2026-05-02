@@ -1,0 +1,68 @@
+{
+  "rules": [
+    {
+      "pattern": "glucose syrup",
+      "score_delta": -25,
+      "reason": "Syrup sweeteners create a strong sugar penalty.",
+      "flags": [
+        "added_sugar_flag"
+      ]
+    },
+    {
+      "pattern": "invert sugar",
+      "score_delta": -22,
+      "reason": "Invert sugar is a direct added sugar ingredient.",
+      "flags": [
+        "added_sugar_flag"
+      ]
+    },
+    {
+      "pattern": "sugar",
+      "score_delta": -18,
+      "reason": "Added sugar materially increases the sweetness load.",
+      "flags": [
+        "added_sugar_flag"
+      ]
+    },
+    {
+      "pattern": "juice concentrate",
+      "score_delta": -10,
+      "reason": "Fruit juice concentrate contributes concentrated sugars.",
+      "flags": [
+        "concentrated_sugar_flag"
+      ]
+    },
+    {
+      "pattern": "agave",
+      "score_delta": -12,
+      "reason": "Agave-based ingredients increase sugar impact.",
+      "flags": [
+        "added_sugar_flag"
+      ]
+    },
+    {
+      "pattern": "maltodextrin",
+      "score_delta": -8,
+      "reason": "Refined carbohydrate ingredient increases sugar-style impact.",
+      "flags": [
+        "refined_carb_flag"
+      ]
+    },
+    {
+      "pattern": "raisins",
+      "score_delta": -4,
+      "reason": "Dried fruit concentrates natural sugars.",
+      "flags": [
+        "concentrated_fruit_sugar_flag"
+      ]
+    },
+    {
+      "pattern": "banana powder",
+      "score_delta": -3,
+      "reason": "Fruit powder concentrates sweetness compared with whole fruit.",
+      "flags": [
+        "concentrated_fruit_sugar_flag"
+      ]
+    }
+  ]
+}

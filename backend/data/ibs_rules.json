@@ -1,0 +1,125 @@
+{
+  "rules": [
+    {
+      "condition": "ibs",
+      "source": "ingredient",
+      "pattern": "lactose",
+      "match_type": "contains",
+      "impact": "caution",
+      "reason": "Lactose may trigger IBS symptoms in sensitive users.",
+      "flags": [
+        "ibs_lactose_flag"
+      ]
+    },
+    {
+      "condition": "ibs",
+      "source": "ingredient",
+      "pattern": "whey",
+      "match_type": "contains",
+      "impact": "caution",
+      "reason": "Whey can be a dairy-linked IBS trigger for some users.",
+      "flags": [
+        "ibs_dairy_flag"
+      ]
+    },
+    {
+      "condition": "ibs",
+      "source": "ingredient",
+      "pattern": "inulin",
+      "match_type": "contains",
+      "impact": "caution",
+      "reason": "Inulin may be a high-FODMAP trigger for IBS.",
+      "flags": [
+        "high_fodmap_flag"
+      ]
+    },
+    {
+      "condition": "ibs",
+      "source": "ingredient",
+      "pattern": "chicory root",
+      "match_type": "contains",
+      "impact": "caution",
+      "reason": "Chicory root fibre may be a high-FODMAP trigger for IBS.",
+      "flags": [
+        "high_fodmap_flag"
+      ]
+    },
+    {
+      "condition": "ibs",
+      "source": "ingredient",
+      "pattern": "onion",
+      "match_type": "contains",
+      "impact": "avoid",
+      "reason": "Onion is a common IBS trigger for sensitive users.",
+      "flags": [
+        "high_fodmap_flag"
+      ]
+    },
+    {
+      "condition": "ibs",
+      "source": "ingredient",
+      "pattern": "garlic",
+      "match_type": "contains",
+      "impact": "avoid",
+      "reason": "Garlic is a common IBS trigger for sensitive users.",
+      "flags": [
+        "high_fodmap_flag"
+      ]
+    },
+    {
+      "condition": "ibs",
+      "source": "ingredient",
+      "pattern": "sorbitol",
+      "match_type": "contains",
+      "impact": "avoid",
+      "reason": "Sorbitol is a polyol sweetener that can trigger IBS symptoms.",
+      "flags": [
+        "polyol_flag"
+      ]
+    },
+    {
+      "condition": "ibs",
+      "source": "ingredient",
+      "pattern": "xylitol",
+      "match_type": "contains",
+      "impact": "avoid",
+      "reason": "Xylitol is a polyol sweetener that can trigger IBS symptoms.",
+      "flags": [
+        "polyol_flag"
+      ]
+    },
+    {
+      "condition": "ibs",
+      "source": "ingredient",
+      "pattern": "mannitol",
+      "match_type": "contains",
+      "impact": "avoid",
+      "reason": "Mannitol is a polyol sweetener that can trigger IBS symptoms.",
+      "flags": [
+        "polyol_flag"
+      ]
+    },
+    {
+      "condition": "ibs",
+      "source": "ingredient",
+      "pattern": "sweetener",
+      "match_type": "contains",
+      "impact": "caution",
+      "reason": "Sweetener wording can be a sensitive trigger for IBS users.",
+      "flags": [
+        "sweetener_flag"
+      ]
+    },
+    {
+      "condition": "ibs",
+      "source": "category",
+      "pattern": "fibre/prebiotic",
+      "match_type": "exact",
+      "impact": "caution",
+      "reason": "Prebiotic fibre ingredients can be a sensitive IBS trigger.",
+      "flags": [
+        "high_fodmap_flag"
+      ]
+    }
+  ]
+}

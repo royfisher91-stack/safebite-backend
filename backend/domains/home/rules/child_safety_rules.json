@@ -1,0 +1,6 @@
+{
+  "rule_pack": "home_child_safety_v1",
+  "status": "starter",
+  "rules": [],
+  "note": "Child-safety flags must be based on verified product warnings, not inferred household assumptions."
+}

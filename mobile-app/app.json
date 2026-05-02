@@ -1,0 +1,44 @@
+{
+  "expo": {
+    "name": "SafeBite",
+    "slug": "safebite-mobile",
+    "version": "0.1.0",
+    "orientation": "portrait",
+    "userInterfaceStyle": "automatic",
+    "scheme": "safebite",
+    "icon": "./assets/icon.png",
+    "splash": {
+      "image": "./assets/splash.png",
+      "resizeMode": "contain",
+      "backgroundColor": "#EEF8F5"
+    },
+    "ios": {
+      "supportsTablet": true,
+      "bundleIdentifier": "com.safebite.mobile",
+      "infoPlist": {
+        "NSCameraUsageDescription": "SafeBite uses the camera to scan product barcodes."
+      }
+    },
+    "android": {
+      "package": "com.safebite.mobile",
+      "adaptiveIcon": {
+        "foregroundImage": "./assets/adaptive-icon.png",
+        "backgroundColor": "#EEF8F5"
+      },
+      "permissions": [
+        "android.permission.CAMERA"
+      ],
+      "blockedPermissions": [
+        "android.permission.RECORD_AUDIO"
+      ]
+    },
+    "plugins": [
+      [
+        "expo-camera",
+        {
+          "cameraPermission": "SafeBite uses the camera to scan product barcodes."
+        }
+      ]
+    ]
+  }
+}

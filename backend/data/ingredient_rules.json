@@ -1,0 +1,438 @@
+{
+  "rules": [
+    {
+      "pattern": "glucose syrup",
+      "match_type": "contains",
+      "category": "sugar",
+      "risk_level": "high",
+      "score_delta": -22,
+      "reason": "Syrup sweeteners materially increase sugar load.",
+      "flags": [
+        "added_sugar_flag"
+      ]
+    },
+    {
+      "pattern": "invert sugar",
+      "match_type": "contains",
+      "category": "sugar",
+      "risk_level": "high",
+      "score_delta": -20,
+      "reason": "Invert sugar is a direct added sugar ingredient.",
+      "flags": [
+        "added_sugar_flag"
+      ]
+    },
+    {
+      "pattern": "sugar",
+      "match_type": "exact",
+      "category": "sugar",
+      "risk_level": "high",
+      "score_delta": -18,
+      "reason": "Added sugar increases sweetness load.",
+      "flags": [
+        "added_sugar_flag"
+      ]
+    },
+    {
+      "pattern": "juice concentrate",
+      "match_type": "contains",
+      "category": "sugar",
+      "risk_level": "medium",
+      "score_delta": -10,
+      "reason": "Fruit juice concentrate concentrates free sugars.",
+      "flags": [
+        "concentrated_sugar_flag"
+      ]
+    },
+    {
+      "pattern": "agave",
+      "match_type": "contains",
+      "category": "sweetener",
+      "risk_level": "high",
+      "score_delta": -12,
+      "reason": "Agave-based sweetening contributes to sugar impact.",
+      "flags": [
+        "added_sugar_flag"
+      ]
+    },
+    {
+      "pattern": "maltodextrin",
+      "match_type": "contains",
+      "category": "stabiliser",
+      "risk_level": "medium",
+      "score_delta": -10,
+      "reason": "Maltodextrin is a refined carbohydrate additive.",
+      "flags": [
+        "processing_additive_flag"
+      ]
+    },
+    {
+      "pattern": "salt",
+      "match_type": "exact",
+      "category": "other",
+      "risk_level": "medium",
+      "score_delta": -10,
+      "reason": "Added salt is a caution signal for baby and toddler products.",
+      "flags": [
+        "added_salt_flag"
+      ]
+    },
+    {
+      "pattern": "preservative",
+      "match_type": "contains",
+      "category": "preservative",
+      "risk_level": "high",
+      "score_delta": -14,
+      "reason": "Generic preservative declaration increases processing concern.",
+      "flags": [
+        "processing_additive_flag"
+      ]
+    },
+    {
+      "pattern": "artificial flavouring",
+      "match_type": "contains",
+      "category": "flavouring",
+      "risk_level": "high",
+      "score_delta": -12,
+      "reason": "Artificial flavouring is a stronger additive signal.",
+      "flags": [
+        "artificial_additive_flag"
+      ]
+    },
+    {
+      "pattern": "flavouring",
+      "match_type": "exact",
+      "category": "flavouring",
+      "risk_level": "unknown",
+      "score_delta": 0,
+      "reason": "Generic flavouring term without a full breakdown.",
+      "flags": [
+        "unknown_ingredient_flag"
+      ]
+    },
+    {
+      "pattern": "herbs",
+      "match_type": "exact",
+      "category": "herb",
+      "risk_level": "unknown",
+      "score_delta": 0,
+      "reason": "Generic herb blend without full breakdown.",
+      "flags": [
+        "unknown_ingredient_flag"
+      ]
+    },
+    {
+      "pattern": "spices",
+      "match_type": "exact",
+      "category": "spice",
+      "risk_level": "unknown",
+      "score_delta": 0,
+      "reason": "Generic spice blend without full breakdown.",
+      "flags": [
+        "unknown_ingredient_flag"
+      ]
+    },
+    {
+      "pattern": "palm oil",
+      "match_type": "contains",
+      "category": "oil/fat",
+      "risk_level": "medium",
+      "score_delta": -8,
+      "reason": "Palm oil increases the processing footprint.",
+      "flags": [
+        "processing_additive_flag"
+      ]
+    },
+    {
+      "pattern": "sunflower oil",
+      "match_type": "contains",
+      "category": "oil/fat",
+      "risk_level": "low",
+      "score_delta": -1,
+      "reason": "Added oil ingredient.",
+      "flags": []
+    },
+    {
+      "pattern": "rapeseed oil",
+      "match_type": "contains",
+      "category": "oil/fat",
+      "risk_level": "low",
+      "score_delta": -1,
+      "reason": "Added oil ingredient.",
+      "flags": []
+    },
+    {
+      "pattern": "coconut oil",
+      "match_type": "contains",
+      "category": "oil/fat",
+      "risk_level": "low",
+      "score_delta": -1,
+      "reason": "Added oil ingredient.",
+      "flags": []
+    },
+    {
+      "pattern": "whole goat milk",
+      "match_type": "contains",
+      "category": "milk/dairy",
+      "risk_level": "medium",
+      "score_delta": -3,
+      "reason": "Goat milk ingredient is nutritionally common but allergen-relevant.",
+      "flags": [
+        "contains_milk_flag"
+      ]
+    },
+    {
+      "pattern": "whole milk",
+      "match_type": "contains",
+      "category": "milk/dairy",
+      "risk_level": "medium",
+      "score_delta": -3,
+      "reason": "Milk ingredient is nutritionally common but allergen-relevant.",
+      "flags": [
+        "contains_milk_flag"
+      ]
+    },
+    {
+      "pattern": "skimmed milk",
+      "match_type": "contains",
+      "category": "milk/dairy",
+      "risk_level": "medium",
+      "score_delta": -3,
+      "reason": "Milk ingredient is nutritionally common but allergen-relevant.",
+      "flags": [
+        "contains_milk_flag"
+      ]
+    },
+    {
+      "pattern": "whey",
+      "match_type": "contains",
+      "category": "milk/dairy",
+      "risk_level": "medium",
+      "score_delta": -4,
+      "reason": "Whey is a milk-derived allergen ingredient.",
+      "flags": [
+        "contains_milk_flag"
+      ]
+    },
+    {
+      "pattern": "lactose",
+      "match_type": "contains",
+      "category": "milk/dairy",
+      "risk_level": "medium",
+      "score_delta": -4,
+      "reason": "Lactose is a milk-derived ingredient.",
+      "flags": [
+        "contains_milk_flag"
+      ]
+    },
+    {
+      "pattern": "oats",
+      "match_type": "contains",
+      "category": "cereal/grain",
+      "risk_level": "low",
+      "score_delta": 4,
+      "reason": "Wholegrain-style oat ingredient.",
+      "flags": []
+    },
+    {
+      "pattern": "wholegrain",
+      "match_type": "contains",
+      "category": "cereal/grain",
+      "risk_level": "low",
+      "score_delta": 6,
+      "reason": "Wholegrain ingredient adds fibre and keeps the ingredient list closer to a whole-food profile.",
+      "flags": []
+    },
+    {
+      "pattern": "corn",
+      "match_type": "exact",
+      "category": "cereal/grain",
+      "risk_level": "low",
+      "score_delta": 2,
+      "reason": "Simple cereal base ingredient.",
+      "flags": []
+    },
+    {
+      "pattern": "apple",
+      "match_type": "exact",
+      "category": "fruit",
+      "risk_level": "low",
+      "score_delta": 5,
+      "reason": "Whole-fruit ingredient.",
+      "flags": []
+    },
+    {
+      "pattern": "banana",
+      "match_type": "exact",
+      "category": "fruit",
+      "risk_level": "low",
+      "score_delta": 5,
+      "reason": "Whole-fruit ingredient.",
+      "flags": []
+    },
+    {
+      "pattern": "pear",
+      "match_type": "exact",
+      "category": "fruit",
+      "risk_level": "low",
+      "score_delta": 5,
+      "reason": "Whole-fruit ingredient.",
+      "flags": []
+    },
+    {
+      "pattern": "peach",
+      "match_type": "exact",
+      "category": "fruit",
+      "risk_level": "low",
+      "score_delta": 5,
+      "reason": "Whole-fruit ingredient.",
+      "flags": []
+    },
+    {
+      "pattern": "mango",
+      "match_type": "exact",
+      "category": "fruit",
+      "risk_level": "low",
+      "score_delta": 5,
+      "reason": "Whole-fruit ingredient.",
+      "flags": []
+    },
+    {
+      "pattern": "strawberry",
+      "match_type": "exact",
+      "category": "fruit",
+      "risk_level": "low",
+      "score_delta": 5,
+      "reason": "Whole-fruit ingredient.",
+      "flags": []
+    },
+    {
+      "pattern": "raspberry",
+      "match_type": "exact",
+      "category": "fruit",
+      "risk_level": "low",
+      "score_delta": 5,
+      "reason": "Whole-fruit ingredient.",
+      "flags": []
+    },
+    {
+      "pattern": "carrot",
+      "match_type": "exact",
+      "category": "vegetable",
+      "risk_level": "low",
+      "score_delta": 5,
+      "reason": "Whole-vegetable ingredient.",
+      "flags": []
+    },
+    {
+      "pattern": "broccoli",
+      "match_type": "exact",
+      "category": "vegetable",
+      "risk_level": "low",
+      "score_delta": 5,
+      "reason": "Whole-vegetable ingredient.",
+      "flags": []
+    },
+    {
+      "pattern": "peas",
+      "match_type": "exact",
+      "category": "vegetable",
+      "risk_level": "low",
+      "score_delta": 4,
+      "reason": "Whole-vegetable ingredient.",
+      "flags": []
+    },
+    {
+      "pattern": "parsnip",
+      "match_type": "exact",
+      "category": "vegetable",
+      "risk_level": "low",
+      "score_delta": 5,
+      "reason": "Whole-vegetable ingredient.",
+      "flags": []
+    },
+    {
+      "pattern": "chicken",
+      "match_type": "contains",
+      "category": "protein",
+      "risk_level": "low",
+      "score_delta": 2,
+      "reason": "Whole-food protein ingredient.",
+      "flags": []
+    },
+    {
+      "pattern": "beef",
+      "match_type": "contains",
+      "category": "protein",
+      "risk_level": "low",
+      "score_delta": 2,
+      "reason": "Whole-food protein ingredient.",
+      "flags": []
+    },
+    {
+      "pattern": "lamb",
+      "match_type": "contains",
+      "category": "protein",
+      "risk_level": "low",
+      "score_delta": 2,
+      "reason": "Whole-food protein ingredient.",
+      "flags": []
+    },
+    {
+      "pattern": "thiamin",
+      "match_type": "contains",
+      "category": "vitamin/mineral",
+      "risk_level": "low",
+      "score_delta": 1,
+      "reason": "Vitamin fortification ingredient.",
+      "flags": []
+    },
+    {
+      "pattern": "vitamins",
+      "match_type": "contains",
+      "category": "vitamin/mineral",
+      "risk_level": "low",
+      "score_delta": 0,
+      "reason": "Vitamin fortification ingredient.",
+      "flags": []
+    },
+    {
+      "pattern": "minerals",
+      "match_type": "contains",
+      "category": "vitamin/mineral",
+      "risk_level": "low",
+      "score_delta": 0,
+      "reason": "Mineral fortification ingredient.",
+      "flags": []
+    },
+    {
+      "pattern": "galacto-oligosaccharides",
+      "match_type": "contains",
+      "category": "fibre/prebiotic",
+      "risk_level": "low",
+      "score_delta": 1,
+      "reason": "Prebiotic fibre ingredient.",
+      "flags": []
+    },
+    {
+      "pattern": "fructo-oligosaccharides",
+      "match_type": "contains",
+      "category": "fibre/prebiotic",
+      "risk_level": "low",
+      "score_delta": 1,
+      "reason": "Prebiotic fibre ingredient.",
+      "flags": []
+    },
+    {
+      "pattern": "hydrolysed whey protein",
+      "match_type": "contains",
+      "category": "milk/dairy",
+      "risk_level": "medium",
+      "score_delta": -4,
+      "reason": "Hydrolysed whey remains milk-derived and allergen-relevant.",
+      "flags": [
+        "contains_milk_flag"
+      ]
+    }
+  ]
+}

@@ -1,0 +1,996 @@
+[
+  {
+    "product": {
+      "barcode": "5056000505910",
+      "name": "Kendamil First Infant Milk 1 From Birth 800g",
+      "brand": "Kendamil",
+      "category": "Baby & Toddler",
+      "subcategory": "Formula Milk"
+    },
+    "offers": [
+      {
+        "retailer": "Tesco",
+        "price": 12.15,
+        "stock_status": "in_stock",
+        "in_stock": true,
+        "product_url": "https://www.tesco.com/groceries/en-GB/products/313737289"
+      }
+    ]
+  },
+  {
+    "product": {
+      "barcode": "5056000502926",
+      "name": "Kendamil Organic Stage 1 First Infant Milk 800G",
+      "brand": "Kendamil",
+      "category": "Baby & Toddler",
+      "subcategory": "Formula Milk"
+    },
+    "offers": [
+      {
+        "retailer": "Tesco",
+        "price": 15.15,
+        "stock_status": "in_stock",
+        "in_stock": true,
+        "product_url": "https://www.tesco.com/groceries/en-GB/products/310689281"
+      }
+    ]
+  },
+  {
+    "product": {
+      "barcode": "5056000503855",
+      "name": "Kendamil Goat First Infant Milk Stage 1 From Birth 800g",
+      "brand": "Kendamil",
+      "category": "Baby & Toddler",
+      "subcategory": "Formula Milk"
+    },
+    "offers": [
+      {
+        "retailer": "Tesco",
+        "price": 20.75,
+        "stock_status": "in_stock",
+        "in_stock": true,
+        "product_url": "https://www.tesco.com/groceries/en-GB/products/314701762"
+      }
+    ]
+  },
+  {
+    "product": {
+      "barcode": "5056000505422",
+      "name": "Kendamil Comfort Milk 0-12 Months 800g",
+      "brand": "Kendamil",
+      "category": "Baby & Toddler",
+      "subcategory": "Formula Milk"
+    },
+    "offers": [
+      {
+        "retailer": "Tesco",
+        "price": 15.5,
+        "stock_status": "in_stock",
+        "in_stock": true,
+        "product_url": "https://www.tesco.com/groceries/en-GB/products/316064112"
+      }
+    ]
+  },
+  {
+    "product": {
+      "barcode": "5060107330276",
+      "name": "Ella's Kitchen Apples Plus Bananas 120G",
+      "brand": "Ella's Kitchen",
+      "category": "Baby & Toddler",
+      "subcategory": "Fruit Puree"
+    },
+    "offers": [
+      {
+        "retailer": "Tesco",
+        "price": 1.2,
+        "stock_status": "in_stock",
+        "in_stock": true,
+        "product_url": "https://www.tesco.com/groceries/en-GB/products/261383215"
+      }
+    ]
+  },
+  {
+    "product": {
+      "barcode": "5060107330368",
+      "name": "Ella's Kitchen Strawberries Plus Apples 120G",
+      "brand": "Ella's Kitchen",
+      "category": "Baby & Toddler",
+      "subcategory": "Fruit Puree"
+    },
+    "offers": [
+      {
+        "retailer": "Tesco",
+        "price": 1.25,
+        "stock_status": "in_stock",
+        "in_stock": true,
+        "product_url": "https://www.tesco.com/groceries/en-GB/products/263419362"
+      }
+    ]
+  },
+  {
+    "product": {
+      "barcode": "5060107330214",
+      "name": "Ella's Kitchen Apples Carrots Plus Parsnips 120G",
+      "brand": "Ella's Kitchen",
+      "category": "Baby & Toddler",
+      "subcategory": "Fruit Puree"
+    },
+    "offers": [
+      {
+        "retailer": "Tesco",
+        "price": 1.2,
+        "stock_status": "in_stock",
+        "in_stock": true,
+        "product_url": "https://www.tesco.com/groceries/en-GB/products/261383169"
+      }
+    ]
+  },
+  {
+    "product": {
+      "barcode": "5000157079961",
+      "name": "Heinz Apple, Pear & Banana Fruit Puree Pouch Baby Food 100g",
+      "brand": "Heinz",
+      "category": "Baby & Toddler",
+      "subcategory": "Fruit Puree"
+    },
+    "offers": [
+      {
+        "retailer": "Tesco",
+        "price": 0.95,
+        "stock_status": "in_stock",
+        "in_stock": true,
+        "product_url": "https://www.tesco.com/groceries/en-GB/products/276867611"
+      }
+    ]
+  },
+  {
+    "product": {
+      "barcode": "5000157079978",
+      "name": "Heinz Peach, Mango, Banana & Apple Baby Food Fruit Puree Pouch 100g",
+      "brand": "Heinz",
+      "category": "Baby & Toddler",
+      "subcategory": "Fruit Puree"
+    },
+    "offers": [
+      {
+        "retailer": "Tesco",
+        "price": 0.95,
+        "stock_status": "in_stock",
+        "in_stock": true,
+        "product_url": "https://www.tesco.com/groceries/en-GB/products/276867761"
+      }
+    ]
+  },
+  {
+    "product": {
+      "barcode": "5000157079930",
+      "name": "Heinz Apple & Mango Baby Food Fruit Puree Pouch 100g",
+      "brand": "Heinz",
+      "category": "Baby & Toddler",
+      "subcategory": "Fruit Puree"
+    },
+    "offers": [
+      {
+        "retailer": "Tesco",
+        "price": 0.95,
+        "stock_status": "in_stock",
+        "in_stock": true,
+        "product_url": "https://www.tesco.com/groceries/en-GB/products/276867536"
+      }
+    ]
+  },
+  {
+    "product": {
+      "barcode": "5000157140081",
+      "name": "Heinz Apple & Strawberry Baby Food Fruit Puree Pouch 100g",
+      "brand": "Heinz",
+      "category": "Baby & Toddler",
+      "subcategory": "Fruit Puree"
+    },
+    "offers": [
+      {
+        "retailer": "Tesco",
+        "price": 0.95,
+        "stock_status": "in_stock",
+        "in_stock": true,
+        "product_url": "https://www.tesco.com/groceries/en-GB/products/278234113"
+      }
+    ]
+  },
+  {
+    "product": {
+      "barcode": "5056000505132",
+      "name": "Kendamil Banana Porridge 150G",
+      "brand": "Kendamil",
+      "category": "Baby & Toddler",
+      "subcategory": "Porridge"
+    },
+    "offers": [
+      {
+        "retailer": "Tesco",
+        "price": 2.1,
+        "stock_status": "in_stock",
+        "in_stock": true,
+        "product_url": "https://www.tesco.com/groceries/en-GB/products/311803427"
+      }
+    ]
+  },
+  {
+    "product": {
+      "barcode": "5056000505125",
+      "name": "Kendamil Creamy Porridge 150G",
+      "brand": "Kendamil",
+      "category": "Baby & Toddler",
+      "subcategory": "Porridge"
+    },
+    "offers": [
+      {
+        "retailer": "Tesco",
+        "price": 2.1,
+        "stock_status": "in_stock",
+        "in_stock": true,
+        "product_url": "https://www.tesco.com/groceries/en-GB/products/312092902"
+      }
+    ]
+  },
+  {
+    "product": {
+      "barcode": "3041091431998",
+      "name": "Cow & Gate Banana Porridge 125G",
+      "brand": "Cow & Gate",
+      "category": "Baby & Toddler",
+      "subcategory": "Porridge"
+    },
+    "offers": [
+      {
+        "retailer": "Tesco",
+        "price": 2.1,
+        "stock_status": "in_stock",
+        "in_stock": true,
+        "product_url": "https://www.tesco.com/groceries/en-GB/products/304408975"
+      }
+    ]
+  },
+  {
+    "product": {
+      "barcode": "3041091431790",
+      "name": "Cow & Gate Banana Wholegrain Porridge Baby Cereal 200G",
+      "brand": "Cow & Gate",
+      "category": "Baby & Toddler",
+      "subcategory": "Porridge"
+    },
+    "offers": [
+      {
+        "retailer": "Tesco",
+        "price": 2.75,
+        "stock_status": "in_stock",
+        "in_stock": true,
+        "product_url": "https://www.tesco.com/groceries/en-GB/products/304370401"
+      }
+    ]
+  },
+  {
+    "product": {
+      "barcode": "3041091427717",
+      "name": "Cow & Gate Creamy Porridge Cereal 125g 4 Month+",
+      "brand": "Cow & Gate",
+      "category": "Baby & Toddler",
+      "subcategory": "Porridge"
+    },
+    "offers": [
+      {
+        "retailer": "Tesco",
+        "price": 2.1,
+        "stock_status": "in_stock",
+        "in_stock": true,
+        "product_url": "https://www.tesco.com/groceries/en-GB/products/304383173"
+      }
+    ]
+  },
+  {
+    "product": {
+      "barcode": "5000157158437",
+      "name": "Heinz Summer Fruit Porridge Baby Food 7m+ 200g",
+      "brand": "Heinz",
+      "category": "Baby & Toddler",
+      "subcategory": "Porridge"
+    },
+    "offers": [
+      {
+        "retailer": "Tesco",
+        "price": 3.0,
+        "stock_status": "in_stock",
+        "in_stock": true,
+        "product_url": "https://www.tesco.com/groceries/en-GB/products/321537393"
+      }
+    ]
+  },
+  {
+    "product": {
+      "barcode": "5000157158499",
+      "name": "Heinz My First Oat Porridge Baby Food 6m+125g",
+      "brand": "Heinz",
+      "category": "Baby & Toddler",
+      "subcategory": "Porridge"
+    },
+    "offers": [
+      {
+        "retailer": "Tesco",
+        "price": 2.0,
+        "stock_status": "in_stock",
+        "in_stock": true,
+        "product_url": "https://www.tesco.com/groceries/en-GB/products/321527278"
+      }
+    ]
+  },
+  {
+    "product": {
+      "barcode": "5051594006812",
+      "name": "Aptamil 1 First Baby Milk Formula Powder from Birth 800g",
+      "brand": "Aptamil",
+      "category": "Baby & Toddler",
+      "subcategory": "Formula Milk"
+    },
+    "offers": [
+      {
+        "retailer": "Tesco",
+        "price": 13.5,
+        "stock_status": "in_stock",
+        "in_stock": true,
+        "product_url": "https://www.tesco.com/groceries/en-GB/products/301359904"
+      }
+    ]
+  },
+  {
+    "product": {
+      "barcode": "5051594006874",
+      "name": "Cow & Gate 1 First Infant Baby Milk Formula Powder from Birth 800g",
+      "brand": "Cow & Gate",
+      "category": "Baby & Toddler",
+      "subcategory": "Formula Milk"
+    },
+    "offers": [
+      {
+        "retailer": "Tesco",
+        "price": 11.0,
+        "stock_status": "in_stock",
+        "in_stock": true,
+        "product_url": "https://www.tesco.com/groceries/en-GB/products/301359789"
+      }
+    ]
+  },
+  {
+    "product": {
+      "barcode": "7613035477872",
+      "name": "SMA First Infant Baby Milk Powder Formula From Birth 800g",
+      "brand": "SMA",
+      "category": "Baby & Toddler",
+      "subcategory": "Formula Milk"
+    },
+    "offers": [
+      {
+        "retailer": "Tesco",
+        "price": 13.0,
+        "stock_status": "in_stock",
+        "in_stock": true,
+        "product_url": "https://www.tesco.com/groceries/en-GB/products/305781649"
+      }
+    ]
+  },
+  {
+    "product": {
+      "barcode": "4062300139008",
+      "name": "HiPP Organic 1 First Infant Baby Milk Powder Formula, From Birth, 800g",
+      "brand": "HiPP Organic",
+      "category": "Baby & Toddler",
+      "subcategory": "Formula Milk"
+    },
+    "offers": [
+      {
+        "retailer": "Tesco",
+        "price": 13.65,
+        "stock_status": "in_stock",
+        "in_stock": true,
+        "product_url": "https://www.tesco.com/groceries/en-GB/products/318252791"
+      }
+    ]
+  },
+  {
+    "product": {
+      "barcode": "7613036926744",
+      "name": "Little Steps First Infant Baby Milk Formula Powder from Birth 800g",
+      "brand": "Little Steps",
+      "category": "Baby & Toddler",
+      "subcategory": "Formula Milk"
+    },
+    "offers": [
+      {
+        "retailer": "Tesco",
+        "price": 8.45,
+        "stock_status": "in_stock",
+        "in_stock": true,
+        "product_url": "https://www.tesco.com/groceries/en-GB/products/303215156"
+      }
+    ]
+  },
+  {
+    "product": {
+      "barcode": "5051594006829",
+      "name": "Aptamil 2 Follow On Baby Milk Formula Powder 6-12 Months 800g",
+      "brand": "Aptamil",
+      "category": "Baby & Toddler",
+      "subcategory": "Formula Milk"
+    },
+    "offers": [
+      {
+        "retailer": "Tesco",
+        "price": 13.5,
+        "stock_status": "in_stock",
+        "in_stock": true,
+        "product_url": "https://www.tesco.com/groceries/en-GB/products/301359927"
+      }
+    ]
+  },
+  {
+    "product": {
+      "barcode": "5051594006881",
+      "name": "Cow & Gate 2 Follow On Baby Milk Formula Powder 6-12 Months 800g",
+      "brand": "Cow & Gate",
+      "category": "Baby & Toddler",
+      "subcategory": "Formula Milk"
+    },
+    "offers": [
+      {
+        "retailer": "Tesco",
+        "price": 11.0,
+        "stock_status": "in_stock",
+        "in_stock": true,
+        "product_url": "https://www.tesco.com/groceries/en-GB/products/301359806"
+      }
+    ]
+  },
+  {
+    "product": {
+      "barcode": "7613035477742",
+      "name": "SMA Follow-On Baby Milk Powder Formula 6-12 Months 800g",
+      "brand": "SMA",
+      "category": "Baby & Toddler",
+      "subcategory": "Formula Milk"
+    },
+    "offers": [
+      {
+        "retailer": "Tesco",
+        "price": 13.65,
+        "stock_status": "in_stock",
+        "in_stock": true,
+        "product_url": "https://www.tesco.com/groceries/en-GB/products/305782747"
+      }
+    ]
+  },
+  {
+    "product": {
+      "barcode": "4062300460492",
+      "name": "HiPP Organic 2 Follow on Baby Milk Powder Formula, From 6 Months, 800g",
+      "brand": "HiPP Organic",
+      "category": "Baby & Toddler",
+      "subcategory": "Formula Milk"
+    },
+    "offers": [
+      {
+        "retailer": "Tesco",
+        "price": 13.5,
+        "stock_status": "in_stock",
+        "in_stock": true,
+        "product_url": "https://www.tesco.com/groceries/en-GB/products/320387162"
+      }
+    ]
+  },
+  {
+    "product": {
+      "barcode": "7613036938259",
+      "name": "Little Steps Follow On Baby Milk Formula Powder 6+ Months 800g",
+      "brand": "Little Steps",
+      "category": "Baby & Toddler",
+      "subcategory": "Formula Milk"
+    },
+    "offers": [
+      {
+        "retailer": "Tesco",
+        "price": 8.5,
+        "stock_status": "in_stock",
+        "in_stock": true,
+        "product_url": "https://www.tesco.com/groceries/en-GB/products/303215179"
+      }
+    ]
+  },
+  {
+    "product": {
+      "barcode": "5060107332119",
+      "name": "Ella's Kitchen Chicken Casserole With Rice 130G",
+      "brand": "Ella's Kitchen",
+      "category": "Baby & Toddler",
+      "subcategory": "Baby Meals"
+    },
+    "offers": [
+      {
+        "retailer": "Tesco",
+        "price": 1.8,
+        "stock_status": "in_stock",
+        "in_stock": true,
+        "product_url": "https://www.tesco.com/groceries/en-GB/products/268534919"
+      }
+    ]
+  },
+  {
+    "product": {
+      "barcode": "5060503502673",
+      "name": "Ella's Kitchen 7 Month Plus Veggie Biryani 130G",
+      "brand": "Ella's Kitchen",
+      "category": "Baby & Toddler",
+      "subcategory": "Baby Meals"
+    },
+    "offers": [
+      {
+        "retailer": "Tesco",
+        "price": 1.8,
+        "stock_status": "in_stock",
+        "in_stock": true,
+        "product_url": "https://www.tesco.com/groceries/en-GB/products/309467274"
+      }
+    ]
+  },
+  {
+    "product": {
+      "barcode": "5060107332157",
+      "name": "Ella's Kitchen Vegetable Bake With Lentils 130G",
+      "brand": "Ella's Kitchen",
+      "category": "Baby & Toddler",
+      "subcategory": "Baby Meals"
+    },
+    "offers": [
+      {
+        "retailer": "Tesco",
+        "price": 1.8,
+        "stock_status": "in_stock",
+        "in_stock": true,
+        "product_url": "https://www.tesco.com/groceries/en-GB/products/268535020"
+      }
+    ]
+  },
+  {
+    "product": {
+      "barcode": "5060107335127",
+      "name": "Ella's Vegetable Lasagne Stage 2 130G",
+      "brand": "Ella's Kitchen",
+      "category": "Baby & Toddler",
+      "subcategory": "Baby Meals"
+    },
+    "offers": [
+      {
+        "retailer": "Tesco",
+        "price": 1.8,
+        "stock_status": "in_stock",
+        "in_stock": true,
+        "product_url": "https://www.tesco.com/groceries/en-GB/products/278047064"
+      }
+    ]
+  },
+  {
+    "product": {
+      "barcode": "5060107337879",
+      "name": "Ella's Kitchen Cottage Pie 130G",
+      "brand": "Ella's Kitchen",
+      "category": "Baby & Toddler",
+      "subcategory": "Baby Meals"
+    },
+    "offers": [
+      {
+        "retailer": "Tesco",
+        "price": 1.8,
+        "stock_status": "in_stock",
+        "in_stock": true,
+        "product_url": "https://www.tesco.com/groceries/en-GB/products/295487179"
+      }
+    ]
+  },
+  {
+    "product": {
+      "barcode": "5000157079855",
+      "name": "Heinz Lamb Hot Pot Baby Food Pouch 130g",
+      "brand": "Heinz",
+      "category": "Baby & Toddler",
+      "subcategory": "Baby Meals"
+    },
+    "offers": [
+      {
+        "retailer": "Tesco",
+        "price": 1.6,
+        "stock_status": "in_stock",
+        "in_stock": true,
+        "product_url": "https://www.tesco.com/groceries/en-GB/products/290369978"
+      }
+    ]
+  },
+  {
+    "product": {
+      "barcode": "5000157079749",
+      "name": "Heinz Tomato Mozzarella Pasta Shapes Baby Food Pouch 130g",
+      "brand": "Heinz",
+      "category": "Baby & Toddler",
+      "subcategory": "Baby Meals"
+    },
+    "offers": [
+      {
+        "retailer": "Tesco",
+        "price": 1.6,
+        "stock_status": "in_stock",
+        "in_stock": true,
+        "product_url": "https://www.tesco.com/groceries/en-GB/products/278234038"
+      }
+    ]
+  },
+  {
+    "product": {
+      "barcode": "5000157079701",
+      "name": "Heinz Sweet Potato & Beef Casserole Baby Food Pouch 130g",
+      "brand": "Heinz",
+      "category": "Baby & Toddler",
+      "subcategory": "Baby Meals"
+    },
+    "offers": [
+      {
+        "retailer": "Tesco",
+        "price": 1.6,
+        "stock_status": "in_stock",
+        "in_stock": true,
+        "product_url": "https://www.tesco.com/groceries/en-GB/products/278246387"
+      }
+    ]
+  },
+  {
+    "product": {
+      "barcode": "5000157079787",
+      "name": "Heinz Sunday Chicken Dinner Baby Food Pouch 130g",
+      "brand": "Heinz",
+      "category": "Baby & Toddler",
+      "subcategory": "Baby Meals"
+    },
+    "offers": [
+      {
+        "retailer": "Tesco",
+        "price": 1.6,
+        "stock_status": "in_stock",
+        "in_stock": true,
+        "product_url": "https://www.tesco.com/groceries/en-GB/products/299232550"
+      }
+    ]
+  },
+  {
+    "product": {
+      "barcode": "5000157079909",
+      "name": "Heinz Sweet Potato, Chicken & Veggies Pouch Baby Food 130g",
+      "brand": "Heinz",
+      "category": "Baby & Toddler",
+      "subcategory": "Baby Meals"
+    },
+    "offers": [
+      {
+        "retailer": "Tesco",
+        "price": 1.6,
+        "stock_status": "in_stock",
+        "in_stock": true,
+        "product_url": "https://www.tesco.com/groceries/en-GB/products/276872224"
+      }
+    ]
+  },
+  {
+    "product": {
+      "barcode": "5000157079800",
+      "name": "Heinz Spaghetti Bolognese Baby Food Pouch 180g",
+      "brand": "Heinz",
+      "category": "Baby & Toddler",
+      "subcategory": "Baby Meals"
+    },
+    "offers": [
+      {
+        "retailer": "Tesco",
+        "price": 2.0,
+        "promo_price": 1.8,
+        "stock_status": "in_stock",
+        "in_stock": true,
+        "product_url": "https://www.tesco.com/groceries/en-GB/products/291397113"
+      }
+    ]
+  },
+  {
+    "product": {
+      "barcode": "5000157079893",
+      "name": "Heinz Sweet & Sour Chicken Baby Food Pouch 180g",
+      "brand": "Heinz",
+      "category": "Baby & Toddler",
+      "subcategory": "Baby Meals"
+    },
+    "offers": [
+      {
+        "retailer": "Tesco",
+        "price": 2.0,
+        "stock_status": "in_stock",
+        "in_stock": true,
+        "product_url": "https://www.tesco.com/groceries/en-GB/products/291397050"
+      }
+    ]
+  },
+  {
+    "product": {
+      "barcode": "5000157079794",
+      "name": "Heinz Thai Chicken Curry Baby Food Pouch 180g",
+      "brand": "Heinz",
+      "category": "Baby & Toddler",
+      "subcategory": "Baby Meals"
+    },
+    "offers": [
+      {
+        "retailer": "Tesco",
+        "price": 2.0,
+        "stock_status": "in_stock",
+        "in_stock": true,
+        "product_url": "https://www.tesco.com/groceries/en-GB/products/316556187"
+      }
+    ]
+  },
+  {
+    "product": {
+      "barcode": "5060107332249",
+      "name": "Ella's Chicken Casserole With Rice 190G",
+      "brand": "Ella's Kitchen",
+      "category": "Baby & Toddler",
+      "subcategory": "Baby Meals"
+    },
+    "offers": [
+      {
+        "retailer": "Tesco",
+        "price": 2.2,
+        "stock_status": "in_stock",
+        "in_stock": true,
+        "product_url": "https://www.tesco.com/groceries/en-GB/products/271413287"
+      }
+    ]
+  },
+  {
+    "product": {
+      "barcode": "5060107338920",
+      "name": "Ella's Kitchen Chicken Curry With Veggie Rice 190G",
+      "brand": "Ella's Kitchen",
+      "category": "Baby & Toddler",
+      "subcategory": "Baby Meals"
+    },
+    "offers": [
+      {
+        "retailer": "Tesco",
+        "price": 2.1,
+        "stock_status": "in_stock",
+        "in_stock": true,
+        "product_url": "https://www.tesco.com/groceries/en-GB/products/301892208"
+      }
+    ]
+  },
+  {
+    "product": {
+      "barcode": "5060107331365",
+      "name": "Ella's Kitchen Organic Cottage Pie With Cinnamon 190G",
+      "brand": "Ella's Kitchen",
+      "category": "Baby & Toddler",
+      "subcategory": "Baby Meals"
+    },
+    "offers": [
+      {
+        "retailer": "Tesco",
+        "price": 2.1,
+        "stock_status": "in_stock",
+        "in_stock": true,
+        "product_url": "https://www.tesco.com/groceries/en-GB/products/264772361"
+      }
+    ]
+  },
+  {
+    "product": {
+      "barcode": "5060107333956",
+      "name": "Ella's Kitchen Lovely Lamb Roast Dinner 190G",
+      "brand": "Ella's Kitchen",
+      "category": "Baby & Toddler",
+      "subcategory": "Baby Meals"
+    },
+    "offers": [
+      {
+        "retailer": "Tesco",
+        "price": 2.1,
+        "stock_status": "in_stock",
+        "in_stock": true,
+        "product_url": "https://www.tesco.com/groceries/en-GB/products/273882453"
+      }
+    ]
+  },
+  {
+    "product": {
+      "barcode": "5060107331327",
+      "name": "Ella's Kitchen Organic Tomato Pasta With Vegetables 190G",
+      "brand": "Ella's Kitchen",
+      "category": "Baby & Toddler",
+      "subcategory": "Baby Meals"
+    },
+    "offers": [
+      {
+        "retailer": "Tesco",
+        "price": 2.2,
+        "stock_status": "in_stock",
+        "in_stock": true,
+        "product_url": "https://www.tesco.com/groceries/en-GB/products/264772401"
+      }
+    ]
+  },
+  {
+    "product": {
+      "barcode": "5060107333970",
+      "name": "Ella's Kitchen Wonderfully Warming Beef Stew 190G",
+      "brand": "Ella's Kitchen",
+      "category": "Baby & Toddler",
+      "subcategory": "Baby Meals"
+    },
+    "offers": [
+      {
+        "retailer": "Tesco",
+        "price": 2.2,
+        "stock_status": "in_stock",
+        "in_stock": true,
+        "product_url": "https://www.tesco.com/groceries/en-GB/products/273881805"
+      }
+    ]
+  },
+  {
+    "product": {
+      "barcode": "5024121100574",
+      "name": "Organix Banana Soft Oaty Bars 6x23g",
+      "brand": "Organix",
+      "category": "Baby Snacks",
+      "subcategory": "Oat Snacks"
+    },
+    "offers": [
+      {
+        "retailer": "Tesco",
+        "price": 3.3,
+        "stock_status": "in_stock",
+        "in_stock": true,
+        "product_url": "https://www.tesco.com/groceries/en-GB/products/314848634"
+      }
+    ]
+  },
+  {
+    "product": {
+      "barcode": "5024121884306",
+      "name": "Organix Melty Sweetcorn Rings 20G",
+      "brand": "Organix",
+      "category": "Baby Snacks",
+      "subcategory": "Baby Crisps & Puffs"
+    },
+    "offers": [
+      {
+        "retailer": "Tesco",
+        "price": 0.6,
+        "stock_status": "in_stock",
+        "in_stock": true,
+        "product_url": "https://www.tesco.com/groceries/en-GB/products/258904624"
+      }
+    ]
+  },
+  {
+    "product": {
+      "barcode": "5051594006805",
+      "name": "Aptamil 3 Toddler Milk Formula Powder 1+ Years 800g",
+      "brand": "Aptamil",
+      "category": "Baby & Toddler",
+      "subcategory": "Toddler Milk"
+    },
+    "offers": [
+      {
+        "retailer": "Tesco",
+        "price": 13.5,
+        "stock_status": "in_stock",
+        "in_stock": true,
+        "product_url": "https://www.tesco.com/groceries/en-GB/products/301359949"
+      }
+    ]
+  },
+  {
+    "product": {
+      "barcode": "5051594006867",
+      "name": "Cow & Gate 3 Toddler Milk Formula 1+ Years 800g",
+      "brand": "Cow & Gate",
+      "category": "Baby & Toddler",
+      "subcategory": "Toddler Milk"
+    },
+    "offers": [
+      {
+        "retailer": "Tesco",
+        "price": 11.0,
+        "stock_status": "in_stock",
+        "in_stock": true,
+        "product_url": "https://www.tesco.com/groceries/en-GB/products/301359829"
+      }
+    ]
+  },
+  {
+    "product": {
+      "barcode": "3329770051584",
+      "name": "Petits Filous Kids Strawberry & Raspberry Yoghurt Small Pots 6 x 47g",
+      "brand": "Petits Filous",
+      "category": "Baby & Toddler",
+      "subcategory": "Toddler Yoghurt"
+    },
+    "offers": [
+      {
+        "retailer": "Tesco",
+        "price": 1.8,
+        "promo_price": 1.4,
+        "original_price": 1.8,
+        "promo_text": "Clubcard Price",
+        "stock_status": "in_stock",
+        "in_stock": true,
+        "product_url": "https://www.tesco.com/groceries/en-GB/products/285019796"
+      }
+    ]
+  },
+  {
+    "product": {
+      "barcode": "5036589255710",
+      "name": "Yeo Valley Organic Little Yeos Fruity Favourites Kids Yogurt 4x85g",
+      "brand": "Yeo Valley",
+      "category": "Baby & Toddler",
+      "subcategory": "Toddler Yoghurt"
+    },
+    "offers": [
+      {
+        "retailer": "Tesco",
+        "price": 2.15,
+        "stock_status": "in_stock",
+        "in_stock": true,
+        "product_url": "https://www.tesco.com/groceries/en-GB/products/312085018"
+      }
+    ]
+  },
+  {
+    "product": {
+      "barcode": "5024121100475",
+      "name": "Organix Raspberry & Apple Soft Oaty Bars 6x23g",
+      "brand": "Organix",
+      "category": "Baby Snacks",
+      "subcategory": "Oat Snacks"
+    },
+    "offers": [
+      {
+        "retailer": "Tesco",
+        "price": 3.3,
+        "stock_status": "in_stock",
+        "in_stock": true,
+        "product_url": "https://www.tesco.com/shop/en-GB/products/314431009"
+      }
+    ]
+  },
+  {
+    "product": {
+      "barcode": "5024121885303",
+      "name": "Organix Melty Carrot Puffs 20G",
+      "brand": "Organix",
+      "category": "Baby Snacks",
+      "subcategory": "Baby Crisps & Puffs"
+    },
+    "offers": [
+      {
+        "retailer": "Tesco",
+        "price": 0.6,
+        "stock_status": "in_stock",
+        "in_stock": true,
+        "product_url": "https://www.tesco.com/groceries/en-GB/products/258904138"
+      }
+    ]
+  }
+]

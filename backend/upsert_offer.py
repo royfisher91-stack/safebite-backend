@@ -1,0 +1,11 @@
+upsert_offer(
+    barcode=barcode,
+    retailer=config["retailer_name"],
+    price=price,
+    in_stock=cleaned["in_stock"],
+    product_url=cleaned["product_url"],
+    source=config["source_name"],
+    imported_at=imported_at,
+    source_file=source_file,
+    source_retailer=source_retailer,
+)

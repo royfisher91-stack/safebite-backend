@@ -1,0 +1,56 @@
+rank,barcode,name,brand,category,subcategory,score,priority,reasons,offer_count,retailers,source,source_retailer
+1,5060107332614,Ella's Kitchen Apples First Tastes 70G,Ella's Kitchen,Baby & Toddler,Fruit Puree,8,low priority,thin ingredient list,1,Sainsbury's,manual_real_batch_fruit_puree_002,Sainsbury's
+2,5060107332621,Ella's Kitchen Pears First Tastes 70G,Ella's Kitchen,Baby & Toddler,Fruit Puree,8,low priority,thin ingredient list,1,Sainsbury's,manual_real_batch_fruit_puree_002,Sainsbury's
+3,5056000503369,Kendamil Comfort Milk,Kendamil,Baby & Toddler,Formula Milk,6,low priority,missing visible weight/pack size in name,2,"Asda, Tesco",manual_real_batch,Asda
+4,5056000500825,Kendamil Goat First Infant Milk Stage 1,Kendamil,Baby & Toddler,Formula Milk,6,low priority,missing visible weight/pack size in name,2,"Asda, Tesco",manual_real_batch,Tesco
+5,5060107332249,Ella's Chicken Casserole With Rice 190G,Ella's Kitchen,Baby & Toddler,Baby Meals,0,clean,,2,"Sainsbury's, Tesco",manual_real_batch_baby_meals_003,Tesco
+6,5060503502673,Ella's Kitchen 7 Month Plus Veggie Biryani 130G,Ella's Kitchen,Baby & Toddler,Baby Meals,0,clean,,2,"Asda, Tesco",manual_real_batch_baby_meals_001,Tesco
+7,5060107332119,Ella's Kitchen Chicken Casserole With Rice 130G,Ella's Kitchen,Baby & Toddler,Baby Meals,0,clean,,1,Tesco,manual_real_batch_baby_meals_001,Tesco
+8,5060107338920,Ella's Kitchen Chicken Curry With Veggie Rice 190G,Ella's Kitchen,Baby & Toddler,Baby Meals,0,clean,,2,"Sainsbury's, Tesco",manual_real_batch_baby_meals_003,Tesco
+9,5060107337879,Ella's Kitchen Cottage Pie 130G,Ella's Kitchen,Baby & Toddler,Baby Meals,0,clean,,2,"Asda, Tesco",manual_real_batch_baby_meals_001,Tesco
+10,5060107333956,Ella's Kitchen Lovely Lamb Roast Dinner 190G,Ella's Kitchen,Baby & Toddler,Baby Meals,0,clean,,2,"Sainsbury's, Tesco",manual_real_batch_baby_meals_003,Tesco
+11,5060107331365,Ella's Kitchen Organic Cottage Pie With Cinnamon 190G,Ella's Kitchen,Baby & Toddler,Baby Meals,0,clean,,2,"Sainsbury's, Tesco",manual_real_batch_baby_meals_003,Tesco
+12,5060107331327,Ella's Kitchen Organic Tomato Pasta With Vegetables 190G,Ella's Kitchen,Baby & Toddler,Baby Meals,0,clean,,2,"Sainsbury's, Tesco",manual_real_batch_baby_meals_003,Tesco
+13,5060107332157,Ella's Kitchen Vegetable Bake With Lentils 130G,Ella's Kitchen,Baby & Toddler,Baby Meals,0,clean,,1,Tesco,manual_real_replacement,Tesco
+14,5060107333970,Ella's Kitchen Wonderfully Warming Beef Stew 190G,Ella's Kitchen,Baby & Toddler,Baby Meals,0,clean,,2,"Sainsbury's, Tesco",manual_real_batch_baby_meals_003,Tesco
+15,5060107335127,Ella's Vegetable Lasagne Stage 2 130G,Ella's Kitchen,Baby & Toddler,Baby Meals,0,clean,,1,Tesco,manual_real_replacement,Tesco
+16,5000157079855,Heinz Lamb Hot Pot Baby Food Pouch 130g,Heinz,Baby & Toddler,Baby Meals,0,clean,,1,Tesco,manual_real_batch_baby_meals_001,Tesco
+17,5000157079800,Heinz Spaghetti Bolognese Baby Food Pouch 180g,Heinz,Baby & Toddler,Baby Meals,0,clean,,3,"Asda, Sainsbury's, Tesco",manual_real_batch_baby_meals_002,Tesco
+18,5000157079787,Heinz Sunday Chicken Dinner Baby Food Pouch 130g,Heinz,Baby & Toddler,Baby Meals,0,clean,,2,"Asda, Tesco",manual_real_batch_baby_meals_002,Tesco
+19,5000157079893,Heinz Sweet & Sour Chicken Baby Food Pouch 180g,Heinz,Baby & Toddler,Baby Meals,0,clean,,3,"Asda, Sainsbury's, Tesco",manual_real_batch_baby_meals_002,Tesco
+20,5000157079701,Heinz Sweet Potato & Beef Casserole Baby Food Pouch 130g,Heinz,Baby & Toddler,Baby Meals,0,clean,,1,Tesco,manual_real_batch_baby_meals_002,Tesco
+21,5000157079909,"Heinz Sweet Potato, Chicken & Veggies Pouch Baby Food 130g",Heinz,Baby & Toddler,Baby Meals,0,clean,,1,Tesco,manual_real_batch_baby_meals_002,Tesco
+22,5000157079794,Heinz Thai Chicken Curry Baby Food Pouch 180g,Heinz,Baby & Toddler,Baby Meals,0,clean,,3,"Asda, Sainsbury's, Tesco",manual_real_batch_baby_meals_002,Tesco
+23,5000157079749,Heinz Tomato Mozzarella Pasta Shapes Baby Food Pouch 130g,Heinz,Baby & Toddler,Baby Meals,0,clean,,1,Tesco,manual_real_batch_baby_meals_001,Tesco
+24,5051594006812,Aptamil 1 First Baby Milk Formula Powder from Birth 800g,Aptamil,Baby & Toddler,Formula Milk,0,clean,,3,"Asda, Sainsbury's, Tesco",manual_real_batch_formula_milk_001,Tesco
+25,5051594006829,Aptamil 2 Follow On Baby Milk Formula Powder 6-12 Months 800g,Aptamil,Baby & Toddler,Formula Milk,0,clean,,2,"Sainsbury's, Tesco",manual_real_batch_formula_milk_002,Tesco
+26,5051594006874,Cow & Gate 1 First Infant Baby Milk Formula Powder from Birth 800g,Cow & Gate,Baby & Toddler,Formula Milk,0,clean,,3,"Asda, Sainsbury's, Tesco",manual_real_batch_formula_milk_001,Tesco
+27,5051594006881,Cow & Gate 2 Follow On Baby Milk Formula Powder 6-12 Months 800g,Cow & Gate,Baby & Toddler,Formula Milk,0,clean,,2,"Sainsbury's, Tesco",manual_real_batch_formula_milk_002,Tesco
+28,4062300139008,"HiPP Organic 1 First Infant Baby Milk Powder Formula, From Birth, 800g",HiPP Organic,Baby & Toddler,Formula Milk,0,clean,,2,"Sainsbury's, Tesco",manual_real_batch_formula_milk_001,Tesco
+29,4062300460492,"HiPP Organic 2 Follow on Baby Milk Powder Formula, From 6 Months, 800g",HiPP Organic,Baby & Toddler,Formula Milk,0,clean,,2,"Sainsbury's, Tesco",manual_real_batch_formula_milk_002,Tesco
+30,5056000505910,Kendamil Classic First Infant Milk Stage 1 800g,Kendamil,Baby & Toddler,Formula Milk,0,clean,,3,"Asda, Sainsbury's, Tesco",manual_real_replacement,Tesco
+31,5056000502926,Kendamil Organic First Infant Milk Stage 1 800g,Kendamil,Baby & Toddler,Formula Milk,0,clean,,3,"Asda, Sainsbury's, Tesco",manual_real_replacement,Tesco
+32,7613036926744,Little Steps First Infant Baby Milk Formula Powder from Birth 800g,Little Steps,Baby & Toddler,Formula Milk,0,clean,,2,"Sainsbury's, Tesco",manual_real_batch_formula_milk_001,Tesco
+33,7613036938259,Little Steps Follow On Baby Milk Formula Powder 6+ Months 800g,Little Steps,Baby & Toddler,Formula Milk,0,clean,,1,Tesco,manual_real_batch_formula_milk_002,Tesco
+34,7613035477872,SMA First Infant Baby Milk Powder Formula From Birth 800g,SMA,Baby & Toddler,Formula Milk,0,clean,,2,"Sainsbury's, Tesco",manual_real_batch_formula_milk_001,Tesco
+35,7613035477742,SMA Follow-On Baby Milk Powder Formula 6-12 Months 800g,SMA,Baby & Toddler,Formula Milk,0,clean,,2,"Sainsbury's, Tesco",manual_real_batch_formula_milk_002,Tesco
+36,5060107330276,Ella's Kitchen Apples Plus Bananas 120G,Ella's Kitchen,Baby & Toddler,Fruit Puree,0,clean,,3,"Asda, Sainsbury's, Tesco",manual_real_batch_fruit_puree_001,Tesco
+37,5060107330382,Ella's Kitchen Peaches Plus Bananas 120G,Ella's Kitchen,Baby & Toddler,Fruit Puree,0,clean,,1,Sainsbury's,manual_real_batch_fruit_puree_002,Sainsbury's
+38,5060107330368,Ella's Kitchen Strawberries Plus Apples 120G,Ella's Kitchen,Baby & Toddler,Fruit Puree,0,clean,,3,"Asda, Sainsbury's, Tesco",manual_real_batch_fruit_puree_001,Tesco
+39,5060503500808,"Ella's Kitchen Strawberries, Rhubarb & Apples 120G",Ella's Kitchen,Baby & Toddler,Fruit Puree,0,clean,,1,Asda,manual_real_batch_fruit_puree_002,Asda
+40,5000157079930,Heinz Apple & Mango Baby Food Fruit Puree Pouch 100g,Heinz,Baby & Toddler,Fruit Puree,0,clean,,1,Tesco,manual_real_replacement,Tesco
+41,5000157140081,Heinz Apple & Strawberry Baby Food Fruit Puree Pouch 100g,Heinz,Baby & Toddler,Fruit Puree,0,clean,,1,Tesco,manual_real_replacement,Tesco
+42,5000157079961,"Heinz Apple, Pear & Banana Fruit Puree Pouch Baby Food 100g",Heinz,Baby & Toddler,Fruit Puree,0,clean,,2,"Asda, Tesco",manual_real_batch_fruit_puree_001,Tesco
+43,5000157079978,"Heinz Peach, Mango, Banana & Apple Baby Food Fruit Puree Pouch 100g",Heinz,Baby & Toddler,Fruit Puree,0,clean,,2,"Sainsbury's, Tesco",manual_real_batch_fruit_puree_001,Tesco
+44,5051594008304,Aptamil Creamed Banana Porridge Baby Cereal 125g,Aptamil,Baby & Toddler,Porridge,0,clean,,1,Sainsbury's,manual_real_batch_porridge_002,Sainsbury's
+45,5051594008281,Aptamil Creamed Porridge Cereal 125g 4 Month+,Aptamil,Baby & Toddler,Porridge,0,clean,,1,Sainsbury's,manual_real_batch_porridge_002,Sainsbury's
+46,5051594008342,Aptamil Multigrain Banana & Berry Cereal 200g 7 Month+,Aptamil,Baby & Toddler,Porridge,0,clean,,1,Sainsbury's,manual_real_batch_porridge_002,Sainsbury's
+47,5900852921254,Aptamil Multigrain Breakfast Cereal 200g 7 Month+,Aptamil,Baby & Toddler,Porridge,0,clean,,1,Sainsbury's,manual_real_batch_porridge_002,Sainsbury's
+48,3041091431998,Cow & Gate Banana Porridge 125G,Cow & Gate,Baby & Toddler,Porridge,0,clean,,2,"Sainsbury's, Tesco",manual_real_batch_porridge_001,Tesco
+49,3041091431790,Cow & Gate Banana Wholegrain Porridge Baby Cereal 200G,Cow & Gate,Baby & Toddler,Porridge,0,clean,,2,"Asda, Tesco",manual_real_batch_porridge_001,Tesco
+50,3041091427717,Cow & Gate Creamy Porridge Cereal 125g 4 Month+,Cow & Gate,Baby & Toddler,Porridge,0,clean,,2,"Sainsbury's, Tesco",manual_real_batch_porridge_002,Sainsbury's
+51,5051594002050,Cow & Gate Multigrain Banana Porridge Baby Cereal 200g,Cow & Gate,Baby & Toddler,Porridge,0,clean,,1,Sainsbury's,manual_real_batch_porridge_002,Sainsbury's
+52,5000157158499,Heinz My First Oat Porridge Baby Food 6m+125g,Heinz,Baby & Toddler,Porridge,0,clean,,1,Tesco,manual_real_replacement,Tesco
+53,5000157158437,Heinz Summer Fruit Porridge Baby Food 7m+ 200g,Heinz,Baby & Toddler,Porridge,0,clean,,1,Tesco,manual_real_replacement,Tesco
+54,5056000505132,Kendamil Banana Porridge 150G,Kendamil,Baby & Toddler,Porridge,0,clean,,2,"Asda, Tesco",manual_real_batch_porridge_001,Tesco
+55,5056000505125,Kendamil Creamy Porridge 150G,Kendamil,Baby & Toddler,Porridge,0,clean,,1,Tesco,manual_real_batch_porridge_001,Tesco

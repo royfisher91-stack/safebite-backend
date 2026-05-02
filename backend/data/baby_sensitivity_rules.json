@@ -1,0 +1,114 @@
+{
+  "rules": [
+    {
+      "condition": "baby-specific sensitivity",
+      "source": "ingredient",
+      "pattern": "glucose syrup",
+      "match_type": "contains",
+      "impact": "avoid",
+      "reason": "Glucose syrup is a strong added-sugar signal for baby-sensitive checks.",
+      "flags": [
+        "added_sugar_flag"
+      ]
+    },
+    {
+      "condition": "baby-specific sensitivity",
+      "source": "ingredient",
+      "pattern": "invert sugar",
+      "match_type": "contains",
+      "impact": "avoid",
+      "reason": "Invert sugar is a strong added-sugar signal for baby-sensitive checks.",
+      "flags": [
+        "added_sugar_flag"
+      ]
+    },
+    {
+      "condition": "baby-specific sensitivity",
+      "source": "ingredient",
+      "pattern": "sugar",
+      "match_type": "exact",
+      "impact": "avoid",
+      "reason": "Added sugar is a strong caution signal for baby-sensitive checks.",
+      "flags": [
+        "added_sugar_flag"
+      ]
+    },
+    {
+      "condition": "baby-specific sensitivity",
+      "source": "ingredient",
+      "pattern": "honey",
+      "match_type": "contains",
+      "impact": "avoid",
+      "reason": "Honey is a strong caution signal for baby-sensitive checks.",
+      "flags": [
+        "added_sugar_flag"
+      ]
+    },
+    {
+      "condition": "baby-specific sensitivity",
+      "source": "ingredient",
+      "pattern": "salt",
+      "match_type": "exact",
+      "impact": "caution",
+      "reason": "Added salt is a caution signal for baby-sensitive checks.",
+      "flags": [
+        "added_salt_flag"
+      ]
+    },
+    {
+      "condition": "baby-specific sensitivity",
+      "source": "ingredient",
+      "pattern": "flavouring",
+      "match_type": "contains",
+      "impact": "caution",
+      "reason": "Generic flavouring increases caution for baby-sensitive checks.",
+      "flags": [
+        "processing_additive_flag"
+      ]
+    },
+    {
+      "condition": "baby-specific sensitivity",
+      "source": "analysis_flag",
+      "pattern": "added_sugar_flag",
+      "match_type": "exact",
+      "impact": "caution",
+      "reason": "Added sugar signal increases caution for baby-sensitive checks.",
+      "flags": [
+        "added_sugar_flag"
+      ]
+    },
+    {
+      "condition": "baby-specific sensitivity",
+      "source": "analysis_flag",
+      "pattern": "concentrated_sugar_flag",
+      "match_type": "exact",
+      "impact": "caution",
+      "reason": "Concentrated sugar signal increases caution for baby-sensitive checks.",
+      "flags": [
+        "concentrated_sugar_flag"
+      ]
+    },
+    {
+      "condition": "baby-specific sensitivity",
+      "source": "analysis_flag",
+      "pattern": "processing_additive_flag",
+      "match_type": "exact",
+      "impact": "caution",
+      "reason": "Processing additives increase caution for baby-sensitive checks.",
+      "flags": [
+        "processing_additive_flag"
+      ]
+    },
+    {
+      "condition": "baby-specific sensitivity",
+      "source": "analysis_flag",
+      "pattern": "artificial_additive_flag",
+      "match_type": "exact",
+      "impact": "avoid",
+      "reason": "Artificial additive signals are stronger avoid cues for baby-sensitive checks.",
+      "flags": [
+        "artificial_additive_flag"
+      ]
+    }
+  ]
+}

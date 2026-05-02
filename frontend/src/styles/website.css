@@ -1,0 +1,366 @@
+.site-page {
+  min-height: 100vh;
+  box-sizing: border-box;
+  padding: 24px;
+  color: #17342f;
+  background:
+    radial-gradient(circle at 12% 18%, rgba(95, 175, 157, 0.18), transparent 28%),
+    linear-gradient(180deg, #eef8f5 0%, #ffffff 42%, #f7fbfa 100%);
+  font-family: -apple-system, BlinkMacSystemFont, "SF Pro Display", "Segoe UI", sans-serif;
+  text-align: left;
+}
+
+.site-page a {
+  color: inherit;
+}
+
+.site-nav,
+.site-hero,
+.site-band,
+.feature-grid,
+.site-footer,
+.simple-hero,
+.content-list,
+.site-disclaimer {
+  width: min(1120px, 100%);
+  margin-inline: auto;
+}
+
+.site-nav {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 18px;
+  padding: 14px 0 34px;
+}
+
+.site-brand {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  color: #17342f;
+  text-decoration: none;
+  font-weight: 800;
+}
+
+.site-brand-mark {
+  display: grid;
+  place-items: center;
+  width: 34px;
+  height: 34px;
+  border-radius: 10px;
+  color: #ffffff;
+  background: linear-gradient(135deg, #5faf9d, #3e8f7d);
+  box-shadow: 0 12px 26px rgba(62, 143, 125, 0.24);
+}
+
+.site-nav-links {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: flex-end;
+  gap: 8px;
+}
+
+.site-nav-links a {
+  padding: 10px 12px;
+  border-radius: 999px;
+  color: #35544e;
+  text-decoration: none;
+  font-size: 0.92rem;
+  font-weight: 700;
+}
+
+.site-nav-links a:hover {
+  background: rgba(95, 175, 157, 0.12);
+}
+
+.site-hero {
+  display: grid;
+  grid-template-columns: minmax(0, 1.05fr) minmax(300px, 0.78fr);
+  gap: 38px;
+  align-items: center;
+  min-height: 610px;
+}
+
+.site-hero-copy h1,
+.simple-hero h1 {
+  margin: 0;
+  color: #10201d;
+  font-size: 4.4rem;
+  line-height: 0.98;
+  font-weight: 860;
+  letter-spacing: 0;
+}
+
+.site-hero-text,
+.simple-hero p,
+.content-list p,
+.feature-grid p,
+.site-footer p,
+.site-disclaimer {
+  color: #52706a;
+  line-height: 1.7;
+}
+
+.site-hero-text {
+  max-width: 680px;
+  margin: 22px 0 0;
+  font-size: 1.12rem;
+}
+
+.site-kicker {
+  margin: 0 0 16px;
+  color: #3e8f7d;
+  font-weight: 800;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  font-size: 0.76rem;
+}
+
+.site-action-row,
+.download-row {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 12px;
+  margin-top: 28px;
+}
+
+.site-button,
+.download-button {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 48px;
+  padding: 0 18px;
+  border-radius: 999px;
+  font-weight: 800;
+  text-decoration: none;
+  border: 1px solid rgba(62, 143, 125, 0.18);
+}
+
+.site-button-primary {
+  color: #ffffff;
+  background: linear-gradient(135deg, #5faf9d, #3e8f7d);
+  box-shadow: 0 16px 32px rgba(62, 143, 125, 0.24);
+}
+
+.site-button-secondary,
+.download-button {
+  color: #244c45;
+  background: rgba(255, 255, 255, 0.78);
+}
+
+.download-button {
+  min-height: 42px;
+  color: #4b625d;
+  font-size: 0.9rem;
+}
+
+.site-hero-visual {
+  position: relative;
+  display: grid;
+  place-items: center;
+  min-height: 520px;
+  border-radius: 28px;
+  background: linear-gradient(160deg, rgba(255, 255, 255, 0.92), rgba(238, 248, 245, 0.72));
+  border: 1px solid rgba(62, 143, 125, 0.14);
+  box-shadow: 0 26px 70px rgba(23, 52, 47, 0.12);
+  overflow: hidden;
+}
+
+.site-hero-visual img {
+  width: min(82%, 390px);
+  height: auto;
+  object-fit: contain;
+  filter: drop-shadow(0 24px 32px rgba(23, 52, 47, 0.18));
+}
+
+.site-band {
+  display: grid;
+  grid-template-columns: 0.78fr 1fr;
+  gap: 26px;
+  align-items: center;
+  margin-top: 34px;
+  padding: 30px 0;
+  border-top: 1px solid rgba(62, 143, 125, 0.14);
+  border-bottom: 1px solid rgba(62, 143, 125, 0.14);
+}
+
+.site-band h2,
+.feature-grid h2,
+.content-list h2 {
+  margin: 0;
+  color: #17342f;
+  font-size: 1.45rem;
+  line-height: 1.2;
+  font-weight: 820;
+}
+
+.retailer-strip {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: flex-end;
+  gap: 10px;
+}
+
+.retailer-strip span {
+  padding: 12px 14px;
+  border-radius: 999px;
+  background: #ffffff;
+  color: #244c45;
+  border: 1px solid rgba(62, 143, 125, 0.14);
+  font-weight: 800;
+}
+
+.feature-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 18px;
+  margin-top: 34px;
+}
+
+.feature-grid article,
+.content-list article {
+  padding: 26px;
+  border-radius: 24px;
+  background: rgba(255, 255, 255, 0.86);
+  border: 1px solid rgba(62, 143, 125, 0.14);
+  box-shadow: 0 18px 50px rgba(23, 52, 47, 0.07);
+}
+
+.feature-number {
+  display: block;
+  margin-bottom: 24px;
+  color: #3e8f7d;
+  font-weight: 900;
+}
+
+.feature-grid p,
+.content-list p {
+  margin: 14px 0 0;
+}
+
+.site-disclaimer {
+  margin-top: 34px;
+  padding: 18px 22px;
+  border-radius: 18px;
+  background: rgba(255, 255, 255, 0.78);
+  border: 1px solid rgba(62, 143, 125, 0.14);
+}
+
+.legal-review-note {
+  display: inline-block;
+  margin-top: 20px;
+  padding: 12px 14px;
+  border-radius: 14px;
+  color: #5a4a10;
+  background: #fff7d6;
+  border: 1px solid #f0d56b;
+  font-size: 0.92rem;
+  font-weight: 700;
+}
+
+.legal-content-list {
+  grid-template-columns: repeat(2, 1fr);
+}
+
+.site-footer {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: 24px;
+  margin-top: 42px;
+  padding: 34px 0 12px;
+  color: #35544e;
+}
+
+.site-footer p {
+  margin: 6px 0 0;
+}
+
+.site-footer-links {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: flex-end;
+  gap: 12px;
+}
+
+.site-footer-links a {
+  color: #35544e;
+  font-weight: 700;
+  text-decoration: none;
+}
+
+.site-page-simple {
+  padding-bottom: 72px;
+}
+
+.simple-hero {
+  padding: 70px 0 34px;
+}
+
+.simple-hero h1 {
+  max-width: 840px;
+  font-size: 3.2rem;
+}
+
+.simple-hero p {
+  max-width: 760px;
+  margin-top: 18px;
+  font-size: 1.08rem;
+}
+
+.content-list {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 18px;
+}
+
+@media (max-width: 860px) {
+  .site-page {
+    padding: 18px;
+  }
+
+  .site-nav {
+    align-items: flex-start;
+    flex-direction: column;
+  }
+
+  .site-nav-links {
+    justify-content: flex-start;
+  }
+
+  .site-hero,
+  .site-band,
+  .feature-grid,
+  .content-list {
+    grid-template-columns: 1fr;
+  }
+
+  .site-hero {
+    min-height: auto;
+    gap: 24px;
+  }
+
+  .site-hero-copy h1,
+  .simple-hero h1 {
+    font-size: 2.6rem;
+    line-height: 1.04;
+  }
+
+  .site-hero-visual {
+    min-height: 360px;
+  }
+
+  .retailer-strip {
+    justify-content: flex-start;
+  }
+
+  .site-footer {
+    flex-direction: column;
+  }
+
+  .site-footer-links {
+    justify-content: flex-start;
+  }
+}
