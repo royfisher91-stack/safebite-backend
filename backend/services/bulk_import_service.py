@@ -6,6 +6,7 @@ from pathlib import Path
 from typing import Any, Callable, Dict, List, Optional, Tuple
 
 from services.gtin_service import normalise_barcode, validate_gtin
+from services.image_rights_service import normalise_image_metadata
 
 
 DB_DEFAULT = str(Path(__file__).resolve().parents[1] / "safebite.db")
@@ -134,6 +135,10 @@ def ensure_phase12_schema(db_path: str = DB_DEFAULT) -> None:
                 ingredients TEXT,
                 allergens TEXT,
                 image_url TEXT,
+                image_source_type TEXT DEFAULT 'safebite_placeholder',
+                image_rights_status TEXT DEFAULT 'not_required',
+                image_credit TEXT,
+                image_last_verified_at TIMESTAMP,
                 source TEXT,
                 data_quality_status TEXT DEFAULT 'unknown',
                 last_verified_at TIMESTAMP
@@ -149,6 +154,10 @@ def ensure_phase12_schema(db_path: str = DB_DEFAULT) -> None:
             ("ingredients", "TEXT"),
             ("allergens", "TEXT"),
             ("image_url", "TEXT"),
+            ("image_source_type", "TEXT DEFAULT 'safebite_placeholder'"),
+            ("image_rights_status", "TEXT DEFAULT 'not_required'"),
+            ("image_credit", "TEXT"),
+            ("image_last_verified_at", "TIMESTAMP"),
             ("source", "TEXT"),
             ("data_quality_status", "TEXT DEFAULT 'unknown'"),
             ("last_verified_at", "TIMESTAMP"),
@@ -260,6 +269,7 @@ def _validate_mapped_row(mapped: Dict[str, Any]) -> Tuple[bool, str]:
 
 def _upsert_product(conn: sqlite3.Connection, mapped: Dict[str, Any]) -> None:
     barcode = normalise_barcode(mapped.get("barcode"))
+    image_metadata = normalise_image_metadata(mapped)
     values = {
         "barcode": barcode,
         "name": clean_text(mapped.get("name")),
@@ -269,11 +279,37 @@ def _upsert_product(conn: sqlite3.Connection, mapped: Dict[str, Any]) -> None:
         "ingredients": parse_list_json(mapped.get("ingredients")),
         "allergens": parse_list_json(mapped.get("allergens")),
         "image_url": clean_text(mapped.get("image_url")),
+        "image_source_type": image_metadata["image_source_type"],
+        "image_rights_status": image_metadata["image_rights_status"],
+        "image_credit": image_metadata["image_credit"],
+        "image_last_verified_at": image_metadata["image_last_verified_at"],
         "source": clean_text(mapped.get("source")) or "phase12_bulk_import",
         "data_quality_status": _data_quality_status(mapped),
     }
-    existing = conn.execute("SELECT id FROM products WHERE barcode = ?", (barcode,)).fetchone()
+    existing = conn.execute(
+        """
+        SELECT id, image_url, image_source_type, image_rights_status, image_credit, image_last_verified_at
+        FROM products
+        WHERE barcode = ?
+        """,
+        (barcode,),
+    ).fetchone()
     if existing:
+        has_image_update = bool(values["image_url"]) or any(
+            clean_text(mapped.get(field))
+            for field in [
+                "image_source_type",
+                "image_rights_status",
+                "image_credit",
+                "image_last_verified_at",
+            ]
+        )
+        if not has_image_update:
+            existing_metadata = normalise_image_metadata(dict(existing))
+            values["image_source_type"] = existing_metadata["image_source_type"]
+            values["image_rights_status"] = existing_metadata["image_rights_status"]
+            values["image_credit"] = existing_metadata["image_credit"]
+            values["image_last_verified_at"] = existing_metadata["image_last_verified_at"]
         conn.execute(
             """
             UPDATE products
@@ -284,6 +320,10 @@ def _upsert_product(conn: sqlite3.Connection, mapped: Dict[str, Any]) -> None:
                 ingredients = CASE WHEN ? != '[]' THEN ? ELSE ingredients END,
                 allergens = CASE WHEN ? != '[]' THEN ? ELSE allergens END,
                 image_url = COALESCE(NULLIF(?, ''), image_url),
+                image_source_type = ?,
+                image_rights_status = ?,
+                image_credit = ?,
+                image_last_verified_at = ?,
                 source = COALESCE(NULLIF(?, ''), source),
                 data_quality_status = ?,
                 last_verified_at = CURRENT_TIMESTAMP,
@@ -300,6 +340,10 @@ def _upsert_product(conn: sqlite3.Connection, mapped: Dict[str, Any]) -> None:
                 values["allergens"],
                 values["allergens"],
                 values["image_url"],
+                values["image_source_type"],
+                values["image_rights_status"],
+                values["image_credit"],
+                values["image_last_verified_at"],
                 values["source"],
                 values["data_quality_status"],
                 barcode,
@@ -311,8 +355,9 @@ def _upsert_product(conn: sqlite3.Connection, mapped: Dict[str, Any]) -> None:
         """
         INSERT INTO products (
             barcode, name, brand, category, subcategory, ingredients, allergens,
-            image_url, source, data_quality_status, last_verified_at
-        ) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, CURRENT_TIMESTAMP)
+            image_url, image_source_type, image_rights_status, image_credit,
+            image_last_verified_at, source, data_quality_status, last_verified_at
+        ) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, CURRENT_TIMESTAMP)
         """,
         (
             values["barcode"],
@@ -323,6 +368,10 @@ def _upsert_product(conn: sqlite3.Connection, mapped: Dict[str, Any]) -> None:
             values["ingredients"],
             values["allergens"],
             values["image_url"],
+            values["image_source_type"],
+            values["image_rights_status"],
+            values["image_credit"],
+            values["image_last_verified_at"],
             values["source"],
             values["data_quality_status"],
         ),

@@ -31,6 +31,10 @@ def _fetch_count(conn: sqlite3.Connection, sql: str, params: tuple = ()) -> int:
     return int(row[0] or 0)
 
 
+def _table_columns(conn: sqlite3.Connection, table: str) -> set[str]:
+    return {row["name"] for row in conn.execute("PRAGMA table_info({0})".format(table)).fetchall()}
+
+
 def _split_csv(value: str) -> List[str]:
     if not value:
         return []
@@ -118,6 +122,9 @@ def build_coverage_summary_report() -> Dict[str, Any]:
             p.subcategory,
             p.ingredients,
             p.allergens,
+            p.image_url,
+            p.image_source_type,
+            p.image_rights_status,
             p.source,
             p.source_retailer,
             COUNT(o.id) AS offer_count,
@@ -131,7 +138,8 @@ def build_coverage_summary_report() -> Dict[str, Any]:
         FROM products p
         LEFT JOIN offers o
             ON o.barcode = p.barcode
-        GROUP BY p.barcode, p.name, p.category, p.subcategory, p.ingredients, p.allergens, p.source, p.source_retailer
+        GROUP BY p.barcode, p.name, p.category, p.subcategory, p.ingredients, p.allergens,
+                 p.image_url, p.image_source_type, p.image_rights_status, p.source, p.source_retailer
         ORDER BY
             offer_count ASC,
             p.category COLLATE NOCASE ASC,
@@ -171,6 +179,25 @@ def build_coverage_summary_report() -> Dict[str, Any]:
     needs_review_products = [
         row for row in product_offer_coverage if not _is_safety_ready(row)
     ]
+
+    product_columns = _table_columns(conn, "products")
+    has_image_rights_columns = {"image_url", "image_source_type", "image_rights_status"}.issubset(product_columns)
+    if has_image_rights_columns:
+        products_with_image_url = [
+            row for row in product_offer_coverage if str(row.get("image_url") or "").strip()
+        ]
+        products_with_blocked_image_rights = [
+            row for row in products_with_image_url
+            if str(row.get("image_rights_status") or "").strip().lower() in {"", "unknown", "unknown_blocked"}
+        ]
+        products_with_allowed_image_rights = [
+            row for row in products_with_image_url
+            if row not in products_with_blocked_image_rights
+        ]
+    else:
+        products_with_image_url = []
+        products_with_blocked_image_rights = []
+        products_with_allowed_image_rights = []
 
     products_missing_target_retailers = []
     for row in product_offer_coverage:
@@ -215,6 +242,9 @@ def build_coverage_summary_report() -> Dict[str, Any]:
         "catalogue_products_without_offers": len(catalogue_products_without_offers),
         "safety_ready_products": len(safety_ready_products),
         "needs_review_products": len(needs_review_products),
+        "products_with_image_url": len(products_with_image_url),
+        "products_with_allowed_image_rights": len(products_with_allowed_image_rights),
+        "products_with_blocked_or_unknown_image_rights": len(products_with_blocked_image_rights),
         "categories_total": _fetch_count(
             conn,
             """
@@ -247,6 +277,7 @@ def build_coverage_summary_report() -> Dict[str, Any]:
         "product_offer_coverage": product_offer_coverage,
         "thin_subcategories": thin_subcategories,
         "products_without_offers": products_without_offers,
+        "products_with_blocked_image_rights": products_with_blocked_image_rights,
         "products_missing_target_retailers": products_missing_target_retailers,
         "issues": issues,
     }
@@ -325,6 +356,19 @@ def print_coverage_summary_report() -> None:
                     barcode=row.get("barcode") or "",
                     name=row.get("name") or "",
                     missing=", ".join(row.get("missing_retailers") or []),
+                )
+            )
+
+    print("\nProducts With Blocked / Unknown Image Rights")
+    if not report["products_with_blocked_image_rights"]:
+        print("- none")
+    else:
+        for row in report["products_with_blocked_image_rights"]:
+            print(
+                "- {barcode} | {name}: image rights={rights}".format(
+                    barcode=row.get("barcode") or "",
+                    name=row.get("name") or "",
+                    rights=row.get("image_rights_status") or "unknown",
                 )
             )
 

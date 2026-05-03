@@ -19,6 +19,10 @@ export type Offer = {
   in_stock?: boolean | null;
   product_url?: string | null;
   image_url?: string | null;
+  image_source_type?: string | null;
+  image_rights_status?: string | null;
+  image_credit?: string | null;
+  image_last_verified_at?: string | null;
   source?: string | null;
   source_retailer?: string | null;
 };
@@ -34,6 +38,12 @@ export type Product = {
   category?: string | null;
   subcategory?: string | null;
   image_url?: string | null;
+  image_source_type?: string | null;
+  image_rights_status?: string | null;
+  image_credit?: string | null;
+  image_last_verified_at?: string | null;
+  image_source_label?: string | null;
+  image_blocked_reason?: string | null;
   source?: string | null;
   source_retailer?: string | null;
   safety_score?: number | null;

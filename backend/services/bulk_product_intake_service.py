@@ -17,6 +17,7 @@ from import_utils import (
 )
 from services.analysis_service import analyse_product
 from services.gtin_service import normalise_barcode, validate_gtin
+from services.image_rights_service import normalise_image_metadata
 
 
 ACTIVE_RETAILERS = {
@@ -192,6 +193,12 @@ def _connect(db_path: str) -> sqlite3.Connection:
     return conn
 
 
+def _ensure_column(conn: sqlite3.Connection, table: str, column: str, column_type: str) -> None:
+    rows = conn.execute("PRAGMA table_info({0})".format(table)).fetchall()
+    if column not in {row["name"] for row in rows}:
+        conn.execute("ALTER TABLE {0} ADD COLUMN {1} {2}".format(table, column, column_type))
+
+
 def ensure_bulk_intake_schema(db_path: str) -> None:
     conn = _connect(db_path)
     try:
@@ -238,6 +245,10 @@ def ensure_bulk_intake_schema(db_path: str) -> None:
                 stock_status TEXT DEFAULT 'unknown',
                 product_url TEXT,
                 image_url TEXT,
+                image_source_type TEXT DEFAULT 'safebite_placeholder',
+                image_rights_status TEXT DEFAULT 'not_required',
+                image_credit TEXT,
+                image_last_verified_at TIMESTAMP,
                 source_url TEXT,
                 data_quality_json TEXT DEFAULT '{}',
                 warnings_json TEXT DEFAULT '[]',
@@ -249,6 +260,13 @@ def ensure_bulk_intake_schema(db_path: str) -> None:
             )
             """
         )
+        for column, column_type in [
+            ("image_source_type", "TEXT DEFAULT 'safebite_placeholder'"),
+            ("image_rights_status", "TEXT DEFAULT 'not_required'"),
+            ("image_credit", "TEXT"),
+            ("image_last_verified_at", "TIMESTAMP"),
+        ]:
+            _ensure_column(conn, "bulk_intake_rows", column, column_type)
         conn.execute(
             """
             CREATE INDEX IF NOT EXISTS idx_bulk_intake_rows_batch
@@ -324,11 +342,24 @@ def _shape_row(
     )
     product_url = clean_url(_first_non_empty(row, ["product_url", "url", "link"]))
     image_url = _valid_url_or_blank(_first_non_empty(row, ["image_url", "image", "thumbnail"]))
+    image_metadata = normalise_image_metadata(
+        {
+            "image_url": image_url,
+            "image_source_type": _first_non_empty(row, ["image_source_type", "image_source", "image_type"]),
+            "image_rights_status": _first_non_empty(row, ["image_rights_status", "image_rights", "rights_status"]),
+            "image_credit": _first_non_empty(row, ["image_credit", "credit", "attribution"]),
+            "image_last_verified_at": _first_non_empty(row, ["image_last_verified_at", "image_verified_at"]),
+        }
+    )
     source_url = _valid_url_or_blank(_first_non_empty(row, ["source_url", "feed_url", "supplier_url"]))
     promo_text = _first_non_empty(row, ["promo_text", "promotion", "offer_text"])
 
     if safe_str(_first_non_empty(row, ["product_url", "url", "link"])) and not product_url:
         errors.append("product_url must be a valid http or https URL when provided")
+    if safe_str(_first_non_empty(row, ["image_url", "image", "thumbnail"])) and not image_url:
+        errors.append("image_url must be a valid http or https URL when provided")
+    if image_url and image_metadata["image_rights_status"] == "unknown_blocked":
+        warnings.append("image_url has unknown rights metadata; public responses will use the SafeBite placeholder")
 
     if not name:
         warnings.append("missing product name; row will remain staged until verified")
@@ -376,6 +407,10 @@ def _shape_row(
         "stock_status": stock_status,
         "product_url": product_url,
         "image_url": image_url,
+        "image_source_type": image_metadata["image_source_type"],
+        "image_rights_status": image_metadata["image_rights_status"],
+        "image_credit": image_metadata["image_credit"],
+        "image_last_verified_at": image_metadata["image_last_verified_at"],
         "source_url": source_url,
         "data_quality": {
             "source_name": source_name,
@@ -453,9 +488,10 @@ def stage_bulk_csv(
                     INSERT INTO bulk_intake_rows (
                         batch_id, row_number, status, row_type, barcode, retailer, name, brand,
                         category, subcategory, ingredients_json, allergens_json, price, promo_price,
-                        original_price, promo_text, stock_status, product_url, image_url, source_url,
-                        data_quality_json, warnings_json, errors_json, raw_json
-                    ) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)
+                        original_price, promo_text, stock_status, product_url, image_url,
+                        image_source_type, image_rights_status, image_credit, image_last_verified_at,
+                        source_url, data_quality_json, warnings_json, errors_json, raw_json
+                    ) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)
                     """,
                     (
                         batch_id,
@@ -477,6 +513,10 @@ def stage_bulk_csv(
                         row["stock_status"],
                         row["product_url"],
                         row["image_url"],
+                        row["image_source_type"],
+                        row["image_rights_status"],
+                        row["image_credit"],
+                        row["image_last_verified_at"],
                         row["source_url"],
                         _json_dumps(row["data_quality"]),
                         _json_dumps(row["warnings"]),
@@ -566,6 +606,10 @@ def _row_to_product_payload(row: sqlite3.Row) -> Dict[str, Any]:
             "ingredients": ingredients,
             "allergens": allergens,
             "image_url": row["image_url"] or "",
+            "image_source_type": row["image_source_type"] or "",
+            "image_rights_status": row["image_rights_status"] or "",
+            "image_credit": row["image_credit"] or "",
+            "image_last_verified_at": row["image_last_verified_at"] or "",
             "source": "bulk_intake_verified_product",
             "source_retailer": row["retailer"],
         },

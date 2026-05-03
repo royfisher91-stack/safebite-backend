@@ -25,6 +25,10 @@ def split_csv(value: object) -> set[str]:
     return {item.strip() for item in str(value).split(",") if item.strip()}
 
 
+def table_columns(conn: sqlite3.Connection, table: str) -> set[str]:
+    return {row["name"] for row in conn.execute("PRAGMA table_info({0})".format(table)).fetchall()}
+
+
 def main() -> int:
     parser = argparse.ArgumentParser(description="SafeBite Phase 1 coverage summary")
     parser.add_argument("--db", required=True, help="Path to safebite.db")
@@ -38,6 +42,29 @@ def main() -> int:
         print("PHASE 1 COVERAGE SUMMARY")
         print("Products total: {0}".format(products_total))
         print("Offers total:   {0}".format(offers_total))
+        product_columns = table_columns(conn, "products")
+        if {"image_url", "image_rights_status"}.issubset(product_columns):
+            image_counts = conn.execute(
+                """
+                SELECT
+                    SUM(CASE WHEN image_url IS NOT NULL AND TRIM(image_url) != '' THEN 1 ELSE 0 END) AS with_image,
+                    SUM(
+                        CASE
+                            WHEN image_url IS NOT NULL
+                             AND TRIM(image_url) != ''
+                             AND (
+                                image_rights_status IS NULL
+                                OR TRIM(image_rights_status) = ''
+                                OR LOWER(image_rights_status) IN ('unknown', 'unknown_blocked')
+                             )
+                            THEN 1 ELSE 0
+                        END
+                    ) AS blocked_unknown
+                FROM products
+                """
+            ).fetchone()
+            print("Products with images: {0}".format(int(image_counts["with_image"] or 0)))
+            print("Products with blocked/unknown image rights: {0}".format(int(image_counts["blocked_unknown"] or 0)))
         print("")
 
         sub_rows = conn.execute(

@@ -36,6 +36,10 @@ class Product(Base):
     salt = Column(Float, default=0)
 
     image_url = Column(String, default="")
+    image_source_type = Column(String, default="safebite_placeholder")
+    image_rights_status = Column(String, default="not_required")
+    image_credit = Column(String, default="")
+    image_last_verified_at = Column(String, default="")
 
     offers = relationship(
         "Offer",
@@ -59,4 +63,4 @@ class Offer(Base):
     size_label = Column(String, default="")
     offer_text = Column(String, default="")
 
-    product = relationship("Product", back_populates="offers"
+    product = relationship("Product", back_populates="offers")

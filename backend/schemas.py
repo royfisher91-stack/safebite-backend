@@ -64,6 +64,10 @@ class FavouriteSchema(FavouriteWriteSchema):
     category: Optional[str] = None
     subcategory: Optional[str] = None
     image_url: Optional[str] = None
+    image_source_type: Optional[str] = None
+    image_rights_status: Optional[str] = None
+    image_credit: Optional[str] = None
+    image_last_verified_at: Optional[str] = None
     created_at: Optional[str] = None
 
 
@@ -86,6 +90,10 @@ class HistorySchema(HistoryWriteSchema):
     category: Optional[str] = None
     subcategory: Optional[str] = None
     image_url: Optional[str] = None
+    image_source_type: Optional[str] = None
+    image_rights_status: Optional[str] = None
+    image_credit: Optional[str] = None
+    image_last_verified_at: Optional[str] = None
     scanned_at: Optional[str] = None
 
 
@@ -314,6 +322,11 @@ class OfferSchema(BaseModel):
     in_stock: bool = False
     stock_status: str = 'unknown'
     product_url: Optional[str] = None
+    image_url: Optional[str] = None
+    image_source_type: Optional[str] = None
+    image_rights_status: Optional[str] = None
+    image_credit: Optional[str] = None
+    image_last_verified_at: Optional[str] = None
     unit_price: Optional[float] = None
     unit_name: Optional[str] = None
     size_text: Optional[str] = None
@@ -368,6 +381,12 @@ class ProductBaseSchema(BaseModel):
     description: Optional[str] = None
     nutrition: Dict[str, Any] = {}
     image_url: Optional[str] = None
+    image_source_type: Optional[str] = None
+    image_rights_status: Optional[str] = None
+    image_credit: Optional[str] = None
+    image_last_verified_at: Optional[str] = None
+    image_source_label: Optional[str] = None
+    image_blocked_reason: Optional[str] = None
     tags: List[Any] = []
     safety_score: Optional[int] = None
     safety_result: str = 'Unknown'
