@@ -16,6 +16,7 @@ if str(Path(__file__).resolve().parent) not in sys.path:
     sys.path.insert(0, str(Path(__file__).resolve().parent))
 
 from database import upsert_product  # noqa: E402
+from services.gtin_service import normalise_barcode, validate_gtin  # noqa: E402
 from validate_catalogue_candidates import (  # noqa: E402
     CANDIDATES_PATH,
     MIN_SAFETY_READY_FOR_PROMOTION,
@@ -44,10 +45,15 @@ def _split_values(value: str) -> List[str]:
     return values
 
 
-def _read_candidates_by_barcode() -> Dict[str, Dict[str, str]]:
+def _read_candidate_rows() -> List[Dict[str, str]]:
+    if not CANDIDATES_PATH.exists():
+        return []
     with CANDIDATES_PATH.open("r", encoding="utf-8-sig", newline="") as handle:
-        rows = [dict(row) for row in csv.DictReader(handle)]
-    return {_clean(row.get("barcode")): row for row in rows if _clean(row.get("barcode"))}
+        return [dict(row) for row in csv.DictReader(handle)]
+
+
+def _read_candidates_by_barcode() -> Dict[str, Dict[str, str]]:
+    return {_clean(row.get("barcode")): row for row in _read_candidate_rows() if _clean(row.get("barcode"))}
 
 
 def _live_product_count() -> int:
@@ -115,6 +121,55 @@ def _payload(row: Dict[str, str]) -> Dict[str, Any]:
         "safety_result": "",
         "ingredient_reasoning": "Catalogue product. Safety analysis should use stored ingredients and source confidence metadata.",
         "allergen_warnings": json.dumps(allergens),
+    }
+
+
+def _is_bootstrap_importable(row: Dict[str, str]) -> bool:
+    barcode = normalise_barcode(row.get("barcode"))
+    valid_gtin, _message = validate_gtin(barcode)
+    if not valid_gtin:
+        return False
+    if _clean(row.get("needs_manual_review")).lower() in {"1", "true", "yes"}:
+        return False
+    required_fields = [
+        "name",
+        "category",
+        "subcategory",
+        "ingredients",
+        "allergens",
+        "source",
+        "source_url",
+    ]
+    for field in required_fields:
+        value = _clean(row.get(field))
+        if not value or value.lower() in {"unknown", "data unavailable", "n/a", "none"}:
+            return False
+    return True
+
+
+def import_catalogue_candidates_for_bootstrap(limit: int = MAX_FIRST_PROMOTION_ROWS) -> Dict[str, int]:
+    rows = _read_candidate_rows()
+    importable = [row for row in rows if _is_bootstrap_importable(row)]
+    selected = importable[:limit]
+    before = _live_product_count()
+    offers_before = _offer_count()
+
+    upserted = 0
+    for row in selected:
+        upsert_product(_payload(row))
+        upserted += 1
+
+    after = _live_product_count()
+    offers_after = _offer_count()
+    return {
+        "candidates_checked": len(rows),
+        "safety_ready_candidates": len(importable),
+        "products_upserted": upserted,
+        "product_count_before": before,
+        "product_count_after": after,
+        "products_added": max(after - before, 0),
+        "retailer_offers_before": offers_before,
+        "retailer_offers_after": offers_after,
     }
 
 

@@ -6,12 +6,14 @@ from import_quality_report import print_quality_report
 from coverage_summary_report import print_coverage_summary_report
 from services.phase2_data_quality import ensure_phase2_tables, refresh_existing_quality_records
 from services.phase2_reporting import build_phase2_summary, render_phase2_text_report
+from scripts.promote_catalogue_candidates import import_catalogue_candidates_for_bootstrap
 
 
 def run_imports(include_reports=False):
     init_db()
     ensure_phase2_tables(str(DB_PATH))
     seeded_products = seed_products_from_json()
+    catalogue_result = import_catalogue_candidates_for_bootstrap()
 
     results = [
         import_tesco(),
@@ -23,6 +25,11 @@ def run_imports(include_reports=False):
 
     if include_reports:
         print(f"Seed products checked: {seeded_products}\n")
+
+        print("Catalogue products checked: {}".format(catalogue_result.get("candidates_checked", 0)))
+        print("Catalogue safety-ready rows: {}".format(catalogue_result.get("safety_ready_candidates", 0)))
+        print("Catalogue products upserted: {}".format(catalogue_result.get("products_upserted", 0)))
+        print("Catalogue products added: {}\n".format(catalogue_result.get("products_added", 0)))
 
         for result in results:
             print_result(result)
@@ -38,6 +45,7 @@ def run_imports(include_reports=False):
 
     return {
         "seeded_products": seeded_products,
+        "catalogue_result": catalogue_result,
         "results": results,
     }
 

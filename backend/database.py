@@ -8,38 +8,7 @@ from typing import Any, Dict, List, Optional
 BASE_DIR = Path(__file__).resolve().parent
 DB_PATH = BASE_DIR / "safebite.db"
 IMPORTS_PRODUCTS_JSON_PATH = BASE_DIR / "imports" / "products.json"
-STARTUP_PRODUCT_SEEDS = [
-    {
-        "barcode": "5000177025658",
-        "name": "Cow & Gate Creamy Porridge",
-        "brand": "Cow & Gate",
-        "description": "",
-        "ingredients": [
-            "Milled cereals",
-            "Skimmed milk powder",
-            "Milled rice",
-            "Demineralised whey powder from milk",
-            "Vegetable oils",
-            "Soy lecithin",
-            "Minerals",
-            "Natural vanilla flavour",
-            "Vitamins",
-        ],
-        "allergens": ["Milk", "Soy"],
-        "category": "Baby & Toddler",
-        "subcategory": "Porridge",
-        "image_url": "",
-        "source": "startup_seed",
-        "source_retailer": "SafeBite",
-        "safety_score": 62,
-        "safety_result": "Caution",
-        "ingredient_reasoning": (
-            "Baby porridge with milk ingredients and soy lecithin; suitable checks "
-            "should account for dairy and soy sensitivities."
-        ),
-        "allergen_warnings": "Contains milk and soy.",
-    }
-]
+STARTUP_PRODUCT_SEEDS = []
 
 try:
     from data.product_enrichment import PRODUCT_ENRICHMENT
@@ -1507,50 +1476,7 @@ class DatabaseManager:
         return seeded
 
     def seed_sample_offers(self) -> int:
-        sample_offers = [
-            {
-                "barcode": "5000177025658",
-                "retailer": "Asda",
-                "price": 1.49,
-                "promo_price": None,
-                "original_price": 1.49,
-                "promo_text": "",
-                "stock_status": "in_stock",
-                "in_stock": True,
-                "product_url": "",
-                "image_url": "",
-                "source": "startup_seed",
-                "source_retailer": "Asda",
-            },
-            {
-                "barcode": "5000112637922",
-                "retailer": "Asda",
-                "price": 1.20,
-                "promo_price": None,
-                "original_price": 1.20,
-                "promo_text": "",
-                "stock_status": "in_stock",
-                "in_stock": True,
-                "product_url": "",
-                "image_url": "",
-                "source": "startup_seed",
-                "source_retailer": "Asda",
-            },
-            {
-                "barcode": "1234567890",
-                "retailer": "Tesco",
-                "price": 12.00,
-                "promo_price": None,
-                "original_price": 12.00,
-                "promo_text": "",
-                "stock_status": "in_stock",
-                "in_stock": True,
-                "product_url": "",
-                "image_url": "",
-                "source": "startup_seed",
-                "source_retailer": "Tesco",
-            },
-        ]
+        sample_offers = []
 
         seeded = 0
 

@@ -21,6 +21,25 @@
 - Promotion gate: READY
 - Final decision: PROMOTED
 
+## Reproducibility Audit
+
+- Audit date: 2026-05-03
+- Rebuild method: clean temporary copy from committed files with the catalogue reproducibility fix applied
+- Product count before rebuild/import: 0 fresh database products
+- Product count after run_imports.py: 97
+- Product count after validate_backend.py startup bootstrap: 97
+- Retailer offers after rebuild/import: 104
+- OFF catalogue products restored from committed staged candidates: 33
+- OFF catalogue products without retailer offers: 33
+- run_imports.py restores catalogue products: yes
+- Render startup can restore catalogue products: yes, because empty startup runs run_imports.py and fallback startup/sample seeds are disabled
+- Retailer offers unchanged by catalogue import: yes
+- Validation warnings after fresh rebuild: 0
+- Validation errors after fresh rebuild: 0
+- Coverage issue_count after fresh rebuild: 0
+- Alternatives issue_count after fresh rebuild: 0
+- Reproducibility decision: REPRODUCIBLE
+
 ## Row Details
 
 - Row 2: 5060040253724 | KIDDYLICIOUS Veggie Straws - saveur Légumes - 48g (4x12g) | needs_review | allergens missing; needs_manual_review is true
