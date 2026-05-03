@@ -192,11 +192,7 @@ export default function ProductDetailScreen({ route, navigation }: Props) {
   const conditionResultsMap = product?.analysis?.condition_results ?? product?.condition_results ?? {};
   const conditionResults = Object.values(conditionResultsMap ?? {}) as ConditionResult[];
   const bestValueOffer = pricing.best_value_offer;
-  const heroImage =
-    product?.image_url ||
-    pricing.best_offer?.image_url ||
-    product?.offers?.find((offer) => !!offer.image_url)?.image_url ||
-    null;
+  const heroImage = product?.image_url || null;
   const healthSummary =
     pricing.pricing_summary ||
     (pricing.lowest_in_stock_price != null

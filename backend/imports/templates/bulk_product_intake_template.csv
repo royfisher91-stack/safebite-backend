@@ -1,2 +1,1 @@
-barcode,name,brand,category,subcategory,ingredients,allergens,retailer,price,promo_price,original_price,promo_text,stock_status,product_url,image_url,source_type,source_url
-
+barcode,name,brand,category,subcategory,ingredients,allergens,retailer,price,promo_price,original_price,promo_text,stock_status,product_url,image_url,image_source_type,image_rights_status,image_credit,image_last_verified_at,source_type,source_url

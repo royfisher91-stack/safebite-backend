@@ -1,6 +1,7 @@
 import os
 import sqlite3
 import sys
+import tempfile
 
 
 SCRIPT_DIR = os.path.dirname(os.path.abspath(__file__))
@@ -66,7 +67,22 @@ def main() -> int:
     finally:
         conn.close()
 
-    ensure_bulk_intake_schema(":memory:")
+    required_image_columns = {
+        "image_source_type",
+        "image_rights_status",
+        "image_credit",
+        "image_last_verified_at",
+    }
+    with tempfile.NamedTemporaryFile(suffix=".db") as handle:
+        ensure_bulk_intake_schema(handle.name)
+        schema_conn = sqlite3.connect(handle.name)
+        try:
+            columns = {row[1] for row in schema_conn.execute("PRAGMA table_info(bulk_intake_rows)").fetchall()}
+        finally:
+            schema_conn.close()
+    missing_image_columns = sorted(required_image_columns - columns)
+    if missing_image_columns:
+        errors.append("bulk_intake_rows missing image rights columns: {0}".format(", ".join(missing_image_columns)))
 
     print("Bulk product intake validation")
     print("- current_target_retailers: {0}".format(", ".join(target_retailer_names())))

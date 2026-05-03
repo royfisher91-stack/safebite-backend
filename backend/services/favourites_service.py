@@ -1,12 +1,19 @@
 from typing import Any, Dict, List, Optional
 
 from database import db
+from services.image_rights_service import normalise_image_metadata, public_image_url
 
 
 def _row_to_favourite(row: Any) -> Optional[Dict[str, Any]]:
     if row is None:
         return None
     payload = dict(row)
+    image_metadata = normalise_image_metadata(payload)
+    display_image_url = public_image_url(
+        payload.get("image_url"),
+        image_metadata["image_source_type"],
+        image_metadata["image_rights_status"],
+    )
     return {
         "id": payload.get("id"),
         "user_id": payload.get("user_id"),
@@ -16,7 +23,11 @@ def _row_to_favourite(row: Any) -> Optional[Dict[str, Any]]:
         "brand": payload.get("brand") or "",
         "category": payload.get("category") or "",
         "subcategory": payload.get("subcategory") or "",
-        "image_url": payload.get("image_url") or "",
+        "image_url": display_image_url,
+        "image_source_type": image_metadata["image_source_type"],
+        "image_rights_status": image_metadata["image_rights_status"],
+        "image_credit": image_metadata["image_credit"],
+        "image_last_verified_at": image_metadata["image_last_verified_at"],
         "created_at": payload.get("created_at"),
     }
 
@@ -27,7 +38,11 @@ _FAVOURITES_SELECT = """
         products.brand AS brand,
         products.category AS category,
         products.subcategory AS subcategory,
-        products.image_url AS image_url
+        products.image_url AS image_url,
+        products.image_source_type AS image_source_type,
+        products.image_rights_status AS image_rights_status,
+        products.image_credit AS image_credit,
+        products.image_last_verified_at AS image_last_verified_at
     FROM favourites
     LEFT JOIN products ON products.barcode = favourites.barcode
 """

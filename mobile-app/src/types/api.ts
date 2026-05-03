@@ -143,6 +143,10 @@ export type Favourite = {
   category?: string | null;
   subcategory?: string | null;
   image_url?: string | null;
+  image_source_type?: string | null;
+  image_rights_status?: string | null;
+  image_credit?: string | null;
+  image_last_verified_at?: string | null;
   created_at?: string | null;
 };
 
@@ -163,6 +167,10 @@ export type HistoryEntry = {
   category?: string | null;
   subcategory?: string | null;
   image_url?: string | null;
+  image_source_type?: string | null;
+  image_rights_status?: string | null;
+  image_credit?: string | null;
+  image_last_verified_at?: string | null;
   allergies: string[];
   conditions: string[];
   safety_result?: SafetyResult | null;
@@ -321,6 +329,10 @@ export type Offer = {
   in_stock?: boolean | null;
   product_url?: string | null;
   image_url?: string | null;
+  image_source_type?: string | null;
+  image_rights_status?: string | null;
+  image_credit?: string | null;
+  image_last_verified_at?: string | null;
 };
 
 export type PricingSummary = {
@@ -375,6 +387,12 @@ export type ProductSummary = {
   cheapest_retailer?: string | null;
   product_url?: string | null;
   image_url?: string | null;
+  image_source_type?: string | null;
+  image_rights_status?: string | null;
+  image_credit?: string | null;
+  image_last_verified_at?: string | null;
+  image_source_label?: string | null;
+  image_blocked_reason?: string | null;
   requested_allergies?: string[] | null;
   requested_conditions?: string[] | null;
   matched_allergens?: string[] | null;

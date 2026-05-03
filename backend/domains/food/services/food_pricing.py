@@ -1,6 +1,7 @@
 from typing import Any, Dict, List
 
 from core.pricing_engine import run_pricing_pipeline
+from services.image_rights_service import normalise_image_metadata, public_image_url
 from services.offer_pricing_service import build_offer_pricing_snapshot, safe_float
 
 
@@ -31,11 +32,18 @@ def _get_stock_status(offer: Dict[str, Any]) -> str:
 def normalise_food_offer(offer: Dict[str, Any]) -> Dict[str, Any]:
     cleaned = dict(offer)
     snapshot = build_offer_pricing_snapshot(offer)
+    image_metadata = normalise_image_metadata(cleaned)
     cleaned.update(snapshot)
     cleaned["effective_price"] = snapshot.get("single_unit_price")
     cleaned["is_valid_price"] = cleaned["effective_price"] is not None
     cleaned["is_available"] = _is_offer_in_stock(offer)
     cleaned["stock_status"] = _get_stock_status(offer)
+    cleaned["image_url"] = public_image_url(
+        cleaned.get("image_url"),
+        image_metadata["image_source_type"],
+        image_metadata["image_rights_status"],
+    )
+    cleaned.update(image_metadata)
     return cleaned
 
 

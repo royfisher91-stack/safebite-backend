@@ -450,6 +450,29 @@ def normalise_product_row(
         "thumbnail",
         "Image URL",
     ])
+    image_source_type = first_non_empty(row, [
+        "image_source_type",
+        "image_source",
+        "image_type",
+        "Image Source Type",
+    ])
+    image_rights_status = first_non_empty(row, [
+        "image_rights_status",
+        "image_rights",
+        "rights_status",
+        "Image Rights Status",
+    ])
+    image_credit = first_non_empty(row, [
+        "image_credit",
+        "credit",
+        "attribution",
+        "Image Credit",
+    ])
+    image_last_verified_at = first_non_empty(row, [
+        "image_last_verified_at",
+        "image_verified_at",
+        "Image Last Verified At",
+    ])
 
     retailer_name = normalise_retailer_name(retailer or first_non_empty(row, ["retailer", "source_retailer"]))
     stock_status = parse_stock(stock_raw, in_stock_raw if in_stock_raw else None)
@@ -474,6 +497,10 @@ def normalise_product_row(
         "in_stock": stock_status in ("in_stock", "limited"),
         "product_url": clean_url(product_url),
         "image_url": clean_url(image_url),
+        "image_source_type": image_source_type,
+        "image_rights_status": image_rights_status,
+        "image_credit": image_credit,
+        "image_last_verified_at": image_last_verified_at,
         "source": build_source_name(retailer_name, fallback="product_import"),
         "source_retailer": retailer_name,
     }

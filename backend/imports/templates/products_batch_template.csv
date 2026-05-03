@@ -1,1 +1,1 @@
-barcode,name,brand,category,subcategory,ingredients,allergens,image_url,source,source_retailer,description,gtin_source_url,title_source_url
+barcode,name,brand,category,subcategory,ingredients,allergens,image_url,image_source_type,image_rights_status,image_credit,image_last_verified_at,source,source_retailer,description,gtin_source_url,title_source_url

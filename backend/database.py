@@ -4,6 +4,8 @@ import traceback
 from pathlib import Path
 from typing import Any, Dict, List, Optional
 
+from services.image_rights_service import image_source_label, normalise_image_metadata, public_image_url
+
 
 BASE_DIR = Path(__file__).resolve().parent
 DB_PATH = BASE_DIR / "safebite.db"
@@ -107,6 +109,10 @@ class DatabaseManager:
                 category TEXT,
                 subcategory TEXT,
                 image_url TEXT,
+                image_source_type TEXT DEFAULT 'safebite_placeholder',
+                image_rights_status TEXT DEFAULT 'not_required',
+                image_credit TEXT,
+                image_last_verified_at TIMESTAMP,
                 source TEXT,
                 source_retailer TEXT,
                 safety_score INTEGER,
@@ -422,6 +428,10 @@ class DatabaseManager:
         self._ensure_column(conn, "products", "category", "TEXT")
         self._ensure_column(conn, "products", "subcategory", "TEXT")
         self._ensure_column(conn, "products", "image_url", "TEXT")
+        self._ensure_column(conn, "products", "image_source_type", "TEXT DEFAULT 'safebite_placeholder'")
+        self._ensure_column(conn, "products", "image_rights_status", "TEXT DEFAULT 'not_required'")
+        self._ensure_column(conn, "products", "image_credit", "TEXT")
+        self._ensure_column(conn, "products", "image_last_verified_at", "TIMESTAMP")
         self._ensure_column(conn, "products", "source", "TEXT")
         self._ensure_column(conn, "products", "source_retailer", "TEXT")
         self._ensure_column(conn, "products", "safety_score", "INTEGER")
@@ -859,6 +869,20 @@ class DatabaseManager:
         product["description"] = product.get("description") or ""
         product["source"] = product.get("source")
         product["source_retailer"] = product.get("source_retailer")
+        image_metadata = normalise_image_metadata(product)
+        raw_image_url = product.get("image_url") or ""
+        display_image_url = public_image_url(
+            raw_image_url,
+            image_metadata["image_source_type"],
+            image_metadata["image_rights_status"],
+        )
+        if raw_image_url and not display_image_url:
+            image_metadata["image_rights_status"] = "unknown_blocked"
+        product.update(image_metadata)
+        product["image_url"] = display_image_url
+        product["image_source_label"] = image_source_label(image_metadata["image_source_type"])
+        if raw_image_url and not display_image_url:
+            product["image_blocked_reason"] = "unknown_image_rights"
 
         return self._apply_product_enrichment(product)
 
@@ -909,6 +933,7 @@ class DatabaseManager:
         category = product_data.get("category")
         subcategory = product_data.get("subcategory")
         image_url = product_data.get("image_url")
+        image_metadata = normalise_image_metadata(product_data)
         source = product_data.get("source")
         source_retailer = product_data.get("source_retailer")
         safety_score = product_data.get("safety_score")
@@ -938,6 +963,46 @@ class DatabaseManager:
             final_category = category if not _is_blank(category) else existing_dict.get("category")
             final_subcategory = subcategory if not _is_blank(subcategory) else existing_dict.get("subcategory")
             final_image_url = image_url if not _is_blank(image_url) else existing_dict.get("image_url")
+            replacing_image = not _is_blank(image_url) and image_url != existing_dict.get("image_url")
+            has_image_metadata = any(
+                not _is_blank(product_data.get(field))
+                for field in [
+                    "image_source_type",
+                    "image_rights_status",
+                    "image_credit",
+                    "image_last_verified_at",
+                ]
+            )
+            if replacing_image:
+                final_image_metadata = image_metadata
+            elif has_image_metadata:
+                final_image_metadata = normalise_image_metadata(
+                    {
+                        "image_url": final_image_url,
+                        "image_source_type": (
+                            product_data.get("image_source_type")
+                            if not _is_blank(product_data.get("image_source_type"))
+                            else existing_dict.get("image_source_type")
+                        ),
+                        "image_rights_status": (
+                            product_data.get("image_rights_status")
+                            if not _is_blank(product_data.get("image_rights_status"))
+                            else existing_dict.get("image_rights_status")
+                        ),
+                        "image_credit": (
+                            product_data.get("image_credit")
+                            if not _is_blank(product_data.get("image_credit"))
+                            else existing_dict.get("image_credit")
+                        ),
+                        "image_last_verified_at": (
+                            product_data.get("image_last_verified_at")
+                            if not _is_blank(product_data.get("image_last_verified_at"))
+                            else existing_dict.get("image_last_verified_at")
+                        ),
+                    }
+                )
+            else:
+                final_image_metadata = normalise_image_metadata(existing_dict)
             final_source = source if not _is_blank(source) else existing_dict.get("source")
             final_source_retailer = (
                 source_retailer if not _is_blank(source_retailer) else existing_dict.get("source_retailer")
@@ -978,6 +1043,10 @@ class DatabaseManager:
                     category = ?,
                     subcategory = ?,
                     image_url = ?,
+                    image_source_type = ?,
+                    image_rights_status = ?,
+                    image_credit = ?,
+                    image_last_verified_at = ?,
                     source = ?,
                     source_retailer = ?,
                     safety_score = ?,
@@ -996,6 +1065,10 @@ class DatabaseManager:
                     final_category,
                     final_subcategory,
                     final_image_url,
+                    final_image_metadata["image_source_type"],
+                    final_image_metadata["image_rights_status"],
+                    final_image_metadata["image_credit"],
+                    final_image_metadata["image_last_verified_at"] or None,
                     final_source,
                     final_source_retailer,
                     final_safety_score,
@@ -1018,6 +1091,10 @@ class DatabaseManager:
                     category,
                     subcategory,
                     image_url,
+                    image_source_type,
+                    image_rights_status,
+                    image_credit,
+                    image_last_verified_at,
                     source,
                     source_retailer,
                     safety_score,
@@ -1025,7 +1102,7 @@ class DatabaseManager:
                     ingredient_reasoning,
                     allergen_warnings
                 )
-                VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)
+                VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)
                 """,
                 (
                     barcode,
@@ -1037,6 +1114,10 @@ class DatabaseManager:
                     category,
                     subcategory,
                     image_url,
+                    image_metadata["image_source_type"],
+                    image_metadata["image_rights_status"],
+                    image_metadata["image_credit"],
+                    image_metadata["image_last_verified_at"] or None,
                     source,
                     source_retailer,
                     safety_score,

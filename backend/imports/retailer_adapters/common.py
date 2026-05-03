@@ -10,6 +10,10 @@ STANDARD_KEYS = [
     "ingredients",
     "allergens",
     "image_url",
+    "image_source_type",
+    "image_rights_status",
+    "image_credit",
+    "image_last_verified_at",
     "retailer",
     "price",
     "promo_price",
@@ -29,6 +33,10 @@ BASE_FIELD_MAP = {
     "ingredients": ["ingredients", "ingredient_list", "Ingredients"],
     "allergens": ["allergens", "allergen_info", "Allergens"],
     "image_url": ["image_url", "image", "thumbnail", "Image URL"],
+    "image_source_type": ["image_source_type", "image_source", "image_type", "Image Source Type"],
+    "image_rights_status": ["image_rights_status", "image_rights", "rights_status", "Image Rights Status"],
+    "image_credit": ["image_credit", "credit", "attribution", "Image Credit"],
+    "image_last_verified_at": ["image_last_verified_at", "image_verified_at", "Image Last Verified At"],
     "price": ["price", "current_price", "sale_price", "Price"],
     "promo_price": ["promo_price", "promotional_price", "offer_price", "Promo Price"],
     "multibuy_text": ["multibuy_text", "promo_text", "promotion", "offer_text"],
@@ -108,4 +116,3 @@ def map_standard_row(
         mapped["source"] = "{0}_bulk_import".format(retailer.lower().replace("&", "and").replace(" ", "_"))
 
     return mapped
-
