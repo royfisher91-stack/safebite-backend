@@ -1,5 +1,6 @@
 import json
 import sqlite3
+import traceback
 from pathlib import Path
 from typing import Any, Dict, List, Optional
 
@@ -77,7 +78,11 @@ def _is_blank(value: Any) -> bool:
 class DatabaseManager:
     def __init__(self, db_path: Optional[str] = None) -> None:
         self.db_path = str(db_path or DB_PATH)
-        self.init_db()
+        try:
+            self.init_db()
+        except Exception:
+            print("SafeBite database startup: initial import-time init_db failed")
+            traceback.print_exc()
 
     def get_connection(self) -> sqlite3.Connection:
         conn = sqlite3.connect(self.db_path)

@@ -1,3 +1,7 @@
+import os
+import sys
+import traceback
+from pathlib import Path
 from typing import Any, Dict, List, Optional
 
 from fastapi import Header, FastAPI, HTTPException, Query
@@ -63,6 +67,8 @@ from services.promo_service import (
 )
 
 from database import (
+    DB_PATH,
+    IMPORTS_PRODUCTS_JSON_PATH,
     get_all_products,
     get_offers_by_barcode,
     get_product_count,
@@ -73,7 +79,6 @@ from database import (
     seed_products_from_json,
     seed_sample_offers,
 )
-from run_imports import run_imports
 from services.alternatives_service import build_alternatives
 from services.analysis_service import analyse_product
 from services.pricing_service import build_pricing_summary, normalise_offer
@@ -98,18 +103,37 @@ app.add_middleware(
 )
 
 
+BASE_DIR = Path(__file__).resolve().parent
 TARGET_RENDER_BARCODE = '5000177025658'
 
 
-def bootstrap_product_data() -> None:
-    init_db()
-    product_count = get_product_count()
+def print_startup_diagnostics() -> None:
+    print('SafeBite startup diagnostics:')
+    print(f'- cwd: {os.getcwd()}')
+    print(f'- mainBE BASE_DIR: {BASE_DIR}')
+    print(f'- database DB_PATH: {DB_PATH}')
+    print(f'- imports products.json path: {IMPORTS_PRODUCTS_JSON_PATH}')
+    print(f'- imports products.json exists: {IMPORTS_PRODUCTS_JSON_PATH.exists()}')
+    print(f'- python version: {sys.version}')
 
-    if product_count == 0:
+
+def bootstrap_product_data() -> None:
+    print_startup_diagnostics()
+    init_db()
+    product_count_before = get_product_count()
+    print(f'SafeBite startup: product count before bootstrap = {product_count_before}')
+
+    if product_count_before == 0:
         print('SafeBite startup: product table empty, running import pipeline')
+        from run_imports import run_imports
+
         run_imports(include_reports=False)
     else:
-        print(f'SafeBite startup: product table already has {product_count} products')
+        print(
+            'SafeBite startup: product table already has {} products'.format(
+                product_count_before
+            )
+        )
 
     seeded_products = seed_products_from_json()
     seeded_offers = seed_sample_offers()
@@ -137,7 +161,11 @@ def bootstrap_product_data() -> None:
 
 @app.on_event('startup')
 def startup_event() -> None:
-    bootstrap_product_data()
+    try:
+        bootstrap_product_data()
+    except Exception:
+        print('SafeBite startup: bootstrap failed; app will continue for /health')
+        traceback.print_exc()
 
 
 def safe_int(value: Any, default: int = 0) -> int:
