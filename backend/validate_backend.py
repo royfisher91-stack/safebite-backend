@@ -370,6 +370,33 @@ def validate_coverage_summary(errors: List[str]) -> None:
         add_error(errors, issue.get("message") or "unknown coverage issue")
 
 
+def validate_product_expansion_plan(errors: List[str]) -> None:
+    print("\n" + "=" * 80)
+    print("PRODUCT EXPANSION PLAN GATE")
+
+    backend_dir = Path(__file__).resolve().parent
+    gate_script = backend_dir / "scripts" / "validate_product_expansion_plan.py"
+    if not gate_script.exists():
+        add_error(errors, "Product expansion plan validator is missing")
+        return
+
+    completed = subprocess.run(
+        [sys.executable, str(gate_script)],
+        cwd=str(backend_dir),
+        text=True,
+        stdout=subprocess.PIPE,
+        stderr=subprocess.STDOUT,
+    )
+    output = completed.stdout or ""
+    if output.strip():
+        print(output.rstrip())
+
+    if completed.returncode != 0:
+        add_error(errors, "Product expansion plan gate failed")
+    else:
+        print("Product expansion plan gate: PASS")
+
+
 def validate_catalogue_reproducibility(errors: List[str]) -> None:
     print("\n" + "=" * 80)
     print("CATALOGUE REPRODUCIBILITY GATE")
@@ -440,6 +467,7 @@ def main() -> None:
     validate_quality_report(data.get("quality", {}), errors, warnings)
     validate_alternatives_quality(errors)
     validate_coverage_summary(errors)
+    validate_product_expansion_plan(errors)
     validate_catalogue_reproducibility(errors)
 
     print("\n" + "=" * 80)

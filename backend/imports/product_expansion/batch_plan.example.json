@@ -1,0 +1,18 @@
+{
+  "active": false,
+  "batch_id": "example_batch_do_not_import",
+  "source_type": "manual_csv",
+  "source_files": [
+    "imports/product_expansion/example_products.csv",
+    "imports/product_expansion/example_offers.csv"
+  ],
+  "target_category": "Baby & Toddler",
+  "target_subcategory": "Baby Meals",
+  "expected_product_delta": 0,
+  "expected_offer_delta": 0,
+  "expected_products_without_retailer_offers_delta": 0,
+  "retailer_offers_included": false,
+  "safety_fields_complete": false,
+  "manual_review_required": true,
+  "notes": "Example schema only. Future active batches must point to committed source files and declare real expected deltas before import."
+}
