@@ -26,6 +26,11 @@ _SAMPLE_NAME_PATTERNS = [
 ]
 
 _AUDIT_SOURCE = "phase2_existing_audit"
+CATALOGUE_SOURCES = {"open_food_facts", "open_food_facts_catalogue", "licensed_catalogue"}
+
+
+def _is_catalogue_source(value: Any) -> bool:
+    return str(value or "").strip().lower() in CATALOGUE_SOURCES
 
 
 class DuplicateDetector:
@@ -386,7 +391,7 @@ def refresh_existing_quality_records(db_path: str) -> Dict[str, int]:
                 validation.add_flag("example_offer_url_flag")
 
             offer_count = conn.execute("SELECT COUNT(*) AS c FROM offers WHERE barcode = ?", (barcode,)).fetchone()["c"]
-            if int(offer_count or 0) == 0:
+            if int(offer_count or 0) == 0 and not _is_catalogue_source(product["source"]):
                 validation.add_issue("product_without_offer", "warning", "Product has no retailer offers", "offers")
                 validation.add_flag("product_without_offer_flag")
 

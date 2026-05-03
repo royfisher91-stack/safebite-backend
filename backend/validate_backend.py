@@ -18,6 +18,7 @@ QUALITY_ZERO_FIELDS = [
     "offers_missing_price",
     "offers_sample_seed",
 ]
+CATALOGUE_SOURCES = {"open_food_facts", "open_food_facts_catalogue", "licensed_catalogue"}
 
 
 def fetch_json(url: str) -> Any:
@@ -38,6 +39,11 @@ def is_in_stock(offer: Dict[str, Any]) -> bool:
     value = offer.get("in_stock")
     stock_value = str(value).strip().lower()
     return value is True or stock_value in {"true", "1", "yes", "in stock", "instock"}
+
+
+def is_catalogue_product(product: Dict[str, Any]) -> bool:
+    source = str(product.get("source") or "").strip().lower()
+    return source in CATALOGUE_SOURCES
 
 
 def effective_price(offer: Dict[str, Any]) -> Optional[float]:
@@ -217,7 +223,9 @@ def validate_product_detail(
     if len(offers) != len(routed_offers):
         add_error(errors, f"{barcode} product detail offer count differs from /offers route")
 
-    if not offers:
+    catalogue_product = is_catalogue_product(product)
+
+    if not offers and not catalogue_product:
         add_warning(warnings, f"{barcode} has no offers")
 
     valid_in_stock_offers = []
@@ -263,7 +271,7 @@ def validate_product_detail(
 
         if actual_price != expected_price:
             add_error(errors, f"{barcode} best price mismatch")
-    else:
+    elif not catalogue_product:
         add_warning(warnings, f"{barcode} has no valid in-stock priced offers")
 
     alternatives = alternative_route.get("alternatives")

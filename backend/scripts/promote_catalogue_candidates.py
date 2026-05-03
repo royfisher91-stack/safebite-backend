@@ -18,10 +18,14 @@ if str(Path(__file__).resolve().parent) not in sys.path:
 from database import upsert_product  # noqa: E402
 from validate_catalogue_candidates import (  # noqa: E402
     CANDIDATES_PATH,
+    MIN_SAFETY_READY_FOR_PROMOTION,
     REPORT_PATH,
     validate_candidates,
     write_report,
 )
+
+
+MAX_FIRST_PROMOTION_ROWS = 100
 
 
 def _clean(value: Any) -> str:
@@ -78,6 +82,17 @@ def _products_with_offers() -> int:
         conn.close()
 
 
+def _offer_count() -> int:
+    conn = sqlite3.connect(str(ROOT / "safebite.db"))
+    try:
+        cur = conn.cursor()
+        cur.execute("SELECT COUNT(*) FROM offers")
+        row = cur.fetchone()
+        return int(row[0] or 0) if row else 0
+    finally:
+        conn.close()
+
+
 def _payload(row: Dict[str, str]) -> Dict[str, Any]:
     allergens = _split_values(row.get("allergens", ""))
     ingredients = _split_values(row.get("ingredients", ""))
@@ -112,17 +127,23 @@ def main() -> None:
         return
 
     safety_ready = [row for row in report["rows"] if row.get("classification") == "safety_ready"]
-    if not safety_ready:
+    if len(safety_ready) < MIN_SAFETY_READY_FOR_PROMOTION:
         write_report(report)
-        print("BLOCKED: no safety-ready catalogue candidates.")
+        print(
+            "BLOCKED: {} safety-ready catalogue candidates; {} required.".format(
+                len(safety_ready),
+                MIN_SAFETY_READY_FOR_PROMOTION,
+            )
+        )
         print("Report: {}".format(REPORT_PATH))
         return
 
     before = _live_product_count()
+    offers_before = _offer_count()
     candidates = _read_candidates_by_barcode()
     promoted = 0
 
-    for item in safety_ready:
+    for item in safety_ready[:MAX_FIRST_PROMOTION_ROWS]:
         barcode = _clean(item.get("barcode"))
         row = candidates.get(barcode)
         if not row:
@@ -132,10 +153,14 @@ def main() -> None:
 
     after = _live_product_count()
     with_offers = _products_with_offers()
+    offers_after = _offer_count()
 
     report["live_product_count_before"] = before
     report["live_product_count_after"] = after
     report["products_promoted"] = promoted
+    report["retailer_offers_before"] = offers_before
+    report["retailer_offers_after"] = offers_after
+    report["retailer_offers_unchanged"] = "yes" if offers_before == offers_after else "no"
     report["products_with_retailer_offers"] = with_offers
     report["products_without_retailer_offers"] = max(after - with_offers, 0)
     report["validation_warnings"] = 0

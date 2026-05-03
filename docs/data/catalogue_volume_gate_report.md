@@ -3,19 +3,234 @@
 ## Summary
 
 - Live product count before: 64
-- Catalogue candidates staged: 0
-- Safety-ready rows: 0
-- Needs-review rows: 0
+- Candidates downloaded: 250
+- Catalogue candidates staged: 211
+- Safety-ready rows: 33
+- Needs-review rows: 178
 - Rejected rows: 0
-- Products promoted: 0
-- Live product count after: 64
+- Products promoted: 33
+- Live product count after: 97
+- Retailer offers before: 104
+- Retailer offers after: 104
+- Retailer offers unchanged: yes
 - Products with retailer offers: 64
-- Products without retailer offers: 0
+- Products without retailer offers: 33
 - Validation warnings: 0
 - Validation errors: 0
 - Issue count: 0
-- Final decision: BLOCKED
+- Promotion gate: READY
+- Final decision: PROMOTED
 
 ## Row Details
 
-- none
+- Row 2: 5060040253724 | KIDDYLICIOUS Veggie Straws - saveur Légumes - 48g (4x12g) | needs_review | allergens missing; needs_manual_review is true
+- Row 3: 5060430292920 | Power Shake Vanilla | safety_ready | ready
+- Row 4: 5024121100499 | Organix carrot cake oats bars | needs_review | allergens missing; needs_manual_review is true
+- Row 5: 5024121222207 | Gingerbread men biscuits | safety_ready | ready
+- Row 6: 5060040250945 | KIDDYLICIOUS Fruity Bakes - Fraise - 132g (6x1p) | needs_review | needs_manual_review is true
+- Row 7: 5060107339811 | Organic Sweetcorn + Carrot Melty Sticks 7 Months | needs_review | allergens missing; needs_manual_review is true
+- Row 8: 5024121100536 | Soft Oaty Bars - Strawberry & Apple | needs_review | allergens missing; needs_manual_review is true
+- Row 9: 4088600341828 | Apple rice cakes | needs_review | allergens missing; needs_manual_review is true
+- Row 10: 5060040250938 | KIDDYLICIOUS Fruity Bakes - Pomme - 132g (6x1p) | needs_review | needs_manual_review is true
+- Row 11: 5060107337237 | real Size from months crispy + nger food kitchen s | needs_review | allergens missing; needs_manual_review is true
+- Row 12: 5411188135289 | Alpro Haferdrink für Kinder 1-3+, Drink zum heranwachsen 1L | needs_review | needs_manual_review is true
+- Row 13: 5024121664212 | Organix goodies | needs_review | allergens missing; needs_manual_review is true
+- Row 14: 5000218005687 | All Ages 4-6 Months Onwards  Rusks Original | safety_ready | ready
+- Row 15: 4088600552057 | strawberry and banana melty stix | needs_review | allergens missing; needs_manual_review is true
+- Row 16: 10601075 | The white one or purple one. Organic!! | needs_review | allergens missing; needs_manual_review is true
+- Row 17: 5024121626609 | organix mini cheese crackers | safety_ready | ready
+- Row 18: 4088600566535 | Banana rusk fingers | needs_review | needs_manual_review is true
+- Row 19: 5060107336056 | Prunes | needs_review | allergens missing; needs_manual_review is true
+- Row 20: 5060452492476 | Crispy Sticks, Cocoa & Hazelnut | safety_ready | ready
+- Row 21: 5060107330016 | Organic The Red One Pouch 6+ Months | needs_review | allergens missing; needs_manual_review is true
+- Row 22: 5024121307126 | Melty | needs_review | allergens missing; needs_manual_review is true
+- Row 23: 5024121099915 | Mini Gingerbread Men | safety_ready | ready
+- Row 24: 5060040251997 | cookie squares | safety_ready | ready
+- Row 25: 4056489742470 | organic soft biscotti | needs_review | allergens missing; needs_manual_review is true
+- Row 26: 5060040253915 | KIDDYLICIOUS Biscotti - Pomme - 120g (6x2p) | needs_review | needs_manual_review is true
+- Row 27: 5024121807121 | Organix apple rice cake clouds | needs_review | allergens missing; needs_manual_review is true
+- Row 28: 5060040252000 | Strawberry and banana smoothie melts | needs_review | allergens missing; needs_manual_review is true
+- Row 29: 5060040254639 | Biscuit bébé KIDDYLICIOUS Wafers Myrtille | Dès 6 Mois | 4x2 | needs_review | allergens missing; needs_manual_review is true
+- Row 30: 5060040254417 | Banana Wafers | needs_review | allergens missing; needs_manual_review is true
+- Row 31: 5060139436434 | Fruit Splits - Strawberry And Apple | safety_ready | ready
+- Row 32: 5060040252109 | US US KIDDYLICIOUS 12+ it's delicious MONTHS straw | safety_ready | ready
+- Row 33: 5060121673823 | Mild Chicken Tikka | needs_review | allergens missing; needs_manual_review is true
+- Row 34: 5063089304525 | 12 ITTLE ANGELS by ASDA APPLE & RASPBERRY CORN CAK | needs_review | allergens missing; needs_manual_review is true
+- Row 35: 5024121327124 | Barbeque Gruffo Claws | needs_review | allergens missing; needs_manual_review is true
+- Row 36: 5060107332225 | Spag bol | needs_review | needs_manual_review is true
+- Row 37: 5060040253717 | Veggie Straws saveur fromage | needs_review | needs_manual_review is true
+- Row 38: 5060107338012 | Organic Bananas + Coconuts Pouch 4+ Months | needs_review | allergens missing; needs_manual_review is true
+- Row 39: 4088600361291 | Mango Greek style yogurt | needs_review | needs_manual_review is true
+- Row 40: 5060503502369 | Dairy free with coconut milk | needs_review | allergens missing; needs_manual_review is true
+- Row 41: 4062300426337 | Creamy Porridge | safety_ready | ready
+- Row 42: 4061461501204 | Mamia prunes | needs_review | allergens missing; needs_manual_review is true
+- Row 43: 5060107337251 | Ella's Kitchen Leek and Tomato Melty Puffs | needs_review | allergens missing; needs_manual_review is true
+- Row 44: 5024121890307 | Saucy Tomato Noughts & Crosses+ Months 4 x (60g) | needs_review | allergens missing; needs_manual_review is true
+- Row 45: 4062300013919 | Chicken scrumble | needs_review | needs_manual_review is true
+- Row 46: 5060107333895 | Ella's kitchen Cheery chicken roast with stuffing | needs_review | needs_manual_review is true
+- Row 47: 5060452492261 | Baby Pasta | safety_ready | ready
+- Row 48: 5057753912260 | Tesco Veggie & Salmon Pie (7m ) | needs_review | needs_manual_review is true
+- Row 49: 5057753923167 | Cheesy pasta with butternut squash | safety_ready | ready
+- Row 50: 4062300400535 | Vegetable cannelloni | needs_review | needs_manual_review is true
+- Row 51: 5000157152633 | Sweet and Sour chicken | safety_ready | ready
+- Row 52: 5060337222563 | Biotiful gut health kids kefir | needs_review | needs_manual_review is true
+- Row 53: 00464222 | Organic pea, parsnip and pear | needs_review | allergens missing; needs_manual_review is true
+- Row 54: 00004480 | smelties | needs_review | allergens missing; needs_manual_review is true
+- Row 55: 4061461501068 | Strawberry, Rhubarb & Apples | needs_review | allergens missing; needs_manual_review is true
+- Row 56: 5000157079947 | Strawberry, Banana, Raspberry and Apple | needs_review | needs_manual_review is true
+- Row 57: 5060040252741 | Melty button | needs_review | allergens missing; needs_manual_review is true
+- Row 58: 5000218005656 | farley's reduced sugar rusks | safety_ready | ready
+- Row 59: 4088600360959 | Red burst | needs_review | allergens missing; needs_manual_review is true
+- Row 60: 00287166 | Lentil and chickpea dhal | needs_review | allergens missing; needs_manual_review is true
+- Row 61: 5060040254790 | strawberry crispy tiddlers | needs_review | allergens missing; needs_manual_review is true
+- Row 62: 4062300076938 | 100% baby rice | needs_review | allergens missing; needs_manual_review is true
+- Row 63: 5024121099793 | Oat & Raisin Mini Flapjack Bites | needs_review | allergens missing; needs_manual_review is true
+- Row 64: 5051594008380 | Organic baby rice | needs_review | allergens missing; needs_manual_review is true
+- Row 65: 7613038459912 | Breast milk substitute | safety_ready | ready
+- Row 66: 5057753437992 | Spaghetti bolognese from 10+ months | safety_ready | ready
+- Row 67: 5057753418755 | Pea & Parsnip with Pear | needs_review | allergens missing; needs_manual_review is true
+- Row 68: 5024121100673 | Oat & Banana Flapjack | safety_ready | ready
+- Row 69: 00291507 | organic simply prune | needs_review | allergens missing; needs_manual_review is true
+- Row 70: 5060043225124 | Strawberry Yoghurt Flakes | needs_review | needs_manual_review is true
+- Row 71: 5060403118561 | little Freddie velvety coconut and summer berries organic | needs_review | allergens missing; needs_manual_review is true
+- Row 72: 4088600361352 | Strawberries & apples | needs_review | allergens missing; needs_manual_review is true
+- Row 73: 5054781023722 | Organic apple &strawberry | needs_review | allergens missing; needs_manual_review is true
+- Row 74: 5059977010371 | Mango kiwi pomegranate and blueberries | needs_review | needs_manual_review is true
+- Row 75: 4056489650775 | Lupilu Organic Chicken Casserole with Rice | needs_review | allergens missing; needs_manual_review is true
+- Row 76: 5056000501493 | Kendamil Organic | safety_ready | ready
+- Row 77: 5000157140487 | Heinz By Nature Cottage Pie baby food | needs_review | needs_manual_review is true
+- Row 78: 5051594009233 | Aptamil | needs_review | needs_manual_review is true
+- Row 79: 5060403118547 | Peaches and Raspberries Pouch | needs_review | needs_manual_review is true
+- Row 80: 4062300346031 | combiotic follow on milk 2 | needs_review | needs_manual_review is true
+- Row 81: 5060452490212 | Carrot,Sweet potato and butternut squash | needs_review | allergens missing; needs_manual_review is true
+- Row 82: 5057967163595 | Apple slurpers | needs_review | allergens missing; needs_manual_review is true
+- Row 83: 5057753418816 | Tesco spaghetti Bolognese | safety_ready | ready
+- Row 84: 4062300018938 | Wholesome vegetable & chicken risotto | safety_ready | ready
+- Row 85: 4088600243894 | Organic mamia | needs_review | needs_manual_review is true
+- Row 86: 5057172639434 | Strawberry Greek Style Yoghurt | safety_ready | ready
+- Row 87: 5057753437978 | yomato and couget spaghetti | needs_review | needs_manual_review is true
+- Row 88: 4088600243900 | Spaghetti bolognese with cheese | safety_ready | ready
+- Row 89: 00464215 | Organic Vegetable & Beef Casserole | safety_ready | ready
+- Row 90: 4056489517986 | Green Pouch organic | needs_review | allergens missing; needs_manual_review is true
+- Row 91: 4062300426368 | Banana & Plum Porridge | safety_ready | ready
+- Row 92: 5900852324000 | Kaszka Ryzowa Malina | needs_review | allergens missing; needs_manual_review is true
+- Row 93: 5060503504332 | Pasta bolognese | safety_ready | ready
+- Row 94: 7996459363014 | organic Little Ruskits | needs_review | needs_manual_review is true
+- Row 95: 4062300092891 | Apple & pear | safety_ready | ready
+- Row 96: 8591119001771 | apple and mango | needs_review | needs_manual_review is true
+- Row 97: 5022817000221 | Infant Formula Stage 1 | safety_ready | ready
+- Row 98: 5056000502896 | Kendakids | needs_review | needs_manual_review is true
+- Row 99: 5010525094816 | Vegetable and beef hotpot | safety_ready | ready
+- Row 100: 00291576 | Upcycled ginger oat cookies with whole oats | needs_review | needs_manual_review is true
+- Row 101: 4088600386195 | Organic Mamia Banana’s & Apples | needs_review | allergens missing; needs_manual_review is true
+- Row 102: 5900852035500 | First infant milk | safety_ready | ready
+- Row 103: 5056517306123 | Meatballs & Spaghetti | needs_review | needs_manual_review is true
+- Row 104: 5060454500537 | beef ragu | needs_review | needs_manual_review is true
+- Row 105: 5060503504615 | Cherry Pie Butterfly Pops | needs_review | allergens missing; needs_manual_review is true
+- Row 106: 5060040252734 | Melty Buttons - Apple & Carrot - Multipack | needs_review | allergens missing; needs_manual_review is true
+- Row 107: 0890180001238 | banana + pumpkin | needs_review | allergens missing; needs_manual_review is true
+- Row 108: 5054781544029 | Organic fromage frais | needs_review | needs_manual_review is true
+- Row 109: 5900852925399 | mini beef casserole | safety_ready | ready
+- Row 110: 4088600042428 | Raspberry & apple soft oaty bars | safety_ready | ready
+- Row 111: 5060107336643 | bubble and squeak | needs_review | needs_manual_review is true
+- Row 112: 5060040250990 | Roasted red pepper Houmous dip-dip | needs_review | needs_manual_review is true
+- Row 113: 7640104951346 | Organic milk cereal | safety_ready | ready
+- Row 114: 5060403119865 | Strawberries, blueberries & Oats | needs_review | needs_manual_review is true
+- Row 115: 5060403119186 | Hearty Root Vegetable Mash | needs_review | allergens missing; needs_manual_review is true
+- Row 116: 5060503503106 | Pears apricots pineapples   ginger | needs_review | allergens missing; needs_manual_review is true
+- Row 117: 4062300400658 | Hipp organic fruity O's | needs_review | needs_manual_review is true
+- Row 118: 59593652 | Munchy Fingers Mixed Berry | needs_review | allergens missing; needs_manual_review is true
+- Row 119: 7622210781093 | Biscuits for children | safety_ready | ready
+- Row 120: 5010029000016 | Weetabix | needs_review | needs_manual_review is true
+- Row 121: 5059319030517 | kelloggs corn flakes | needs_review | needs_manual_review is true
+- Row 122: 5018357012497 | simply nutty muesli | needs_review | needs_manual_review is true
+- Row 123: 5070000126579 | Granola Super Nutty | needs_review | needs_manual_review is true
+- Row 124: 4088600247519 | Wheat Bisks | needs_review | needs_manual_review is true
+- Row 125: 5010029226188 | Muesli Recipe | needs_review | needs_manual_review is true
+- Row 126: 5070000126548 | GRANOLA LOW SUGAR, NATURALLY | needs_review | needs_manual_review is true
+- Row 127: 7613287194374 | BITESIZE SHREDDED WHEAT | needs_review | needs_manual_review is true
+- Row 128: 5018357804764 | Nutty Granola | needs_review | needs_manual_review is true
+- Row 129: 5010029229035 | Weetabix Crispy Minis Chocolate Chip | needs_review | needs_manual_review is true
+- Row 130: 5000108022152 | BRITISH PORRIDGE OATS | needs_review | allergens missing; needs_manual_review is true
+- Row 131: 7613287152183 | Shreddies | needs_review | needs_manual_review is true
+- Row 132: 5018357012534 | Simply Fruity muesli | needs_review | needs_manual_review is true
+- Row 133: 4056489438564 | Granola Coconut Cashew & Almond | needs_review | needs_manual_review is true
+- Row 134: 5018357804849 | oat granola | needs_review | needs_manual_review is true
+- Row 135: 5060853640131 | Protein Granola Cocoa Hazelnut | needs_review | needs_manual_review is true
+- Row 136: 5060482841565 | Nutty Granola | needs_review | needs_manual_review is true
+- Row 137: 5060043225353 | Lizis low sugar granola nuts and seeds | needs_review | needs_manual_review is true
+- Row 138: 5018357012350 | Gloriously nutty muesli | needs_review | needs_manual_review is true
+- Row 139: 5010477347312 | SIMPLY GRANOLA WITH A HINT OF HONEY | needs_review | needs_manual_review is true
+- Row 140: 4056489159506 | LOW SUGAR Granola ORIGINAL | needs_review | needs_manual_review is true
+- Row 141: 8445291301948 | Multigrain Cheerios | needs_review | needs_manual_review is true
+- Row 142: 5059319029702 | Rice Krispies | needs_review | needs_manual_review is true
+- Row 143: 5018357012411 | Simply Delicious Muesli | needs_review | needs_manual_review is true
+- Row 144: 5010029202410 | Weetabix | needs_review | needs_manual_review is true
+- Row 145: 4088600169934 | Muesli Swiss Style | needs_review | needs_manual_review is true
+- Row 146: 5010477364654 | Granola Triple Nut | needs_review | needs_manual_review is true
+- Row 147: 5000108022176 | PORAGE OATS ORIGINAL TRADITIONAL SMOOTH CUT | needs_review | allergens missing; needs_manual_review is true
+- Row 148: 5010029231212 | Muesli | needs_review | needs_manual_review is true
+- Row 149: 5000436616443 | Corn Flakes | needs_review | needs_manual_review is true
+- Row 150: 5013803001070 | low sugar granola whole grain oats, almonds & seeds | needs_review | needs_manual_review is true
+- Row 151: 5000119117359 | Wheat Biscuits | needs_review | needs_manual_review is true
+- Row 152: 4088600247458 | malted wheaties | needs_review | needs_manual_review is true
+- Row 153: 4088600326252 | Bran Flakes | needs_review | needs_manual_review is true
+- Row 154: 4056489825623 | Scottish Porridge Oats 100% Wholegrain | needs_review | allergens missing; needs_manual_review is true
+- Row 155: 5059319033501 | Cornflakes | needs_review | needs_manual_review is true
+- Row 156: 5052003786561 | Tesco No Added Sugar or Salt Swiss Style Muesli | needs_review | needs_manual_review is true
+- Row 157: 5060139434362 | Cocoa Alpha Bites | needs_review | needs_manual_review is true
+- Row 158: 4056489825586 | Swiss style museli | needs_review | needs_manual_review is true
+- Row 159: 5010029226133 | Alpen Original Muesli | needs_review | needs_manual_review is true
+- Row 160: 5000127142190 | All-Bran Original | needs_review | needs_manual_review is true
+- Row 161: 5099801003315 | Organic Porridge Oats | needs_review | needs_manual_review is true
+- Row 162: 5055958705342 | Cherry Bakewell Oat Boosts | needs_review | needs_manual_review is true
+- Row 163: 8445290345608 | Multigrain Cheerios | needs_review | needs_manual_review is true
+- Row 164: 5000108280941 | Original | needs_review | allergens missing; needs_manual_review is true
+- Row 165: 5010477367570 | Country Crisp Strawberry | needs_review | needs_manual_review is true
+- Row 166: 4088600202433 | Multi-Grain Hoops | needs_review | needs_manual_review is true
+- Row 167: 5053827193368 | Bran Flakes | needs_review | needs_manual_review is true
+- Row 168: 4088600169859 | Really Nutty Granola | needs_review | needs_manual_review is true
+- Row 169: 5018357804863 | Honey Granola | needs_review | needs_manual_review is true
+- Row 170: 20719326 | Raisin and Almond Granola | needs_review | needs_manual_review is true
+- Row 171: 5060043225414 | Lizis original granola nuts and seeds | needs_review | needs_manual_review is true
+- Row 172: 5010029221701 | PROTEIN | needs_review | needs_manual_review is true
+- Row 173: 4056489239901 | High Protein Granola Cranberry & Almond | needs_review | needs_manual_review is true
+- Row 174: 5000119092502 | Scottish Oats | needs_review | needs_manual_review is true
+- Row 175: 5059319013473 | Blueberry Wheats | needs_review | needs_manual_review is true
+- Row 176: 5000108030904 | Jumbo Oats | needs_review | allergens missing; needs_manual_review is true
+- Row 177: 00130509 | Wheat Biscuits | needs_review | needs_manual_review is true
+- Row 178: 4056489462828 | Porridge oats | needs_review | allergens missing; needs_manual_review is true
+- Row 179: 5000119684257 | FRUIT & FIBRE FRUITY CRUNCH | needs_review | needs_manual_review is true
+- Row 180: 5010477362759 | Jordan's Super Berry Granola | needs_review | needs_manual_review is true
+- Row 181: 5060853640698 | Muesli Fruit & Nut | needs_review | needs_manual_review is true
+- Row 182: 7613287157201 | Multigrain Cheerios | needs_review | needs_manual_review is true
+- Row 183: 5000108030553 | GOLDEN SYRUP FLAVOUR OAT SO SIMPLE | needs_review | allergens missing; needs_manual_review is true
+- Row 184: 5057545744765 | PORRIDGE OATS | needs_review | allergens missing; needs_manual_review is true
+- Row 185: 5010029208610 | Weetabix Oatiflakes | needs_review | needs_manual_review is true
+- Row 186: 20425609 | Multigrain Hoops | needs_review | needs_manual_review is true
+- Row 187: 5013665117551 | Three Nut Crunch | needs_review | needs_manual_review is true
+- Row 188: 5059319004051 | Fruit'n Fibre | needs_review | needs_manual_review is true
+- Row 189: 4088600248752 | Bite size wheat shreds | needs_review | needs_manual_review is true
+- Row 190: 5010477338679 | Jordans Natural Muesli | needs_review | needs_manual_review is true
+- Row 191: 5010477364678 | Jordans no added sugar granola apple and berry | needs_review | needs_manual_review is true
+- Row 192: 29455614 | Multigrain Hoops | needs_review | allergens missing; needs_manual_review is true
+- Row 193: 7613287171009 | Shredded Wheat | needs_review | needs_manual_review is true
+- Row 194: 4088600248592 | Fruit & Fibre | needs_review | needs_manual_review is true
+- Row 195: 5052910395559 | SUPER BERRY GRANOLA | needs_review | needs_manual_review is true
+- Row 196: 5010477362735 | Super Nutty Granola | needs_review | needs_manual_review is true
+- Row 197: 5010029000856 | Weetabix | needs_review | needs_manual_review is true
+- Row 198: 5059319003931 | Special K Red Berries | needs_review | needs_manual_review is true
+- Row 199: 5391115000302 | CLUSTERS | needs_review | needs_manual_review is true
+- Row 200: 5059319032931 | Kelloggs crunchy nut | needs_review | needs_manual_review is true
+- Row 201: 29434725 | GRANOLA SUPER SEEDED | needs_review | needs_manual_review is true
+- Row 202: 7613287170989 | shredded wheat | needs_review | needs_manual_review is true
+- Row 203: 5057753031664 | Super Nutty Granola | needs_review | needs_manual_review is true
+- Row 204: 29310524 | wholegrain wheat flakes and wheat bran with added vitamins and iron | needs_review | needs_manual_review is true
+- Row 205: 5010204372204 | Multigrain Hoops Cereal | needs_review | needs_manual_review is true
+- Row 206: 01835588 | Granola | needs_review | needs_manual_review is true
+- Row 207: 5057753916428 | Tesco Honey & Almond Granola | needs_review | needs_manual_review is true
+- Row 208: 5060043224561 | Low Sugar Nuts & Seeds Granola imp | needs_review | needs_manual_review is true
+- Row 209: 5010029229158 | Crispy Minis Fruit & Nut | needs_review | needs_manual_review is true
+- Row 210: 21114731 | Malted Wheaties | needs_review | needs_manual_review is true
+- Row 211: 20508111 | Malt wheaties | needs_review | needs_manual_review is true
+- Row 212: 5060201621812 | Granola Super Berry | needs_review | needs_manual_review is true

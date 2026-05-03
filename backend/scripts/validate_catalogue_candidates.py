@@ -37,6 +37,7 @@ CANDIDATE_COLUMNS = [
 
 VALID_CONFIDENCE = {"community", "verified", "manual_verified"}
 CATALOGUE_SOURCES = {"open_food_facts", "open_food_facts_catalogue", "licensed_catalogue"}
+MIN_SAFETY_READY_FOR_PROMOTION = 25
 
 
 def _clean(value: Any) -> str:
@@ -52,6 +53,14 @@ def _read_candidates() -> List[Dict[str, str]]:
         return []
     with CANDIDATES_PATH.open("r", encoding="utf-8-sig", newline="") as handle:
         return [dict(row) for row in csv.DictReader(handle)]
+
+
+def _downloaded_candidate_count() -> int:
+    source_path = ROOT / "imports" / "external" / "open_food_facts_sample.jsonl"
+    if not source_path.exists():
+        return 0
+    with source_path.open("r", encoding="utf-8") as handle:
+        return sum(1 for line in handle if line.strip())
 
 
 def _connect() -> sqlite3.Connection:
@@ -89,10 +98,12 @@ def _live_counts(conn: sqlite3.Connection) -> Dict[str, int]:
         )
         """,
     )
+    offers_total = _fetch_count(conn, "SELECT COUNT(*) FROM offers")
     return {
         "products_total": products_total,
         "products_with_offers": products_with_offers,
         "products_without_offers": max(products_total - products_with_offers, 0),
+        "offers_total": offers_total,
     }
 
 
@@ -217,17 +228,26 @@ def validate_candidates() -> Dict[str, Any]:
         report = {
             "live_product_count_before": live_counts["products_total"],
             "live_product_count_after": live_counts["products_total"],
+            "candidates_downloaded": _downloaded_candidate_count(),
             "catalogue_candidates_staged": len(rows),
             "safety_ready_rows": len(safety_ready),
             "needs_review_rows": len(needs_review),
             "rejected_rows": len(rejected),
             "products_promoted": 0,
+            "retailer_offers_before": live_counts["offers_total"],
+            "retailer_offers_after": live_counts["offers_total"],
+            "retailer_offers_unchanged": "yes",
             "products_with_retailer_offers": live_counts["products_with_offers"],
             "products_without_retailer_offers": live_counts["products_without_offers"],
             "validation_warnings": 0,
             "validation_errors": len(rejected),
             "issue_count": len(rejected),
             "final_decision": "BLOCKED",
+            "promotion_gate": (
+                "READY"
+                if len(safety_ready) >= MIN_SAFETY_READY_FOR_PROMOTION and not rejected
+                else "BLOCKED"
+            ),
             "rows": classified,
         }
         return report
@@ -243,17 +263,22 @@ def write_report(report: Dict[str, Any]) -> None:
         "## Summary",
         "",
         "- Live product count before: {}".format(report["live_product_count_before"]),
+        "- Candidates downloaded: {}".format(report.get("candidates_downloaded", 0)),
         "- Catalogue candidates staged: {}".format(report["catalogue_candidates_staged"]),
         "- Safety-ready rows: {}".format(report["safety_ready_rows"]),
         "- Needs-review rows: {}".format(report["needs_review_rows"]),
         "- Rejected rows: {}".format(report["rejected_rows"]),
         "- Products promoted: {}".format(report["products_promoted"]),
         "- Live product count after: {}".format(report["live_product_count_after"]),
+        "- Retailer offers before: {}".format(report.get("retailer_offers_before", 0)),
+        "- Retailer offers after: {}".format(report.get("retailer_offers_after", 0)),
+        "- Retailer offers unchanged: {}".format(report.get("retailer_offers_unchanged", "yes")),
         "- Products with retailer offers: {}".format(report["products_with_retailer_offers"]),
         "- Products without retailer offers: {}".format(report["products_without_retailer_offers"]),
         "- Validation warnings: {}".format(report["validation_warnings"]),
         "- Validation errors: {}".format(report["validation_errors"]),
         "- Issue count: {}".format(report["issue_count"]),
+        "- Promotion gate: {}".format(report.get("promotion_gate", "BLOCKED")),
         "- Final decision: {}".format(report["final_decision"]),
         "",
         "## Row Details",
@@ -284,9 +309,11 @@ def main() -> None:
     print("CATALOGUE CANDIDATE VALIDATION")
     print("=" * 80)
     print("Catalogue candidates staged: {}".format(report["catalogue_candidates_staged"]))
+    print("Candidates downloaded: {}".format(report.get("candidates_downloaded", 0)))
     print("Safety-ready rows: {}".format(report["safety_ready_rows"]))
     print("Needs-review rows: {}".format(report["needs_review_rows"]))
     print("Rejected rows: {}".format(report["rejected_rows"]))
+    print("Promotion gate: {}".format(report.get("promotion_gate", "BLOCKED")))
     print("Final decision: {}".format(report["final_decision"]))
     print("Report: {}".format(REPORT_PATH))
 

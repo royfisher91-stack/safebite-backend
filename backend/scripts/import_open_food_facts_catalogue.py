@@ -57,7 +57,9 @@ NONE_DECLARED_MARKERS = {
 
 
 def _clean(value: Any) -> str:
-    return str(value or "").strip()
+    if isinstance(value, list):
+        return " ".join(" ".join(str(item or "").split()) for item in value if " ".join(str(item or "").split()))
+    return " ".join(str(value or "").split())
 
 
 def _clean_lower(value: Any) -> str:
@@ -159,7 +161,7 @@ def _map_category(row: Dict[str, Any]) -> Tuple[str, str]:
     ).lower()
 
     if "baby" not in text and "toddler" not in text and "infant" not in text:
-        return "", ""
+        return "General Food", "Uncategorised"
 
     subcategory = ""
     if any(term in text for term in ["formula", "infant milk"]):
@@ -178,7 +180,7 @@ def _map_category(row: Dict[str, Any]) -> Tuple[str, str]:
         subcategory = "Baby Meals"
 
     if not subcategory:
-        return "", ""
+        return "General Food", "Uncategorised"
 
     category, mapped_subcategory = enforce_phase1_taxonomy("", subcategory)
     return category, mapped_subcategory
@@ -198,6 +200,9 @@ def _candidate_from_row(row: Dict[str, Any], live_barcodes: Set[str]) -> Optiona
         return None
 
     barcode = normalise_barcode(_first(row, ["code", "barcode", "gtin", "ean", "_id"]))
+    if barcode in live_barcodes:
+        return None
+
     name = _first(row, ["product_name", "product_name_en", "name"])
     brand = _first(row, ["brands", "brand", "brands_tags"])
     ingredients = _first(row, ["ingredients_text", "ingredients_text_en", "ingredients"])
@@ -208,12 +213,12 @@ def _candidate_from_row(row: Dict[str, Any], live_barcodes: Set[str]) -> Optiona
     valid_gtin, gtin_message = validate_gtin(barcode)
     if not valid_gtin:
         notes.append(gtin_message)
-    if barcode in live_barcodes:
-        notes.append("barcode already exists in live products")
     if not name:
         notes.append("product name missing")
-    if not category or not subcategory:
-        notes.append("outside current SafeBite catalogue taxonomy")
+    if category == "General Food" and subcategory == "Uncategorised":
+        notes.append("no clean SafeBite subcategory mapped")
+    elif not category or not subcategory:
+        notes.append("category/subcategory missing")
     if not ingredients:
         notes.append("ingredients missing")
     if not allergens:
@@ -240,7 +245,7 @@ def _candidate_from_row(row: Dict[str, Any], live_barcodes: Set[str]) -> Optiona
 def _write_candidates(rows: List[Dict[str, str]]) -> None:
     CANDIDATES_PATH.parent.mkdir(parents=True, exist_ok=True)
     with CANDIDATES_PATH.open("w", encoding="utf-8", newline="") as handle:
-        writer = csv.DictWriter(handle, fieldnames=CANDIDATE_COLUMNS)
+        writer = csv.DictWriter(handle, fieldnames=CANDIDATE_COLUMNS, lineterminator="\n")
         writer.writeheader()
         for row in rows:
             writer.writerow({column: row.get(column, "") for column in CANDIDATE_COLUMNS})
@@ -268,9 +273,7 @@ def main() -> None:
             continue
         barcode = candidate.get("barcode", "")
         if barcode and barcode in seen:
-            candidate["needs_manual_review"] = "true"
-            note = candidate.get("notes", "")
-            candidate["notes"] = "{}; duplicate barcode in source sample".format(note).strip("; ")
+            continue
         seen.add(barcode)
         candidates.append(candidate)
 
