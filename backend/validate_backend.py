@@ -1,14 +1,18 @@
 import json
+import os
+import subprocess
 import sys
 import urllib.error
 import urllib.parse
 import urllib.request
+from pathlib import Path
 from typing import Any, Dict, List, Optional, Tuple
 
 from import_utils import ALLOWED_TAXONOMY
 
 
 BASE_URL = "http://127.0.0.1:8000"
+SKIP_CATALOGUE_REPRO_GATE_ENV = "SAFEBITE_SKIP_CATALOGUE_REPRO_GATE"
 QUALITY_ZERO_FIELDS = [
     "products_missing_category",
     "products_other_general",
@@ -366,6 +370,37 @@ def validate_coverage_summary(errors: List[str]) -> None:
         add_error(errors, issue.get("message") or "unknown coverage issue")
 
 
+def validate_catalogue_reproducibility(errors: List[str]) -> None:
+    print("\n" + "=" * 80)
+    print("CATALOGUE REPRODUCIBILITY GATE")
+
+    if os.environ.get(SKIP_CATALOGUE_REPRO_GATE_ENV) == "1":
+        print("Skipped inside catalogue reproducibility archive validation.")
+        return
+
+    backend_dir = Path(__file__).resolve().parent
+    gate_script = backend_dir / "scripts" / "validate_catalogue_reproducibility.py"
+    if not gate_script.exists():
+        add_error(errors, "Catalogue reproducibility gate script is missing")
+        return
+
+    completed = subprocess.run(
+        [sys.executable, str(gate_script)],
+        cwd=str(backend_dir),
+        text=True,
+        stdout=subprocess.PIPE,
+        stderr=subprocess.STDOUT,
+    )
+    output = completed.stdout or ""
+    if output.strip():
+        print(output.rstrip())
+
+    if completed.returncode != 0:
+        add_error(errors, "Catalogue reproducibility gate failed")
+    else:
+        print("Catalogue reproducibility gate: PASS")
+
+
 def main() -> None:
     mode, data = load_backend_data()
     errors: List[str] = []
@@ -405,6 +440,7 @@ def main() -> None:
     validate_quality_report(data.get("quality", {}), errors, warnings)
     validate_alternatives_quality(errors)
     validate_coverage_summary(errors)
+    validate_catalogue_reproducibility(errors)
 
     print("\n" + "=" * 80)
     print(f"Validation warnings: {len(warnings)}")
