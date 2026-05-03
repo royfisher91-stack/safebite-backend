@@ -1463,7 +1463,7 @@ class DatabaseManager:
                 "in_stock": True,
                 "product_url": "",
                 "image_url": "",
-                "source": "sample_seed",
+                "source": "startup_seed",
                 "source_retailer": "Asda",
             },
             {
@@ -1477,7 +1477,7 @@ class DatabaseManager:
                 "in_stock": True,
                 "product_url": "",
                 "image_url": "",
-                "source": "sample_seed",
+                "source": "startup_seed",
                 "source_retailer": "Asda",
             },
             {
@@ -1491,7 +1491,7 @@ class DatabaseManager:
                 "in_stock": True,
                 "product_url": "",
                 "image_url": "",
-                "source": "sample_seed",
+                "source": "startup_seed",
                 "source_retailer": "Tesco",
             },
         ]
@@ -1516,10 +1516,28 @@ class DatabaseManager:
                 (offer["barcode"], offer["retailer"]),
             )
             existing_offer = cursor.fetchone()
-            conn.close()
 
             if existing_offer:
+                cursor.execute(
+                    """
+                    UPDATE offers
+                    SET source = ?,
+                        source_retailer = ?,
+                        updated_at = CURRENT_TIMESTAMP
+                    WHERE id = ?
+                      AND LOWER(TRIM(source)) = 'sample_seed'
+                    """,
+                    (
+                        offer["source"],
+                        offer["source_retailer"],
+                        existing_offer["id"],
+                    ),
+                )
+                conn.commit()
+                conn.close()
                 continue
+
+            conn.close()
 
             self.upsert_offer(offer)
             seeded += 1

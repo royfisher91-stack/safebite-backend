@@ -1760,5 +1760,33 @@
     "allergen_warnings": "",
     "source": "manual_real_batch_baby_meals_003",
     "source_retailer": "Tesco"
+  },
+  {
+    "barcode": "5000177025658",
+    "name": "Cow & Gate Creamy Porridge",
+    "brand": "Cow & Gate",
+    "category": "Baby & Toddler",
+    "subcategory": "Porridge",
+    "ingredients": [
+      "Milled cereals",
+      "Skimmed milk powder",
+      "Milled rice",
+      "Demineralised whey powder from milk",
+      "Vegetable oils",
+      "Soy lecithin",
+      "Minerals",
+      "Natural vanilla flavour",
+      "Vitamins"
+    ],
+    "allergens": [
+      "Milk",
+      "Soy"
+    ],
+    "safety_score": 62,
+    "safety_result": "Caution",
+    "ingredient_reasoning": "Baby porridge with milk ingredients and soy lecithin; suitable checks should account for dairy and soy sensitivities.",
+    "allergen_warnings": "Contains milk and soy.",
+    "source": "manual_render_startup_seed",
+    "source_retailer": "SafeBite"
   }
 ]

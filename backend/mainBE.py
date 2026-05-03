@@ -65,6 +65,7 @@ from services.promo_service import (
 from database import (
     get_all_products,
     get_offers_by_barcode,
+    get_product_count,
     get_product_by_barcode,
     get_similar_products,
     init_db,
@@ -72,6 +73,7 @@ from database import (
     seed_products_from_json,
     seed_sample_offers,
 )
+from run_imports import run_imports
 from services.alternatives_service import build_alternatives
 from services.analysis_service import analyse_product
 from services.pricing_service import build_pricing_summary, normalise_offer
@@ -96,11 +98,46 @@ app.add_middleware(
 )
 
 
+TARGET_RENDER_BARCODE = '5000177025658'
+
+
+def bootstrap_product_data() -> None:
+    init_db()
+    product_count = get_product_count()
+
+    if product_count == 0:
+        print('SafeBite startup: product table empty, running import pipeline')
+        run_imports(include_reports=False)
+    else:
+        print(f'SafeBite startup: product table already has {product_count} products')
+
+    seeded_products = seed_products_from_json()
+    seeded_offers = seed_sample_offers()
+    final_product_count = get_product_count()
+    target_product = get_product_by_barcode(TARGET_RENDER_BARCODE)
+
+    print(
+        'SafeBite startup: product count after bootstrap = {}'.format(
+            final_product_count
+        )
+    )
+    print(
+        'SafeBite startup: JSON seeds checked = {}, sample offers added = {}'.format(
+            seeded_products,
+            seeded_offers,
+        )
+    )
+    print(
+        'SafeBite startup: barcode {} present = {}'.format(
+            TARGET_RENDER_BARCODE,
+            bool(target_product),
+        )
+    )
+
+
 @app.on_event('startup')
 def startup_event() -> None:
-    init_db()
-    seed_products_from_json()
-    seed_sample_offers()
+    bootstrap_product_data()
 
 
 def safe_int(value: Any, default: int = 0) -> int:
@@ -1011,14 +1048,3 @@ def flag_community_feedback_route(
         'status': 'flagged',
         'id': feedback_id,
     }
-
-
-from run_imports import run_imports
-
-@app.on_event("startup")
-def startup_event():
-    try:
-        run_imports()
-        print("Data imported successfully")
-    except Exception as e:
-        print("Import failed:", e)

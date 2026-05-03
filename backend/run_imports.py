@@ -8,6 +8,40 @@ from services.phase2_data_quality import ensure_phase2_tables, refresh_existing_
 from services.phase2_reporting import build_phase2_summary, render_phase2_text_report
 
 
+def run_imports(include_reports=False):
+    init_db()
+    ensure_phase2_tables(str(DB_PATH))
+    seeded_products = seed_products_from_json()
+
+    results = [
+        import_tesco(),
+        import_asda(),
+        import_sainsburys(),
+    ]
+
+    refresh_existing_quality_records(str(DB_PATH))
+
+    if include_reports:
+        print(f"Seed products checked: {seeded_products}\n")
+
+        for result in results:
+            print_result(result)
+            print()
+
+        print_quality_report(limit=20)
+        print()
+        print_coverage_summary_report()
+        print()
+
+        print("Phase 2 data quality")
+        print(render_phase2_text_report(build_phase2_summary(str(DB_PATH))))
+
+    return {
+        "seeded_products": seeded_products,
+        "results": results,
+    }
+
+
 def print_result(result):
     retailer = result.get("retailer", "Unknown")
     errors = result.get("errors", [])
@@ -27,29 +61,7 @@ def print_result(result):
 def main():
     print("🚀 Running supermarket imports...\n")
 
-    init_db()
-    ensure_phase2_tables(str(DB_PATH))
-    seeded_products = seed_products_from_json()
-    print(f"Seed products checked: {seeded_products}\n")
-
-    results = [
-        import_tesco(),
-        import_asda(),
-        import_sainsburys(),
-    ]
-
-    for result in results:
-        print_result(result)
-        print()
-
-    print_quality_report(limit=20)
-    print()
-    print_coverage_summary_report()
-    print()
-
-    print("Phase 2 data quality")
-    refresh_existing_quality_records(str(DB_PATH))
-    print(render_phase2_text_report(build_phase2_summary(str(DB_PATH))))
+    run_imports(include_reports=True)
 
     print("✅ Import run finished")
 
