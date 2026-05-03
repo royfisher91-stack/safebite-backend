@@ -34,17 +34,15 @@ Use `backend/imports/staged/baby_meals_source_queue.csv` to record source eviden
 
 ## Validation Command Results
 
-- `scripts/validate_baby_meals_verified_batch.py`: BLOCKED as expected; 6 needs_review rows, 0 verified rows, promotion threshold is 6
-- `run_imports.py`: PASS; products 64, offers 104, validation issues 0, warnings 0, errors 0
-- `coverage_summary_report.py`: PASS; issue_count 0
-- `alternatives_quality_report.py`: PASS; issue_count 0
-- `validate_backend.py`: PASS; products 64, validation warnings 0, validation errors 0
+- `scripts/validate_baby_meals_verified_batch.py`: BLOCKED
+- `run_imports.py`: pending external run
+- `coverage_summary_report.py`: pending external run
+- `alternatives_quality_report.py`: pending external run
+- `validate_backend.py`: pending external run
 
 ## Decision
 
 BLOCKED
-
-No live import was performed for this verified Baby Meals batch because the 6 candidate rows remain needs_review and have not been manually completed with GTIN, ingredient, allergen, and price evidence.
 
 ## Error Detail
 
