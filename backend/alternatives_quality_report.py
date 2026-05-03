@@ -39,6 +39,11 @@ def _clean_lower(value: Any) -> str:
     return _clean(value).lower()
 
 
+def _is_catalogue_product(product: Dict[str, Any]) -> bool:
+    source = _clean_lower(product.get("source"))
+    return source in {"open_food_facts", "open_food_facts_catalogue", "licensed_catalogue"}
+
+
 def _product_label(product: Dict[str, Any]) -> str:
     return "{barcode} | {name} | {category} / {subcategory}".format(
         barcode=product.get("barcode") or "",
@@ -138,7 +143,8 @@ def _validate_option(
     if option_key == "cheaper_option":
         option_price = safe_float(option.get("best_price"))
         if current_price is None:
-            issues.append("cheaper_option exists but current product has no price")
+            if not _is_catalogue_product(product):
+                issues.append("cheaper_option exists but current product has no price")
         elif option_price is None:
             issues.append("cheaper_option has no price")
         elif option_price >= current_price:
@@ -148,17 +154,20 @@ def _validate_option(
 
 
 def build_alternatives_quality_report() -> Dict[str, Any]:
-    products = get_all_products()
+    products = get_all_products(limit=100000)
     rows = []
     issues = []
     products_with_same_subcategory_option = 0
     products_with_cheaper_option = 0
     products_with_safer_option = 0
+    products_without_retailer_offers = 0
 
     for product in products:
         barcode = _clean(product.get("barcode"))
         pricing = _pricing_for_product(product)
         current_price = safe_float(pricing.get("best_price"))
+        if current_price is None:
+            products_without_retailer_offers += 1
         alternatives = build_alternatives(product)
         same_subcategory_count = _same_subcategory_count(product, products)
         row_issues = []
@@ -212,6 +221,7 @@ def build_alternatives_quality_report() -> Dict[str, Any]:
             "products_with_same_category_option": products_with_same_subcategory_option,
             "products_with_cheaper_option": products_with_cheaper_option,
             "products_with_safer_option": products_with_safer_option,
+            "products_without_retailer_offers": products_without_retailer_offers,
             "issue_count": len(issues),
         },
         "rows": rows,

@@ -1,3 +1,4 @@
+import json
 import sqlite3
 from pathlib import Path
 from typing import Any, Dict, List
@@ -8,6 +9,7 @@ DB_PATH = BASE_DIR / "safebite.db"
 TARGET_RETAILERS = ["Tesco", "Asda", "Sainsbury's", "Waitrose", "Ocado", "Iceland", "Morrisons"]
 MIN_PRODUCTS_PER_SUBCATEGORY = 2
 MIN_OFFERS_PER_PRODUCT = 1
+CATALOGUE_SOURCES = {"open_food_facts", "open_food_facts_catalogue", "licensed_catalogue"}
 
 
 def _row_to_dict(row: sqlite3.Row) -> Dict[str, Any]:
@@ -33,6 +35,30 @@ def _split_csv(value: str) -> List[str]:
     if not value:
         return []
     return [item.strip() for item in value.split(",") if item.strip()]
+
+
+def _json_list(value: Any) -> List[Any]:
+    if not value:
+        return []
+    try:
+        parsed = json.loads(value)
+    except (TypeError, ValueError):
+        return []
+    if isinstance(parsed, list):
+        return parsed
+    return []
+
+
+def _is_catalogue_product(row: Dict[str, Any]) -> bool:
+    source = str(row.get("source") or "").strip().lower()
+    return source in CATALOGUE_SOURCES
+
+
+def _is_safety_ready(row: Dict[str, Any]) -> bool:
+    ingredients = _json_list(row.get("ingredients"))
+    allergens = _json_list(row.get("allergens"))
+    has_allergens = bool(allergens) or _is_catalogue_product(row)
+    return bool(ingredients) and has_allergens
 
 
 def build_coverage_summary_report() -> Dict[str, Any]:
@@ -90,6 +116,10 @@ def build_coverage_summary_report() -> Dict[str, Any]:
             p.name,
             p.category,
             p.subcategory,
+            p.ingredients,
+            p.allergens,
+            p.source,
+            p.source_retailer,
             COUNT(o.id) AS offer_count,
             GROUP_CONCAT(DISTINCT o.retailer) AS retailers,
             MIN(
@@ -101,7 +131,7 @@ def build_coverage_summary_report() -> Dict[str, Any]:
         FROM products p
         LEFT JOIN offers o
             ON o.barcode = p.barcode
-        GROUP BY p.barcode, p.name, p.category, p.subcategory
+        GROUP BY p.barcode, p.name, p.category, p.subcategory, p.ingredients, p.allergens, p.source, p.source_retailer
         ORDER BY
             offer_count ASC,
             p.category COLLATE NOCASE ASC,
@@ -120,6 +150,26 @@ def build_coverage_summary_report() -> Dict[str, Any]:
         row
         for row in product_offer_coverage
         if int(row.get("offer_count") or 0) < MIN_OFFERS_PER_PRODUCT
+    ]
+
+    catalogue_products = [
+        row for row in product_offer_coverage if _is_catalogue_product(row)
+    ]
+
+    catalogue_products_without_offers = [
+        row for row in products_without_offers if _is_catalogue_product(row)
+    ]
+
+    products_missing_required_offers = [
+        row for row in products_without_offers if not _is_catalogue_product(row)
+    ]
+
+    safety_ready_products = [
+        row for row in product_offer_coverage if _is_safety_ready(row)
+    ]
+
+    needs_review_products = [
+        row for row in product_offer_coverage if not _is_safety_ready(row)
     ]
 
     products_missing_target_retailers = []
@@ -145,7 +195,7 @@ def build_coverage_summary_report() -> Dict[str, Any]:
             }
         )
 
-    for row in products_without_offers:
+    for row in products_missing_required_offers:
         issues.append(
             {
                 "type": "missing_offers",
@@ -159,6 +209,12 @@ def build_coverage_summary_report() -> Dict[str, Any]:
     summary = {
         "products_total": _fetch_count(conn, "SELECT COUNT(*) FROM products"),
         "offers_total": _fetch_count(conn, "SELECT COUNT(*) FROM offers"),
+        "product_catalogue_count": len(catalogue_products),
+        "products_with_retailer_offers": len(product_offer_coverage) - len(products_without_offers),
+        "products_without_retailer_offers": len(products_without_offers),
+        "catalogue_products_without_offers": len(catalogue_products_without_offers),
+        "safety_ready_products": len(safety_ready_products),
+        "needs_review_products": len(needs_review_products),
         "categories_total": _fetch_count(
             conn,
             """
@@ -175,6 +231,7 @@ def build_coverage_summary_report() -> Dict[str, Any]:
         "target_retailers": ", ".join(TARGET_RETAILERS),
         "thin_subcategory_count": len(thin_subcategories),
         "products_without_offers": len(products_without_offers),
+        "products_missing_required_offers": len(products_missing_required_offers),
         "products_missing_target_retailers": len(products_missing_target_retailers),
         "issue_count": len(issues),
     }
