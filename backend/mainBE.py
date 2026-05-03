@@ -78,6 +78,7 @@ from database import (
     search_products,
     seed_products_from_json,
     seed_sample_offers,
+    seed_startup_products,
 )
 from services.alternatives_service import build_alternatives
 from services.analysis_service import analyse_product
@@ -125,9 +126,13 @@ def bootstrap_product_data() -> None:
 
     if product_count_before == 0:
         print('SafeBite startup: product table empty, running import pipeline')
-        from run_imports import run_imports
+        try:
+            from run_imports import run_imports
 
-        run_imports(include_reports=False)
+            run_imports(include_reports=False)
+        except Exception:
+            print('SafeBite startup: import pipeline failed; continuing to seed fallback data')
+            traceback.print_exc()
     else:
         print(
             'SafeBite startup: product table already has {} products'.format(
@@ -136,6 +141,7 @@ def bootstrap_product_data() -> None:
         )
 
     seeded_products = seed_products_from_json()
+    startup_products = seed_startup_products()
     seeded_offers = seed_sample_offers()
     final_product_count = get_product_count()
     target_product = get_product_by_barcode(TARGET_RENDER_BARCODE)
@@ -146,8 +152,9 @@ def bootstrap_product_data() -> None:
         )
     )
     print(
-        'SafeBite startup: JSON seeds checked = {}, sample offers added = {}'.format(
+        'SafeBite startup: JSON seeds checked = {}, startup products added = {}, sample offers added = {}'.format(
             seeded_products,
+            startup_products,
             seeded_offers,
         )
     )

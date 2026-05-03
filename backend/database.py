@@ -8,6 +8,38 @@ from typing import Any, Dict, List, Optional
 BASE_DIR = Path(__file__).resolve().parent
 DB_PATH = BASE_DIR / "safebite.db"
 IMPORTS_PRODUCTS_JSON_PATH = BASE_DIR / "imports" / "products.json"
+STARTUP_PRODUCT_SEEDS = [
+    {
+        "barcode": "5000177025658",
+        "name": "Cow & Gate Creamy Porridge",
+        "brand": "Cow & Gate",
+        "description": "",
+        "ingredients": [
+            "Milled cereals",
+            "Skimmed milk powder",
+            "Milled rice",
+            "Demineralised whey powder from milk",
+            "Vegetable oils",
+            "Soy lecithin",
+            "Minerals",
+            "Natural vanilla flavour",
+            "Vitamins",
+        ],
+        "allergens": ["Milk", "Soy"],
+        "category": "Baby & Toddler",
+        "subcategory": "Porridge",
+        "image_url": "",
+        "source": "startup_seed",
+        "source_retailer": "SafeBite",
+        "safety_score": 62,
+        "safety_result": "Caution",
+        "ingredient_reasoning": (
+            "Baby porridge with milk ingredients and soy lecithin; suitable checks "
+            "should account for dairy and soy sensitivities."
+        ),
+        "allergen_warnings": "Contains milk and soy.",
+    }
+]
 
 try:
     from data.product_enrichment import PRODUCT_ENRICHMENT
@@ -1406,11 +1438,14 @@ class DatabaseManager:
         file_path = Path(path) if path else IMPORTS_PRODUCTS_JSON_PATH
 
         if not file_path.exists():
+            print(f"SafeBite startup: products seed file not found: {file_path}")
             return 0
 
         try:
             raw = json.loads(file_path.read_text(encoding="utf-8"))
         except Exception:
+            print(f"SafeBite startup: failed to read products seed file: {file_path}")
+            traceback.print_exc()
             return 0
 
         items = []
@@ -1451,6 +1486,22 @@ class DatabaseManager:
             }
 
             self.upsert_product(product_payload)
+            seeded += 1
+
+        return seeded
+
+    def seed_startup_products(self) -> int:
+        seeded = 0
+
+        for item in STARTUP_PRODUCT_SEEDS:
+            barcode = str(item.get("barcode") or "").strip()
+            if not barcode:
+                continue
+
+            if self.get_product_by_barcode(barcode):
+                continue
+
+            self.upsert_product(item)
             seeded += 1
 
         return seeded
@@ -1617,6 +1668,10 @@ def get_offer_count() -> int:
 
 def seed_products_from_json() -> int:
     return db.seed_products_from_json()
+
+
+def seed_startup_products() -> int:
+    return db.seed_startup_products()
 
 
 def seed_sample_offers() -> int:
