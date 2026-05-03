@@ -3,6 +3,7 @@
 
 from __future__ import annotations
 
+import os
 import sqlite3
 import subprocess
 import sys
@@ -20,13 +21,14 @@ EXPECTED_OFFERS = 104
 EXPECTED_OFF_CATALOGUE_PRODUCTS = 33
 EXPECTED_OFF_CATALOGUE_WITHOUT_OFFERS = 33
 DRIFT_MESSAGE = "Catalogue volume drift detected: expected 97 products / 104 offers from committed import files."
+SKIP_CATALOGUE_REPRO_GATE_ENV = "SAFEBITE_SKIP_CATALOGUE_REPRO_GATE"
 
 
 class GateError(RuntimeError):
     pass
 
 
-def run_command(label: str, command: Sequence[str], cwd: Path) -> str:
+def run_command(label: str, command: Sequence[str], cwd: Path, env: Dict[str, str] = None) -> str:
     print("\nRunning {0}".format(label))
     print("$ {0}".format(" ".join(command)))
     completed = subprocess.run(
@@ -35,6 +37,7 @@ def run_command(label: str, command: Sequence[str], cwd: Path) -> str:
         text=True,
         stdout=subprocess.PIPE,
         stderr=subprocess.STDOUT,
+        env=env,
     )
     output = completed.stdout or ""
     if completed.returncode != 0:
@@ -150,7 +153,9 @@ def main() -> int:
         print_state("State after run_imports.py", after_import)
         assert_counts("after run_imports.py", after_import)
 
-        run_command("validate_backend.py", [sys.executable, "validate_backend.py"], backend_dir)
+        validation_env = os.environ.copy()
+        validation_env[SKIP_CATALOGUE_REPRO_GATE_ENV] = "1"
+        run_command("validate_backend.py", [sys.executable, "validate_backend.py"], backend_dir, env=validation_env)
         after_validation = count_state(backend_dir)
         print_state("State after validate_backend.py", after_validation)
         assert_counts("after validate_backend.py", after_validation)
